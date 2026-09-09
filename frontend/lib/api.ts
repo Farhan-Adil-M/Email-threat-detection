@@ -48,3 +48,22 @@ export type CaseSummary = {
   explanation: Explanation | null; ml: MLAssessment | null;
   auth_results: AuthResult[]; hops_count: number; findings_count: number;
 }
+
+export type Campaign = {
+  id: string; name: string; description: string;
+  confidence: number; case_count: number; created_at: string;
+}
+
+export type DashboardStats = {
+  total_cases: number; open_cases: number;
+  severity_counts: Record<string, number>;
+  status_counts: Record<string, number>;
+  campaigns: Campaign[];
+  indicators: {
+    total: number; unique_domains: number; unique_ips: number; unique_urls: number;
+    top_domains: string[]; top_ips: string[];
+  };
+  mitre_techniques: Record<string, number>;
+  risk_distribution: Record<string, number>;
+  recent_cases: { id: string; title: string; status: string; severity: string; created_at: string }[];
+}
