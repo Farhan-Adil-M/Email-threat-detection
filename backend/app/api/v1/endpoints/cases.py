@@ -43,9 +43,18 @@ def _parse_uuid(case_id: str) -> UUID:
 
 
 @router.get("", response_model=APIResponse[list[CaseRead]])
-def list_cases(db: Session = Depends(get_db)):
+def list_cases(
+    db: Session = Depends(get_db),
+    page: int = 1,
+    page_size: int = 20,
+):
     service = CaseService(db)
-    cases = service.list_cases()
+    # Validate pagination params
+    if page < 1:
+        page = 1
+    if page_size < 1 or page_size > 100:
+        page_size = 20
+    cases = service.list_cases(limit=page_size, offset=(page - 1) * page_size)
     return APIResponse(data=cases)
 
 

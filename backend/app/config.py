@@ -20,7 +20,7 @@ class Settings(BaseSettings):
     MAX_UPLOAD_SIZE: int = 25 * 1024 * 1024  # 25 MB
     INTEL_MODE: str = "disabled"  # disabled | fixture | live
     INTEL_DNS_TIMEOUT: float = 2.0
-    AUTH_REQUIRED: bool = False
+    AUTH_REQUIRED: bool = True
     DEMO_ANALYST_PASSWORD: str = "change-me-analyst"
     DEMO_ADMIN_PASSWORD: str = "change-me-admin"
 

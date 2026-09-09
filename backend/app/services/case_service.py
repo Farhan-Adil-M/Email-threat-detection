@@ -10,8 +10,14 @@ class CaseService:
     def __init__(self, db: Session):
         self.db = db
 
-    def list_cases(self) -> list[Case]:
-        return self.db.query(Case).order_by(Case.created_at.desc()).all()
+    def list_cases(self, limit: int = 20, offset: int = 0) -> list[Case]:
+        return (
+            self.db.query(Case)
+            .order_by(Case.created_at.desc())
+            .limit(limit)
+            .offset(offset)
+            .all()
+        )
 
     def create_case(self, payload: CaseCreate) -> Case:
         case = Case(

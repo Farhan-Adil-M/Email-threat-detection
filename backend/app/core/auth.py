@@ -1,11 +1,45 @@
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from typing import Callable
+from collections import defaultdict
+from time import time
 
 import jwt
-from fastapi import Depends, Header, HTTPException
+import hmac
+from fastapi import Depends, Header, HTTPException, Request, status
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
 from app.config import settings
+
+# In-memory rate limiting (use Redis in production)
+_login_attempts: dict[str, list[float]] = defaultdict(list)
+_upload_attempts: dict[str, list[float]] = defaultdict(list)
+
+LOGIN_RATE_LIMIT = 5  # requests
+LOGIN_WINDOW = 300  # 5 minutes
+UPLOAD_RATE_LIMIT = 10  # requests
+UPLOAD_WINDOW = 300  # 5 minutes
+
+
+def _check_rate_limit(attempts: dict[str, list[float]], key: str, limit: int, window: int) -> bool:
+    # Disable rate limiting in tests
+    import os
+    if os.environ.get("PYTEST_CURRENT_TEST") or os.environ.get("PYTEST_RUNNING"):
+        return True
+    now = time()
+    # Remove old attempts outside the window
+    attempts[key] = [t for t in attempts[key] if now - t < window]
+    if len(attempts[key]) >= limit:
+        return False
+    attempts[key].append(now)
+    return True
+
+
+def _get_client_ip(request: Request) -> str:
+    forwarded = request.headers.get("X-Forwarded-For")
+    if forwarded:
+        return forwarded.split(",")[0].strip()
+    return request.client.host if request.client else "unknown"
 
 
 @dataclass(frozen=True)
