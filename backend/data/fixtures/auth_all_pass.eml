@@ -1,0 +1,10 @@
+From: sender@example.com
+To: victim@example.com
+Subject: All auth pass
+Message-ID: <auth-pass-001@example.com>
+Date: Mon, 01 Jan 2024 10:00:00 +0000
+MIME-Version: 1.0
+Content-Type: text/plain
+Authentication-Results: mx.example.com; spf=pass smtp.mailfrom=example.com; dkim=pass header.i=@example.com; dmarc=pass (p=REJECT) header.from=example.com
+
+All authentication passed.

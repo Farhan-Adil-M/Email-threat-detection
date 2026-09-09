@@ -1,0 +1,9 @@
+From: sender@example.com
+To: victim@example.com
+Subject: No auth header
+Message-ID: <auth-missing-001@example.com>
+Date: Mon, 01 Jan 2024 10:00:00 +0000
+MIME-Version: 1.0
+Content-Type: text/plain
+
+No Authentication-Results header.

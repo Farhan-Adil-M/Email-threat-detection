@@ -22,7 +22,11 @@ def test_parse_legitimate_email(client: TestClient):
     assert analyze.status_code == 200
     data = analyze.json()["data"]
     assert data["status"] == "analyzed"
-    assert data["findings_count"] == 0
+
+    findings = client.get(f"/api/v1/cases/{case_id}/findings")
+    items = findings.json()["data"]
+    non_auth_rules = {f["rule_id"] for f in items if not f["rule_id"].startswith("AUTH-")}
+    assert non_auth_rules == set()
 
 
 def test_parse_bec_email(client: TestClient):

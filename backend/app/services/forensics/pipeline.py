@@ -10,6 +10,7 @@ from app.models.received_hop import ReceivedHop
 from app.services.audit_service import AuditService
 from app.services.finding_service import FindingService
 from app.services.forensics.auth_analyzer import parse_authentication_results
+from app.services.forensics.auth_finding_engine import generate_auth_findings
 from app.services.forensics.header_analyzer import analyze_headers
 from app.services.forensics.parser import parse_email_bytes
 from app.services.forensics.received_chain import parse_received_chain
@@ -99,6 +100,15 @@ class ForensicPipeline:
             subject=parsed.subject,
             body_text=parsed.body_text,
         )
+
+        # Authentication findings
+        from_domain = parsed.from_address.split("@")[-1].strip().lower() if parsed.from_address and "@" in parsed.from_address else None
+        auth_findings = generate_auth_findings(
+            from_domain=from_domain,
+            auth_records=auth_records,
+        )
+        findings.extend(auth_findings)
+
         finding_service = FindingService(self.db)
         for finding in findings:
             finding_service.create_from_header_finding(
