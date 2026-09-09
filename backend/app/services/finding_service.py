@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 
 from app.models.finding import Finding
 from app.services.forensics.header_analyzer import HeaderFinding
+from app.services.rule_catalog import get_rule
 
 
 class FindingService:
@@ -17,6 +18,12 @@ class FindingService:
         email_id: UUID,
         finding: HeaderFinding,
     ) -> Finding:
+        # Keep rule metadata centralized. Unknown rules remain visible for
+        # forward compatibility, but are marked informational rather than
+        # silently receiving an invented score policy.
+        definition = get_rule(finding.rule_id)
+        if definition is None:
+            finding.confidence = min(finding.confidence, 0.5)
         record = Finding(
             case_id=case_id,
             email_id=email_id,
