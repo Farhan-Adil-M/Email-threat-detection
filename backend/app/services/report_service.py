@@ -22,3 +22,33 @@ def build_json_report(db: Session, case_id: UUID) -> dict:
         "intelligence": [{"indicator": x.indicator, "provider": x.provider, "status": x.status, "confidence": x.confidence, "source_reference": x.source_reference} for x in intel],
         "limitations": ["Infrastructure intelligence is optional enrichment.", "IP/domain observations do not establish physical attacker identity."],
     }
+
+
+def build_pdf_report(db: Session, case_id: UUID) -> bytes:
+    from io import BytesIO
+    from reportlab.lib.pagesizes import A4
+    from reportlab.lib.styles import getSampleStyleSheet
+    from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
+
+    report = build_json_report(db, case_id)
+    output = BytesIO()
+    document = SimpleDocTemplate(output, pagesize=A4, title="SENTINEL Forensic Report")
+    styles = getSampleStyleSheet()
+    story = [Paragraph("SENTINEL — Forensic Investigation Report", styles["Title"]), Spacer(1, 12)]
+    case = report.get("case") or {}
+    story.append(Paragraph(f"Case: {case.get('title', 'Unknown')} ({case.get('id', '')})", styles["BodyText"]))
+    story.append(Paragraph(f"Status: {case.get('status', 'unknown')} | Severity: {case.get('severity', 'unassigned')}", styles["BodyText"]))
+    story.append(Spacer(1, 12))
+    risk = report.get("risk")
+    story.append(Paragraph("Risk Assessment", styles["Heading2"]))
+    story.append(Paragraph(str(risk or "No risk assessment available"), styles["BodyText"]))
+    story.append(Spacer(1, 12))
+    story.append(Paragraph("Findings", styles["Heading2"]))
+    for finding in report["findings"]:
+        story.append(Paragraph(f"{finding['rule_id']} — {finding['title']} ({finding['severity']})", styles["BodyText"]))
+    story.append(Spacer(1, 12))
+    story.append(Paragraph("Limitations", styles["Heading2"]))
+    for limitation in report["limitations"]:
+        story.append(Paragraph(limitation, styles["BodyText"]))
+    document.build(story)
+    return output.getvalue()

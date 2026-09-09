@@ -256,6 +256,15 @@ def report_json(case_id: str, db: Session = Depends(get_db)):
     return build_json_report(db, case_uuid)
 
 
+@router.get("/{case_id}/report.pdf")
+def report_pdf(case_id: str, db: Session = Depends(get_db)):
+    from fastapi.responses import Response
+    case_uuid = _parse_uuid(case_id)
+    if not CaseService(db).get_case(case_uuid): raise SentinelError("Case not found", status_code=404)
+    from app.services.report_service import build_pdf_report
+    return Response(content=build_pdf_report(db, case_uuid), media_type="application/pdf", headers={"Content-Disposition": f"attachment; filename=sentinel-{case_id}.pdf"})
+
+
 @router.get("/{case_id}/ledger", response_model=APIResponse[list[AuditEventRead]])
 def get_ledger(case_id: str, db: Session = Depends(get_db)):
     service = AuditService(db)
