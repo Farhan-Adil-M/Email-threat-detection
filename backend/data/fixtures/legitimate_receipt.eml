@@ -1,0 +1,41 @@
+Return-Path: <orders@amazon.com>
+Received: from smtp.amazon.com (email-smtp.us-east-1.amazonaws.com [54.240.249.130])
+	by mx.google.com with ESMTPS id v0123456789
+	from <orders@amazon.com>
+	for <john.doe@gmail.com>; Mon, 08 Sep 2025 10:22:44 -0700
+DKIM-Signature: v=1; a=rsa-sha256; d=amazon.com; s=selector1; bh=abc123=;
+Authentication-Results: mx.google.com;
+	dkim=pass header.d=amazon.com;
+	spf=pass (google.com: domain of orders@amazon.com designates 54.240.249.130 as permitted sender)
+	dmarc=pass (p=REJECT) header.from=amazon.com
+From: "Amazon.com" <orders@amazon.com>
+To: "John Doe" <john.doe@gmail.com>
+Subject: Your Amazon.com order has shipped! #113-4882764-8827432
+Date: Mon, 08 Sep 2025 10:22:44 -0700
+Message-ID: <amazon-order-113-4882764-8827432@amazon.com>
+Content-Type: text/html; charset="UTF-8"
+MIME-Version: 1.0
+
+<html>
+<body style="font-family:Arial,sans-serif">
+<div style="max-width:500px;margin:0 auto">
+<div style="background:#232f3e;color:white;padding:15px;text-align:center">
+<h2 style="margin:0">amazon.com</h2>
+</div>
+<div style="padding:20px">
+<p>Hello John,</p>
+<p>Good news! Your order has shipped.</p>
+<table style="width:100%;border-collapse:collapse;margin:15px 0">
+<tr><td style="padding:8px;border:1px solid #ddd"><strong>Order #:</strong></td><td style="padding:8px;border:1px solid #ddd">113-4882764-8827432</td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd"><strong>Item:</strong></td><td style="padding:8px;border:1px solid #ddd">Logitech MX Master 3S Mouse</td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd"><strong>Price:</strong></td><td style="padding:8px;border:1px solid #ddd">$89.99</td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd"><strong>Est. Delivery:</strong></td><td style="padding:8px;border:1px solid #ddd">Sep 11-12, 2025</td></tr>
+</table>
+<p style="text-align:center;margin:20px 0">
+<a href="https://www.amazon.com/gp/your-account/order-details?orderID=113-4882764-8827432" style="background:#ff9900;color:#000;padding:10px 20px;text-decoration:none">Track Package</a>
+</p>
+<p style="color:#666;font-size:12px">Amazon.com, Inc., 410 Terry Avenue North, Seattle, WA 98109</p>
+</div>
+</div>
+</body>
+</html>

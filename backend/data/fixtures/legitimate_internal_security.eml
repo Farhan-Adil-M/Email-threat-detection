@@ -1,0 +1,48 @@
+Return-Path: <security@acme-corp.com>
+Received: from mail.acme-corp.com (mail.acme-corp.com [10.0.1.50])
+	by mx.google.com with ESMTPS id t6789012345
+	from <security@acme-corp.com>
+	for <all-staff@acme-corp.com>; Fri, 05 Sep 2025 16:30:11 -0700
+DKIM-Signature: v=1; a=rsa-sha256; d=acme-corp.com; s=google; bh=abc123=;
+Authentication-Results: mx.google.com;
+	dkim=pass header.d=acme-corp.com;
+	spf=pass (google.com: domain of security@acme-corp.com designates 10.0.1.50 as permitted sender)
+	dmarc=pass (p=REJECT) header.from=acme-corp.com
+From: "Information Security" <security@acme-corp.com>
+To: "All Staff" <all-staff@acme-corp.com>
+Subject: [Security Notice] Phishing Awareness - What to Watch For
+Date: Fri, 05 Sep 2025 16:30:11 -0700
+Message-ID: <security-notice-phishing-20250905@acme-corp.com>
+Content-Type: text/plain; charset="UTF-8"
+MIME-Version: 1.0
+
+Hi Team,
+
+Our security operations center has observed an increase in phishing attempts targeting Acme Corp employees this week. Please review the following guidance:
+
+RECOGNIZING PHISHING:
+1. Check the sender's email address carefully - look for misspellings or unusual domains
+2. Hover over links before clicking - does the URL match the expected domain?
+3. Be suspicious of urgency or threats ("Your account will be suspended!")
+4. Never provide credentials via email or through links in emails
+5. Verify unusual requests by contacting the sender through a known channel
+
+WHAT WE'VE SEEN:
+- Fake Microsoft 365 password expiration notices
+- CEO fraud wire transfer requests
+- Fake IT support patches
+- Package delivery notifications
+
+REPORTING:
+If you receive a suspicious email, please:
+1. Do NOT click any links or download attachments
+2. Forward the email to security@acme-corp.com
+3. Report via the Phish Alert button in Outlook
+4. Delete the email after reporting
+
+Our security team is monitoring these threats and will provide updates as needed.
+
+Thank you for your vigilance.
+
+Information Security Team
+security@acme-corp.com

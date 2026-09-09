@@ -1,0 +1,41 @@
+Return-Path: <support@techhelp-desk-247.com>
+Received: from smtp247.techhelp-desk-247.com (us-central smtp.mail-relay.io [192.241.100.44])
+	by mx.aol.com with ESMTPS id C9876543210
+	from <support@techhelp-desk-247.com>
+	for <mjohnson@acme-corp.com>; Wed, 03 Sep 2025 16:22:55 -0400
+Authentication-Results: mx.aol.com;
+	spf=softfail (aol.com: domain of support@techhelp-desk-247.com does not designate 192.241.100.44 as permitted sender)
+	dmarc=none
+From: "IT Support" <support@techhelp-desk-247.com>
+To: "Mike Johnson" <mjohnson@acme-corp.com>
+Subject: [ALERT] Your computer has been compromised - Immediate action required
+Date: Wed, 03 Sep 2025 16:22:55 -0400
+Message-ID: <alert-compromised-44321@techhelp-desk-247.com>
+Content-Type: text/html; charset="UTF-8"
+MIME-Version: 1.0
+
+<html>
+<body style="font-family:Arial;font-size:14px;background:#f5f5f5">
+<div style="max-width:500px;margin:40px auto;background:white;border:2px solid #cc0000">
+<div style="background:#cc0000;color:white;padding:15px;text-align:center">
+<h2>CRITICAL SECURITY ALERT</h2>
+</div>
+<div style="padding:20px">
+<p>Dear Mike Johnson,</p>
+<p>Our monitoring systems have detected <strong>unauthorized access</strong> to your workstation (ACME-WS-JOHNSON). Multiple suspicious activities have been logged:</p>
+<ul>
+<li>3 failed login attempts from IP 185.234.72.19 (Russia)</li>
+<li>Data exfiltration detected - 2.4GB transferred</li>
+<li>Keylogger malware installed</li>
+</ul>
+<p><strong>Your credentials may have been compromised.</strong></p>
+<p>To secure your account, please download and install our security patch immediately:</p>
+<p style="text-align:center">
+<a href="https://techhelp-desk-247.com/download/security-patch.exe" style="background:#cc0000;color:white;padding:10px 20px;text-decoration:none">Download Security Patch</a>
+</p>
+<p>If you do not install this patch within 2 hours, your account will be suspended per company security policy.</p>
+<p>IT Security Team<br>techhelp-desk-247.com</p>
+</div>
+</div>
+</body>
+</html>

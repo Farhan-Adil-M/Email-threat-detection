@@ -1,0 +1,43 @@
+Return-Path: <invoices@trusted-vendor-payments.com>
+Received: from smtp.trusted-vendor-payments.com (ec2-52-14-200-88.compute-1.amazonaws.com [52.14.200.88])
+	by mx.yahoo.com with ESMTPS id M6543210987
+	from <invoices@trusted-vendor-payments.com>
+	for <ap@acme-corp.com>; Thu, 04 Sep 2025 09:15:22 -0400
+Authentication-Results: mx.yahoo.com;
+	spf=softfail (yahoo.com: domain of invoices@trusted-vendor-payments.com does not designate 52.14.200.88 as permitted sender)
+	dmarc=none
+From: "SecureNet Solutions" <invoices@trusted-vendor-payments.com>
+To: "Accounts Payable" <ap@acme-corp.com>
+Subject: Updated Payment Instructions - Invoice #SN-4421
+Date: Thu, 04 Sep 2025 09:15:22 -0400
+Message-ID: <SN-4421-payment-update@trusted-vendor-payments.com>
+Content-Type: text/plain; charset="UTF-8"
+MIME-Version: 1.0
+
+Hi AP Team,
+
+This is to inform you that we have updated our bank account details effective immediately. Please update your records and direct all future payments to the new account below.
+
+This change is due to our recent merger with Meridian Financial Group.
+
+NEW PAYMENT DETAILS:
+Company: SecureNet Solutions LLC
+Bank: First Continental Bank
+Account Number: 7748291035
+Routing Number: 021000021
+SWIFT: FCBKUS33
+IBAN: US33 0210 0002 1774 8291 035
+
+Please update all future wire transfers and ACH payments to this account. The previous account will be closed on September 15, 2025.
+
+Current outstanding invoices to redirect:
+- Invoice #SN-4421: $18,750.00
+- Invoice #SN-4455: $12,300.00
+
+Please confirm receipt of this email and confirm when payments have been redirected.
+
+Thank you for your prompt attention.
+
+James Peterson
+CFO, SecureNet Solutions
+james.peterson@trusted-vendor-payments.com

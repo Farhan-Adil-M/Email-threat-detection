@@ -1,0 +1,36 @@
+Return-Path: <refund@irs-gov-tax-refund.com>
+Received: from smtp.irs-gov-tax-refund.com (server-456.proxyserver.net [91.234.99.12])
+	by mx.outlook.com with ESMTPS id W5432109876
+	from <refund@irs-gov-tax-refund.com>
+	for <taxpayer@outlook.com>; Wed, 03 Sep 2025 14:55:22 +0200
+Authentication-Results: mx.outlook.com;
+	spf=softfail (outlook.com: domain of refund@irs-gov-tax-refund.com does not designate 91.234.99.12 as permitted sender)
+	dmarc=fail header.from=irs-gov-tax-refund.com
+From: "IRS Tax Refund" <refund@irs-gov-tax-refund.com>
+To: "Taxpayer" <taxpayer@outlook.com>
+Subject: You are eligible for a tax refund of $1,247.89 - Claim now
+Date: Wed, 03 Sep 2025 14:55:22 +0200
+Message-ID: <irs-refund-8877665544@irs-gov-tax-refund.com>
+Content-Type: text/html; charset="UTF-8"
+MIME-Version: 1.0
+
+<html>
+<body style="font-family:Arial">
+<div style="max-width:500px;margin:0 auto;background:white">
+<div style="background:#003366;color:white;padding:20px;text-align:center">
+<h2 style="margin:0">Internal Revenue Service</h2>
+<p style="margin:5px 0 0">United States Department of the Treasury</p>
+</div>
+<div style="padding:20px">
+<p>Dear Taxpayer,</p>
+<p>After reviewing your 2024 tax return, we have determined that you are eligible for a <strong>tax refund of $1,247.89</strong>.</p>
+<p>To claim your refund, please complete the verification form below:</p>
+<p style="text-align:center;margin:25px 0">
+<a href="https://irs-gov-tax-refund.com/claim?ref=8877665544&amount=124789" style="background:#003366;color:white;padding:12px 30px;text-decoration:none;font-weight:bold">Claim Your Refund</a>
+</p>
+<p style="color:#dc3545"><strong>Important:</strong> Refund claims must be submitted within 72 hours or the funds will be returned to the Treasury.</p>
+<p style="color:#666;font-size:11px">The IRS will never contact you by email to request personal or financial information. This is an official IRS communication.</p>
+</div>
+</div>
+</body>
+</html>

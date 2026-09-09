@@ -1,0 +1,39 @@
+Return-Path: <notifications@docusign-document-portal.com>
+Received: from smtp.docusign-document-portal.com (server-123.proxymail.net [85.214.132.100])
+	by mx.gmail.com with ESMTPS id N3210987654
+	from <notifications@docusign-document-portal.com>
+	for <legal@acme-corp.com>; Fri, 05 Sep 2025 13:44:11 -0700
+Authentication-Results: mx.gmail.com;
+	spf=softfail (gmail.com: domain of notifications@docusign-document-portal.com does not designate 85.214.132.100 as permitted sender)
+	dmarc=fail header.from=docusign-document-portal.com
+From: "DocuSign" <notifications@docusign-document-portal.com>
+To: "Legal Department" <legal@acme-corp.com>
+Subject: [Legal] Please sign: Non-Disclosure Agreement - Acme Corp / Meridian Holdings
+Date: Fri, 05 Sep 2025 13:44:11 -0700
+Message-ID: <docusign-nda-meridian-88776655@document-portal.com>
+Content-Type: text/html; charset="UTF-8"
+MIME-Version: 1.0
+
+<html>
+<body style="font-family:Arial;background:#f7f7f7">
+<div style="max-width:500px;margin:30px auto;background:white;border:1px solid #ddd">
+<div style="background:#4c00ff;color:white;padding:15px;text-align:center">
+<h2 style="margin:0">DocuSign</h2>
+</div>
+<div style="padding:25px">
+<p>Legal Department,</p>
+<p>You are requested to sign the following document:</p>
+<div style="background:#f5f5f5;padding:15px;border-radius:4px;margin:15px 0">
+<strong>Non-Disclosure Agreement</strong><br>
+<span style="color:#666">Parties: Acme Corp / Meridian Holdings LLC</span><br>
+<span style="color:#666">Sent by: David Chen (CEO)</span><br>
+<span style="color:#666">Expires: Sep 12, 2025</span>
+</div>
+<p style="text-align:center;margin:25px 0">
+<a href="https://docusign-document-portal.com/sign?envelope=meridian-nda-887766&token=eyJhbGciOi" style="background:#4c00ff;color:white;padding:12px 30px;text-decoration:none;border-radius:4px;font-weight:bold">Review & Sign</a>
+</p>
+<p style="color:#666;font-size:12px">This is a DocuSign notification. DocuSign, Inc., San Francisco, CA 94105</p>
+</div>
+</div>
+</body>
+</html>

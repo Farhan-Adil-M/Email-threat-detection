@@ -1,0 +1,37 @@
+Return-Path: <james.peterson@securenetsolutions.com>
+Received: from mail.securenetsolutions.com (mail.securenetsolutions.com [192.241.100.88])
+	by mx.google.com with ESMTPS id s5678901234
+	from <james.peterson@securenetsolutions.com>
+	for <ap@acme-corp.com>; Tue, 02 Sep 2025 11:45:33 -0700
+DKIM-Signature: v=1; a=rsa-sha256; d=securenetsolutions.com; s=selector1; bh=abc123=;
+Authentication-Results: mx.google.com;
+	dkim=none header.d=securenetsolutions.com;
+	spf=softfail (google.com: domain of james.peterson@securenetsolutions.com does not designate 192.241.100.88 as permitted sender)
+	dmarc=fail (p=NONE) header.from=securenetsolutions.com
+From: "James Peterson" <james.peterson@securenetsolutions.com>
+To: "Accounts Payable" <ap@acme-corp.com>
+Subject: URGENT: Bank Account Change - Please Update Records
+Date: Tue, 02 Sep 2025 11:45:33 -0700
+Message-ID: <SN-bank-update-20250902@securenetsolutions.com>
+Content-Type: text/plain; charset="UTF-8"
+MIME-Version: 1.0
+
+Hi AP Team,
+
+Due to our recent banking transition, we need to update our payment information on file. Please update your records with the following bank details for all future payments:
+
+Company: SecureNet Solutions LLC
+Bank: Continental Trust Bank
+Account Name: SecureNet Solutions LLC
+Account Number: 4455667788
+Routing: 021000021
+
+Please note: Our old bank account at Chase will be closed on September 10, 2025. Any payments sent after that date to the old account will be returned and subject to a $250 re-processing fee.
+
+Please confirm receipt of this email and update your AP system accordingly.
+
+Thank you,
+James Peterson
+CFO, SecureNet Solutions
+james.peterson@securenetsolutions.com
+(555) 234-5678

@@ -1,0 +1,38 @@
+Return-Path: <security@whatsapp-account-verify.com>
+Received: from smtp.whatsapp-account-verify.com (sg/smtp [167.89.112.45])
+	by mx.fastmail.com with ESMTPS id K9876543210
+	from <security@whatsapp-account-verify.com>
+	for <tom.wilson@gmail.com>; Wed, 03 Sep 2025 19:55:33 +0000
+Authentication-Results: mx.fastmail.com;
+	spf=softfail (fastmail.com: domain of security@whatsapp-account-verify.com does not designate 167.89.112.45 as permitted sender)
+	dmarc=fail header.from=whatsapp-account-verify.com
+From: "WhatsApp Security" <security@whatsapp-account-verify.com>
+To: "Tom Wilson" <tom.wilson@gmail.com>
+Subject: Your WhatsApp account will be suspended - verify now
+Date: Wed, 03 Sep 2025 19:55:33 +0000
+Message-ID: <WA-verify-88776655@whatsapp-account-verify.com>
+Content-Type: text/html; charset="UTF-8"
+MIME-Version: 1.0
+
+<html>
+<body style="font-family:Arial;background:#eaeaea">
+<div style="max-width:480px;margin:20px auto;background:white;border-radius:8px">
+<div style="background:#25d366;color:white;padding:20px;border-radius:8px 8px 0 0;text-align:center">
+<h2 style="margin:0">WhatsApp</h2>
+</div>
+<div style="padding:25px">
+<p>Hello Tom Wilson,</p>
+<p>Your WhatsApp account has been flagged for <strong>violating our Terms of Service</strong>. Our system detected unusual activity on your account.</p>
+<div style="background:#fff3cd;border:1px solid #ffc107;padding:12px;border-radius:4px;margin:15px 0">
+<strong>Warning:</strong> Your account has 2 active reports from other users. If these reports are not addressed, your account will be permanently suspended.
+</div>
+<p>To appeal this action and verify your identity, please click below:</p>
+<p style="text-align:center;margin:25px 0">
+<a href="https://whatsapp-account-verify.com/appeal?user=tom.wilson@gmail.com" style="background:#25d366;color:white;padding:12px 30px;text-decoration:none;border-radius:25px;font-weight:bold">Verify My Account</a>
+</p>
+<p>You have 48 hours to verify before permanent suspension.</p>
+<p style="color:#666;font-size:12px">WhatsApp LLC, 1 Hacker Way, Menlo Park, CA 94025</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+Return-Path: <accounts@global-invoice-service.net>
+Received: from mail.global-invoice-service.net (us-east-1 smtp-12.proxied.email [3.14.59.201])
+	by mx.gmail.com with ESMTPS id b2345678901
+	from <accounts@global-invoice-service.net>
+	for <billing@brightwave.io>; Mon, 01 Sep 2025 14:33:07 +0530
+DKIM-Signature: v=1; a=rsa-sha256; d=global-invoice-service.net; s=k1; bh=abc123=;
+Authentication-Results: mx.gmail.com;
+	dkim=pass header.d=global-invoice-service.net;
+	spf=softfail (gmail.com: domain of accounts@global-invoice-service.net does not designate 3.14.59.201 as permitted sender)
+	dmarc=none
+From: "Accounts Payable" <accounts@global-invoice-service.net>
+To: "Billing Dept" <billing@brightwave.io>
+Subject: Overdue Invoice #INV-2025-8847 - Payment Required Immediately
+Date: Mon, 01 Sep 2025 14:33:07 +0530
+Message-ID: <INV-8847-payment@proxied.email>
+Content-Type: multipart/mixed; boundary="----=_Part_8847"
+MIME-Version: 1.0
+
+------=_Part_8847
+Content-Type: text/plain; charset="UTF-8"
+
+Dear Billing Department,
+
+This is a final reminder regarding the outstanding invoice #INV-2025-8847 for consulting services rendered in August 2025.
+
+Amount Due: $12,450.00
+Due Date: August 31, 2025 (OVERDUE)
+Late Fee: $622.50 (5%)
+Total Now Due: $13,072.50
+
+Please remit payment within 24 hours to avoid account suspension and additional late fees. Wire transfer details are provided in the attached invoice.
+
+If you have already submitted payment, please disregard this notice.
+
+Accounts Payable Department
+Global Invoice Service
+support@global-invoice-service.net
+
+------=_Part_8847
+Content-Type: application/pdf; name="INV-2025-8847.pdf"
+Content-Disposition: attachment; filename="INV-2025-8847.pdf"
+Content-Transfer-Encoding: base64
+
+JVBERi0xLjQKMSAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL1R5cGUgL1BhZ2VzCi9LaWRzIFszIDAgUl0KL0NvdW50IDEKPj4KZW5kb2JqCjMgMCBvYmoKPDwKL1R5cGUgL1BhZ2UKL1BhcmVudCAyIDAgUgovTWVkaWFCb3ggWzAgMCA2MTIgNzkyXQovUmVzb3VyY2VzIDw8Ci9Gb250IDw8Ci9GMSA0IDAgUgo+Pgo+PgovQ29udGVudHMgNSAwIFIKPj4KZW5kb2JqCjQgMCBvYmoKPDwKL1R5cGUgL0ZvbnQKL1N1YnR5cGUgL1R5cGUwMQovQmFzZUZvbnQgL0hlbHZldGljYQo+PgplbmRvYmoKNSAwIG9iago8PAovTGVuZ3RoIDQ0CnN0cmVhbQpCVAovRjEgMTIgVGYKMTAwIDcwMCBUZAooU0VORSBJVk9JQyBJTi1WMSAtIFBBWU1FTlQgUkVNSURERUQpIFRqCjAgMCBUZAooQU1PVU5UIERVRSA6ICQxMywwNzIuNTApIFRqCjAgMCBUZAooUFJFU0VOVEVEIEJZIDogUEFZQUwgUEFZIEVOVEVSIFBBWkFMQQpTVAplbmRzdHJlYW0KZW5kb2JqCjYgMCBvYmoKPDwKL1R5cGUgL0ZvbnQKL1N1YnR5cGUgL1R5cGUwMQovQmFzZUZvbnQgL1R5cGV3cml0dQo+PgplbmRvYmoKdHJhaWxlcgo8PAovU2l6ZSA3Ci9Sb290IDEgMCBSCj4+CnN0YXJ0eHJlZgo2MTkKZW5kb29iCnhyZWYKMCA4CjAwMDAwMDAwMDAgNjU1MzUgZgowMDAwMDAwMDE2IDAwMDAwIG4KMDAwMDAwMDA3NSAwMDAwMCBuCjAwMDAwMDAxMjggMDAwMDAgbgowMDAwMDAwMjI1IDAwMDAwIG4KMDAwMDAwMDI5MyAwMDAwMCBuCjAwMDAwMDAzOTIgMDAwMDAgbgowMDAwMDAwNDQ4IDAwMDAwIG4KdHJhaWxlcgo=
+------=_Part_8847--

@@ -50,7 +50,7 @@ def upload_evidence(
     If case_id is omitted, a new investigation case is created automatically.
     """
     client_ip = _get_client_ip(request)
-    if not _check_rate_limit(_upload_attempts, f"upload:{client_ip}", 10, 300):
+    if not _check_rate_limit(_upload_attempts, f"upload:{client_ip}", 50, 300):
         raise HTTPException(status_code=429, detail="Too many upload attempts. Try again later.")
 
     # Read file content for validation

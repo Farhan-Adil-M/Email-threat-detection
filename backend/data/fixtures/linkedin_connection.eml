@@ -1,0 +1,46 @@
+Return-Path: <invitations@linkedin-notifications.com>
+Received: from smtp.linkedin-notifications.com (server-204.proxymail.net [85.214.132.67])
+	by mx.icloud.com with ESMTPS id 12345678901
+	from <invitations@linkedin-notifications.com>
+	for <alex.turner@outlook.com>; Mon, 08 Sep 2025 15:44:12 +0100
+Authentication-Results: mx.icloud.com;
+	spf=softfail (icloud.com: domain of invitations@linkedin-notifications.com does not designate 85.214.132.67 as permitted sender)
+	dmarc=fail header.from=linkedin-notifications.com
+From: LinkedIn <invitations@linkedin-notifications.com>
+To: "Alex Turner" <alex.turner@outlook.com>
+Subject: You have 3 new connection requests
+Date: Mon, 08 Sep 2025 15:44:12 +0100
+Message-ID: <linkedin-inv-3-8812345678@proxymail.net>
+Content-Type: text/html; charset="UTF-8"
+MIME-Version: 1.0
+
+<html>
+<body style="font-family:Arial;background:#f3f2ef">
+<div style="max-width:500px;margin:0 auto;background:white">
+<div style="background:#0077b5;padding:15px;text-align:center">
+<img alt="LinkedIn" style="height:34px" />
+</div>
+<div style="padding:20px">
+<p>Hi Alex,</p>
+<p>You have <strong>3 pending connection requests</strong>:</p>
+<table style="width:100%">
+<tr>
+<td style="padding:10px">
+<div style="display:flex;align-items:center">
+<div style="width:48px;height:48px;background:#0077b5;border-radius:50%;color:white;text-align:center;line-height:48px;font-size:20px">S</div>
+<div style="margin-left:12px">
+<strong>Sarah Mitchell</strong><br>
+<span style="color:#666">VP of Engineering at TechCorp</span>
+</div>
+</div>
+</td>
+</tr>
+</table>
+<p style="text-align:center;margin:20px 0">
+<a href="https://linkedin-notifications.com/accept?inv=8812345678&token=eyJhbGciOi" style="background:#0077b5;color:white;padding:10px 24px;text-decoration:none;border-radius:20px">Accept All</a>
+</p>
+<p style="color:#666;font-size:12px">You are receiving this because you are a LinkedIn member. LinkedIn Corporation, Sunnyvale, CA.</p>
+</div>
+</div>
+</body>
+</html>

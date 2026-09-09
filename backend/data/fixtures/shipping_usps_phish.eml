@@ -1,0 +1,38 @@
+Return-Path: <notifications@usps-delivery-tracking.com>
+Received: from smtp-usps-delivery.com (mx25.sendgrid.net [167.89.12.34])
+	by mx.hey.com with ESMTPS id E7654321098
+	from <notifications@usps-delivery-tracking.com>
+	for <rachel.green@gmail.com>; Tue, 02 Sep 2025 11:05:33 -0500
+Authentication-Results: mx.hey.com;
+	spf=softfail (hey.com: domain of notifications@usps-delivery-tracking.com does not designate 167.89.12.34 as permitted sender)
+	dmarc=fail header.from=usps-delivery-tracking.com
+From: "USPS Delivery" <notifications@usps-delivery-tracking.com>
+To: "Rachel Green" <rachel.green@gmail.com>
+Subject: USPS - Delivery Attempt Failed - Package #9261290100130827644927
+Date: Tue, 02 Sep 2025 11:05:33 -0500
+Message-ID: <USPS-9261290100130827644927@sendgrid.net>
+Content-Type: text/html; charset="UTF-8"
+MIME-Version: 1.0
+
+<html>
+<body style="font-family:Arial">
+<div style="max-width:500px;margin:0 auto;padding:20px">
+<div style="background:#004B87;color:white;padding:15px;text-align:center">
+<h2>USPS Package Delivery</h2>
+</div>
+<div style="padding:20px">
+<p>Dear Customer,</p>
+<p>We attempted to deliver your package on September 1, 2025 but no one was available to sign for it.</p>
+<table style="width:100%;border-collapse:collapse;margin:15px 0">
+<tr><td style="padding:8px;border:1px solid #ddd"><strong>Tracking #:</strong></td><td style="padding:8px;border:1px solid #ddd">9261290100130827644927</td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd"><strong>Status:</strong></td><td style="padding:8px;border:1px solid #ddd">Held at Post Office</td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd"><strong>Action Required:</strong></td><td style="padding:8px;border:1px solid #ddd">Confirm delivery address</td></tr>
+</table>
+<p style="text-align:center;margin:25px 0">
+<a href="https://usps-delivery-tracking.com/track?ref=9261290100130827644927" style="background:#004B87;color:white;padding:12px 30px;text-decoration:none">Track Package</a>
+</p>
+<p style="color:#666;font-size:12px">If you do not confirm your address within 48 hours, the package will be returned to sender.</p>
+</div>
+</div>
+</body>
+</html>

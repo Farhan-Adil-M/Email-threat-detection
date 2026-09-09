@@ -1,0 +1,41 @@
+Return-Path: <hr-benefits@company-portal-update.com>
+Received: from smtp.company-portal-update.com (us-west-2 ec2-54-187-200-12.compute-1.amazonaws.com [54.187.200.12])
+	by mx.protonmail.ch with ESMTPS id F6543210987
+	from <hr-benefits@company-portal-update.com>
+	for <john.doe@company.com>; Thu, 04 Sep 2025 08:31:22 +0200
+Authentication-Results: mx.protonmail.ch;
+	spf=softfail (protonmail.ch: domain of hr-benefits@company-portal-update.com does not designate 54.187.200.12 as permitted sender)
+	dmarc=none
+From: "HR Benefits Department" <hr-benefits@company-portal-update.com>
+To: "John Doe" <john.doe@company.com>
+Subject: Action Required: Confirm your employee benefits enrollment by Sep 5
+Date: Thu, 04 Sep 2025 08:31:22 +0200
+Message-ID: <benefits-2025-0904@company-portal-update.com>
+Content-Type: text/html; charset="UTF-8"
+MIME-Version: 1.0
+
+<html>
+<body style="font-family:Segoe UI,Arial,sans-serif;background:#f0f2f5">
+<div style="max-width:550px;margin:40px auto;background:white;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1)">
+<div style="background:#1a73e8;color:white;padding:20px;border-radius:8px 8px 0 0">
+<h2 style="margin:0">Employee Benefits Enrollment</h2>
+</div>
+<div style="padding:25px">
+<p>Hello John,</p>
+<p>As part of the annual open enrollment period, you must confirm your benefits selections by <strong>September 5, 2025</strong>.</p>
+<p>Please review and update your selections for:</p>
+<ul>
+<li>Health Insurance (Medical/Dental/Vision)</li>
+<li>Life Insurance</li>
+<li>401(k) Contributions</li>
+<li>Flexible Spending Account</li>
+</ul>
+<p style="text-align:center;margin:30px 0">
+<a href="https://company-portal-update.com/enroll?user=john.doe@company.com&token=xK9mN2pL4vR7" style="background:#1a73e8;color:white;padding:12px 30px;text-decoration:none;border-radius:4px;font-weight:bold">Confirm Benefits</a>
+</p>
+<p style="color:#dc3545;font-weight:bold">Important: Failure to confirm will result in automatic termination of all benefits.</p>
+<p>HR Benefits Department</p>
+</div>
+</div>
+</body>
+</html>
