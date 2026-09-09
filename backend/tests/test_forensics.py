@@ -70,6 +70,59 @@ def test_parse_credential_phishing(client: TestClient):
     assert data["auth_count"] == 0
 
 
+def test_url_analysis_finds_ip_literal_and_userinfo(client: TestClient):
+    eml = b"""From: sender@example.com
+To: victim@example.com
+Subject: Login
+Message-ID: <url-001@example.com>
+Date: Mon, 01 Jan 2024 11:00:00 +0000
+MIME-Version: 1.0
+Content-Type: text/plain
+
+Open http://user:pass@192.0.2.10:8080/login now.
+"""
+    upload = client.post(
+        "/api/v1/evidence/upload",
+        files={"file": ("url.eml", eml, "message/rfc822")},
+    )
+    case_id = upload.json()["data"]["case_id"]
+    analyzed = client.post(f"/api/v1/cases/{case_id}/analyze")
+    assert analyzed.status_code == 200
+    findings = client.get(f"/api/v1/cases/{case_id}/findings").json()["data"]
+    rule_ids = {item["rule_id"] for item in findings}
+    assert "URL-USERINFO-001" in rule_ids
+    assert "URL-IP-LITERAL-001" in rule_ids
+    assert "URL-UNUSUAL-PORT-001" in rule_ids
+
+
+def test_attachment_metadata_only(client: TestClient):
+    eml = b"""From: sender@example.com
+To: victim@example.com
+Subject: Attachment
+Message-ID: <attachment-001@example.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary=demo
+
+--demo
+Content-Type: text/plain
+
+See attachment.
+--demo
+Content-Type: application/octet-stream
+Content-Disposition: attachment; filename=invoice.bin
+
+safe synthetic bytes
+--demo--
+"""
+    upload = client.post(
+        "/api/v1/evidence/upload",
+        files={"file": ("attachment.eml", eml, "message/rfc822")},
+    )
+    case_id = upload.json()["data"]["case_id"]
+    analyzed = client.post(f"/api/v1/cases/{case_id}/analyze")
+    assert analyzed.status_code == 200
+
+
 def test_malformed_email_does_not_crash(client: TestClient):
     eml = _read_fixture("malformed_received.eml")
     upload = client.post(

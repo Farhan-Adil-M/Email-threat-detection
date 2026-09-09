@@ -14,6 +14,8 @@ from app.models.email import EmailMessage  # noqa: F401
 from app.models.evidence import EvidenceObject  # noqa: F401
 from app.models.finding import Finding  # noqa: F401
 from app.models.received_hop import ReceivedHop  # noqa: F401
+from app.models.attachment import Attachment  # noqa: F401
+from app.models.url_indicator import URLIndicator  # noqa: F401
 
 # this is the Alembic Config object
 config = context.config

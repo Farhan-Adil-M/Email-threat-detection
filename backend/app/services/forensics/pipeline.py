@@ -4,9 +4,11 @@ from uuid import UUID
 from sqlalchemy.orm import Session
 
 from app.models.auth_result import AuthenticationResult
+from app.models.attachment import Attachment
 from app.models.email import EmailMessage
 from app.models.evidence import EvidenceObject
 from app.models.received_hop import ReceivedHop
+from app.models.url_indicator import URLIndicator
 from app.services.audit_service import AuditService
 from app.services.finding_service import FindingService
 from app.services.forensics.auth_analyzer import parse_authentication_results
@@ -14,6 +16,7 @@ from app.services.forensics.auth_finding_engine import generate_auth_findings
 from app.services.forensics.header_analyzer import analyze_headers
 from app.services.forensics.parser import parse_email_bytes
 from app.services.forensics.received_chain import parse_received_chain
+from app.services.forensics.url_analyzer import analyze_urls
 from app.services.storage_service import StorageService
 
 
@@ -91,6 +94,38 @@ class ForensicPipeline:
                 )
             )
 
+        # URL extraction and passive URL analysis. No URL is fetched.
+        url_analyses, url_findings = analyze_urls(parsed.urls)
+        for analysis in url_analyses:
+            self.db.add(
+                URLIndicator(
+                    email_id=email_msg.id,
+                    case_id=evidence.case_id,
+                    raw_url=analysis.raw_url,
+                    normalized_url=analysis.normalized_url,
+                    scheme=analysis.scheme,
+                    hostname=analysis.hostname,
+                    port=analysis.port,
+                    path=analysis.path,
+                    has_userinfo=analysis.has_userinfo,
+                    is_ip_literal=analysis.is_ip_literal,
+                    is_punycode=analysis.is_punycode,
+                )
+            )
+
+        for attachment in parsed.attachments:
+            self.db.add(
+                Attachment(
+                    email_id=email_msg.id,
+                    case_id=evidence.case_id,
+                    filename=attachment.filename,
+                    content_type=attachment.content_type,
+                    size=attachment.size,
+                    sha256=attachment.sha256,
+                    metadata_only=True,
+                )
+            )
+
         # Header / content findings
         findings = analyze_headers(
             from_address=parsed.from_address,
@@ -108,6 +143,7 @@ class ForensicPipeline:
             auth_records=auth_records,
         )
         findings.extend(auth_findings)
+        findings.extend(url_findings)
 
         finding_service = FindingService(self.db)
         for finding in findings:

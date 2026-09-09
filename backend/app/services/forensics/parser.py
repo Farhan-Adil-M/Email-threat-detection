@@ -1,4 +1,5 @@
 import email
+import hashlib
 import re
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -132,6 +133,27 @@ def _get_body_text(msg: Any) -> tuple[str | None, str | None]:
     return plain, sanitized_html
 
 
+def _get_raw_html(msg: Any) -> str | None:
+    parts: list[str] = []
+    for part in msg.walk() if msg.is_multipart() else [msg]:
+        if part.get_content_type() != "text/html":
+            continue
+        payload = part.get_payload(decode=True)
+        if not payload:
+            continue
+        charset = part.get_content_charset() or "utf-8"
+        parts.append(payload.decode(charset, errors="replace"))
+    return "\n".join(parts) or None
+
+
+@dataclass
+class ParsedAttachment:
+    filename: str | None
+    content_type: str | None
+    size: int
+    sha256: str | None
+
+
 @dataclass
 class ParsedEmail:
     from_address: str | None = None
@@ -149,6 +171,8 @@ class ParsedEmail:
     raw_headers: str = ""
     body_text: str | None = None
     body_html_sanitized: str | None = None
+    urls: list[str] = field(default_factory=list)
+    attachments: list[ParsedAttachment] = field(default_factory=list)
 
 
 def parse_email_bytes(raw_bytes: bytes) -> ParsedEmail:
@@ -168,6 +192,21 @@ def parse_email_bytes(raw_bytes: bytes) -> ParsedEmail:
 
     display, addr = _extract_first_address(msg.get("From", ""))
     body_text, body_html = _get_body_text(msg)
+    raw_html = _get_raw_html(msg)
+    attachments: list[ParsedAttachment] = []
+    for part in msg.walk():
+        if part.is_multipart() or part.get_content_disposition() != "attachment":
+            continue
+        payload = part.get_payload(decode=True) or b""
+        attachments.append(
+            ParsedAttachment(
+                filename=part.get_filename(),
+                content_type=part.get_content_type(),
+                size=len(payload),
+                sha256=hashlib.sha256(payload).hexdigest() if payload else None,
+            )
+        )
+    from app.services.forensics.url_analyzer import extract_urls
 
     return ParsedEmail(
         from_address=addr,
@@ -187,4 +226,6 @@ def parse_email_bytes(raw_bytes: bytes) -> ParsedEmail:
         raw_headers=raw_headers,
         body_text=body_text,
         body_html_sanitized=body_html,
+        urls=extract_urls(body_text, raw_html, body_html),
+        attachments=attachments,
     )
