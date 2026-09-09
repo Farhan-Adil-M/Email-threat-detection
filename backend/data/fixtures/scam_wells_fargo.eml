@@ -1,0 +1,14 @@
+From: "Wells Fargo Security" <security@wellsfargo-secure-access.com>
+To: user@company.com
+Subject: Your Wells Fargo account has been locked - verify identity
+Date: Tue, 09 Sep 2025 10:11:44 -0400
+Message-ID: <wf-lock-445566@wellsfargo-secure-access.com>
+Content-Type: text/html; charset="UTF-8"
+
+<html><body style="font-family:Arial"><div style="max-width:500px;margin:0 auto;background:white;border:1px solid #ddd">
+<div style="background:#d71e28;color:white;padding:15px;text-align:center"><h2 style="margin:0">Wells Fargo</h2></div>
+<div style="padding:20px">
+<p>Dear Customer,</p>
+<p>Your Wells Fargo account has been <strong>temporarily locked</strong> due to multiple failed login attempts from an unrecognized device.</p>
+<p style="text-align:center"><a href="https://wellsfargo-secure-access.com/unlock?id=445566" style="background:#d71e28;color:white;padding:10px 20px;text-decoration:none">Unlock Account</a></p>
+</div></div></body></html>

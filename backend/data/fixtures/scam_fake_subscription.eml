@@ -1,0 +1,15 @@
+From: "Premium Service" <billing@premium-service-billing.com>
+To: user@gmail.com
+Subject: Your Premium Service subscription renewal - $299.99 charged
+Date: Tue, 09 Sep 2025 11:44:33 -0400
+Message-ID: <premium-charge-445566@premium-service-billing.com>
+Content-Type: text/html; charset="UTF-8"
+
+<html><body style="font-family:Arial"><div style="max-width:500px;margin:0 auto;background:white;border:1px solid #ddd">
+<div style="background:#6c5ce7;color:white;padding:15px;text-align:center"><h2 style="margin:0">Premium Service</h2></div>
+<div style="padding:20px">
+<p>Dear User,</p>
+<p>Your Premium Service subscription has been renewed. A charge of <strong>$299.99</strong> was processed to your card ending in 4827.</p>
+<p>If you did not authorize this renewal, request a refund:</p>
+<p style="text-align:center"><a href="https://premium-service-billing.com/refund?id=445566" style="background:#6c5ce7;color:white;padding:10px 20px;text-decoration:none">Request Refund</a></p>
+</div></div></body></html>

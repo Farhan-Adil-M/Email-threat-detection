@@ -1,0 +1,15 @@
+From: "UPS Service" <notice@ups-delivery-service.com>
+To: buyer@outlook.com
+Subject: UPS: Your package is on hold - action required
+Date: Thu, 11 Sep 2025 08:55:11 -0400
+Message-ID: <ups-hold-112233@ups-delivery-service.com>
+Content-Type: text/html; charset="UTF-8"
+
+<html><body style="font-family:Arial"><div style="max-width:500px;margin:0 auto;background:white;border:1px solid #ddd">
+<div style="background:#351c15;color:white;padding:15px;text-align:center"><h2 style="margin:0">UPS</h2></div>
+<div style="padding:20px">
+<p>Dear Customer,</p>
+<p>Your package is currently on hold at our distribution center. An incorrect address was provided. Please update your delivery details.</p>
+<p><strong>Tracking:</strong> 1Z999AA10123456784</p>
+<p style="text-align:center"><a href="https://ups-delivery-service.com/update?track=1Z999AA10123456784" style="background:#351c15;color:white;padding:10px 20px;text-decoration:none">Update Address</a></p>
+</div></div></body></html>

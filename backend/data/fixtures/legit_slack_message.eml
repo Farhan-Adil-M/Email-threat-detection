@@ -1,0 +1,14 @@
+From: "Slack" <notifications@slack.com>
+To: user@company.com
+Subject: [Acme Corp #general] Sarah Mitchell: Meeting moved to 3pm
+Date: Wed, 10 Sep 2025 11:33:22 -0700
+Message-ID: <slack-general-556677@slack.com>
+Content-Type: text/html; charset="UTF-8"
+
+<html><body style="font-family:Arial"><div style="max-width:500px;margin:0 auto;background:white;border:1px solid #ddd;border-radius:8px;overflow:hidden">
+<div style="background:#4a154b;color:white;padding:15px;text-align:center"><h2 style="margin:0">Slack</h2></div>
+<div style="padding:20px">
+<p><strong>Sarah Mitchell</strong> in <strong>#general</strong>:</p>
+<p style="background:#f8f8f8;padding:10px;border-left:3px solid #4a154b">Hey team - the sprint review is moved to 3pm today. Please update your JIRA tickets before then. Thanks!</p>
+<p style="text-align:center"><a href="https://acme-corp.slack.com" style="background:#4a154b;color:white;padding:8px 16px;text-decoration:none;border-radius:4px">Open Slack</a></p>
+</div></div></body></html>

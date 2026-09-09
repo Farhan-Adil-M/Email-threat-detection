@@ -1,0 +1,15 @@
+From: "Jira" <jira@acme-corp.atlassian.net>
+To: developer@company.com
+Subject: [SENTINEL-1234] Authentication middleware fix - assigned to you
+Date: Tue, 09 Sep 2025 09:11:44 -0700
+Message-ID: <jira-1234@acme-corp.atlassian.net>
+Content-Type: text/html; charset="UTF-8"
+
+<html><body style="font-family:Arial"><div style="max-width:500px;margin:0 auto;background:white;border:1px solid #ddd">
+<div style="background:#0052cc;color:white;padding:15px;text-align:center"><h2 style="margin:0">Jira</h2></div>
+<div style="padding:20px">
+<p><strong>SENTINEL-1234</strong> assigned to you</p>
+<p><strong>Authentication middleware fix</strong></p>
+<p>Priority: High | Status: To Do | Sprint: 24</p>
+<p style="text-align:center"><a href="https://acme-corp.atlassian.net/browse/SENTINEL-1234" style="background:#0052cc;color:white;padding:8px 16px;text-decoration:none">View Ticket</a></p>
+</div></div></body></html>

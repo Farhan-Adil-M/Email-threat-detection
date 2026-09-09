@@ -1,0 +1,14 @@
+From: "Apple TV+" <billing@apple-tv-billing.com>
+To: user@icloud.com
+Subject: Apple TV+: Your subscription payment was declined
+Date: Thu, 11 Sep 2025 15:44:55 -0400
+Message-ID: <appletv-billing-112233@apple-tv-billing.com>
+Content-Type: text/html; charset="UTF-8"
+
+<html><body style="font-family:-apple-system"><div style="max-width:500px;margin:0 auto;background:white;border:1px solid #ddd;border-radius:12px;overflow:hidden">
+<div style="background:#000;color:white;padding:15px;text-align:center"><h2 style="margin:0">Apple TV+</h2></div>
+<div style="padding:20px">
+<p>Hi User,</p>
+<p>Your Apple TV+ payment of <strong>$6.99</strong> was declined. Update your payment method to keep watching.</p>
+<p style="text-align:center"><a href="https://apple-tv-billing.com/update?id=112233" style="background:#000;color:white;padding:10px 20px;text-decoration:none;border-radius:8px">Update Payment</a></p>
+</div></div></body></html>

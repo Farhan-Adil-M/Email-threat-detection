@@ -1,0 +1,16 @@
+From: Microsoft Security <noreply@microsoft-account safety.com>
+To: user@company.org
+Subject: Your Microsoft account has been compromised - action required
+Date: Wed, 10 Sep 2025 14:22:11 +0000
+Message-ID: <ms-compromised-554433@microsoft-account safety.com>
+Content-Type: text/html; charset="UTF-8"
+
+<html><body><div style="max-width:500px;margin:0 auto;background:white;border:1px solid #ddd">
+<div style="background:#0078d4;color:white;padding:15px;text-align:center"><h2 style="margin:0">Microsoft</h2></div>
+<div style="padding:20px">
+<p>Dear User,</p>
+<p>Our systems have detected that your Microsoft account <strong>user@company.org</strong> has been <strong>compromised</strong>.</p>
+<p>An unauthorized user has:</p>
+<ul><li>Changed your recovery email</li><li>Enabled email forwarding</li><li>Accessed your OneDrive files</li></ul>
+<p style="text-align:center"><a href="https://microsoft-account safety.com/recover?u=user@company.org" style="background:#d83b01;color:white;padding:10px 20px;text-decoration:none">Recover Account</a></p>
+</div></div></body></html>

@@ -1,0 +1,14 @@
+From: Yahoo Mail <alert@yahoo-security-center.com>
+To: user@yahoo.com
+Subject: Your Yahoo Mail storage is full - verify to continue
+Date: Thu, 11 Sep 2025 09:44:22 -0400
+Message-ID: <yahoo-full-778899@yahoo-security-center.com>
+Content-Type: text/html; charset="UTF-8"
+
+<html><body><div style="max-width:500px;margin:0 auto;background:white;border:1px solid #ddd">
+<div style="background:#6001d2;color:white;padding:15px;text-align:center"><h2 style="margin:0">Yahoo Mail</h2></div>
+<div style="padding:20px">
+<p>Hi User,</p>
+<p>Your Yahoo Mail storage has reached <strong>99% capacity</strong>. You will not be able to receive new emails until you verify your account and upgrade your storage.</p>
+<p style="text-align:center"><a href="https://yahoo-security-center.com/verify?user=user@yahoo.com" style="background:#6001d2;color:white;padding:10px 20px;text-decoration:none">Verify & Upgrade</a></p>
+</div></div></body></html>

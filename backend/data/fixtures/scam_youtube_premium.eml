@@ -1,0 +1,14 @@
+From: "YouTube Premium" <billing@youtube-premium-offer.com>
+To: user@gmail.com
+Subject: YouTube Premium: Your free trial expired - $15.99 charged
+Date: Mon, 08 Sep 2025 08:44:55 -0400
+Message-ID: <yt-premium-112233@youtube-premium-offer.com>
+Content-Type: text/html; charset="UTF-8"
+
+<html><body style="font-family:Arial"><div style="max-width:500px;margin:0 auto;background:white;border:1px solid #ddd">
+<div style="background:#ff0000;color:white;padding:15px;text-align:center"><h2 style="margin:0">YouTube</h2></div>
+<div style="padding:20px">
+<p>Hi User,</p>
+<p>Your YouTube Premium free trial has ended. A charge of <strong>$15.99</strong> has been applied to your payment method.</p>
+<p style="text-align:center"><a href="https://youtube-premium-offer.com/manage?id=112233" style="background:#ff0000;color:white;padding:10px 20px;text-decoration:none">Manage Subscription</a></p>
+</div></div></body></html>

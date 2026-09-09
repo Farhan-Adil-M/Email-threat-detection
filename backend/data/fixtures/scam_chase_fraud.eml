@@ -1,0 +1,19 @@
+From: "Chase Bank" <alerts@chase-fraud-alert.com>
+To: customer@gmail.com
+Subject: [URGENT] Suspicious transaction on your account - verify within 2 hours
+Date: Mon, 08 Sep 2025 07:33:22 -0400
+Message-ID: <chase-fraud-112233@chase-fraud-alert.com>
+Content-Type: text/html; charset="UTF-8"
+
+<html><body style="font-family:Arial"><div style="max-width:500px;margin:0 auto;background:white;border:1px solid #ddd">
+<div style="background:#117aca;color:white;padding:15px;text-align:center"><h2 style="margin:0">Chase</h2></div>
+<div style="padding:20px">
+<p>Dear Customer,</p>
+<p>We detected a <strong>suspicious transaction</strong> on your Chase account ending in <strong>4521</strong>:</p>
+<table style="width:100%;margin:10px 0;font-size:13px"><tr><td><strong>Amount:</strong></td><td>$2,847.00</td></tr>
+<tr><td><strong>Merchant:</strong></td><td>BestBuy.com</td></tr>
+<tr><td><strong>Date:</strong></td><td>Sep 8, 2025 7:15 AM</td></tr>
+<tr><td><strong>Status:</strong></td><td style="color:red"><strong>PENDING</strong></td></tr></table>
+<p>If you did NOT make this transaction, call immediately:</p>
+<p style="text-align:center"><a href="https://chase-fraud-alert.com/dispute?acct=4521&ref=112233" style="background:#117aca;color:white;padding:10px 20px;text-decoration:none">Dispute Transaction</a></p>
+</div></div></body></html>

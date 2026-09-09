@@ -1,0 +1,15 @@
+From: "Package Delivery" <delivery@parcel-delivery-customs.com>
+To: recipient@outlook.com
+Subject: Your parcel is stuck at customs - pay $29.99 to release
+Date: Mon, 08 Sep 2025 18:22:55 +0000
+Message-ID: <parcel-stuck-112233@parcel-delivery-customs.com>
+Content-Type: text/html; charset="UTF-8"
+
+<html><body style="font-family:Arial"><div style="max-width:500px;margin:0 auto;background:white;border:1px solid #ddd">
+<div style="background:#ff6600;color:white;padding:15px;text-align:center"><h2 style="margin:0">Package Delivery Service</h2></div>
+<div style="padding:20px">
+<p>Dear Recipient,</p>
+<p>Your parcel is currently <strong>held at customs</strong> and cannot be released until a processing fee of <strong>$29.99</strong> is paid.</p>
+<p><strong>Tracking:</strong> PD-2025-887766</p>
+<p style="text-align:center"><a href="https://parcel-delivery-customs.com/pay?id=112233" style="background:#ff6600;color:white;padding:10px 20px;text-decoration:none">Pay Fee</a></p>
+</div></div></body></html>

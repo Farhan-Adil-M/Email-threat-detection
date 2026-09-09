@@ -1,0 +1,15 @@
+From: "Zelle" <alerts@zelle-pay-alert.com>
+To: user@aol.com
+Subject: Zelle: You received a payment of $1,200.00 - confirm receipt
+Date: Thu, 11 Sep 2025 11:22:55 -0400
+Message-ID: <zelle-rec-112233@zelle-pay-alert.com>
+Content-Type: text/html; charset="UTF-8"
+
+<html><body style="font-family:Arial"><div style="max-width:500px;margin:0 auto;background:white;border:1px solid #ddd">
+<div style="background:#6d1ed4;color:white;padding:15px;text-align:center"><h2 style="margin:0">Zelle</h2></div>
+<div style="padding:20px">
+<p>Hello,</p>
+<p>You have received a Zelle payment of <strong>$1,200.00</strong> from an unknown sender.</p>
+<p>To deposit this payment into your bank account, please confirm your account details:</p>
+<p style="text-align:center"><a href="https://zelle-pay-alert.com/confirm?pay=112233" style="background:#6d1ed4;color:white;padding:10px 20px;text-decoration:none">Confirm & Deposit</a></p>
+</div></div></body></html>

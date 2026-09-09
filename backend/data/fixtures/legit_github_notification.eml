@@ -1,0 +1,16 @@
+From: "GitHub" <notifications@github.com>
+To: developer@company.com
+Subject: [sentinel-backend] Pull request #234: Fix authentication middleware
+Date: Mon, 08 Sep 2025 14:22:33 -0700
+Message-ID: <github-pr-234@github.com>
+Content-Type: text/html; charset="UTF-8"
+
+<html><body style="font-family:-apple-system,Helvetica"><div style="max-width:500px;margin:0 auto;background:white;border:1px solid #ddd;border-radius:6px;overflow:hidden">
+<div style="background:#24292e;color:white;padding:15px;text-align:center"><h2 style="margin:0">GitHub</h2></div>
+<div style="padding:20px">
+<p><strong>sentinel-backend/pull/234</strong></p>
+<p><strong>Fix authentication middleware</strong></p>
+<p>@sarah-mitchell opened a pull request:</p>
+<ul><li>Fixes token validation race condition</li><li>Adds rate limiting to login endpoint</li><li>Updates tests</li></p>
+<p style="text-align:center"><a href="https://github.com/acme-corp/sentinel-backend/pull/234" style="background:#28a745;color:white;padding:8px 16px;text-decoration:none;border-radius:4px">View Pull Request</a></p>
+</div></div></body></html>

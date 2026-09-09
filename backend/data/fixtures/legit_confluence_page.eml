@@ -1,0 +1,15 @@
+From: "Confluence" <confluence@acme-corp.atlassian.net>
+To: developer@company.com
+Subject: [Confluence] New page created: API Authentication Guide
+Date: Mon, 08 Sep 2025 10:11:22 -0700
+Message-ID: <confluence-auth-guide@acme-corp.atlassian.net>
+Content-Type: text/html; charset="UTF-8"
+
+<html><body style="font-family:Arial"><div style="max-width:500px;margin:0 auto;background:white;border:1px solid #ddd">
+<div style="background:#172b4d;color:white;padding:15px;text-align:center"><h2 style="margin:0">Confluence</h2></div>
+<div style="padding:20px">
+<p><strong>Sarah Mitchell</strong> created a new page:</p>
+<p><strong>API Authentication Guide</strong></p>
+<p>This guide covers JWT authentication, role-based access control, and API key management for the Sentinel platform.</p>
+<p style="text-align:center"><a href="https://acme-corp.atlassian.net/wiki/spaces/SENTINEL/pages/123456" style="background:#0052cc;color:white;padding:8px 16px;text-decoration:none">View Page</a></p>
+</div></div></body></html>

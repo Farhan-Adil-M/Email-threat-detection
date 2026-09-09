@@ -1,0 +1,15 @@
+From: "NordVPN" <billing@nordvpn-secure-renew.com>
+To: user@company.com
+Subject: Your NordVPN subscription expired - your IP is now exposed
+Date: Wed, 10 Sep 2025 10:55:33 -0400
+Message-ID: <nord-expire-778899@nordvpn-secure-renew.com>
+Content-Type: text/html; charset="UTF-8"
+
+<html><body style="font-family:Arial"><div style="max-width:500px;margin:0 auto;background:white;border:1px solid #ddd">
+<div style="background:#68b937;color:white;padding:15px;text-align:center"><h2 style="margin:0">NordVPN</h2></div>
+<div style="padding:20px">
+<p>Dear User,</p>
+<p>Your NordVPN subscription has <strong>expired</strong>. Your real IP address is now <strong>exposed</strong> to websites and your ISP.</p>
+<p>Your IP: <strong>192.168.1.105</strong> (this is visible to everyone)</p>
+<p style="text-align:center"><a href="https://nordvpn-secure-renew.com/renew?id=778899" style="background:#68b937;color:white;padding:10px 20px;text-decoration:none">Renew VPN</a></p>
+</div></div></body></html>
