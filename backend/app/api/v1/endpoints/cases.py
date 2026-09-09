@@ -22,6 +22,7 @@ from app.schemas.common import (
     ThreatIntelResultRead,
     MLAssessmentRead,
     RiskAssessmentRead, GraphRead, ExplanationRead,
+    CampaignRead, MitreMappingRead,
 )
 from app.services.audit_service import AuditService
 from app.services.case_service import CaseService
@@ -195,6 +196,22 @@ def graph_case(case_id: str, db: Session = Depends(get_db)):
     from app.services.graph_builder import GraphBuilder
     nodes, edges = GraphBuilder(db).build(case_uuid)
     return APIResponse(data=GraphRead(nodes=nodes, edges=edges))
+
+
+@router.post("/{case_id}/correlate", response_model=APIResponse[CampaignRead | None])
+def correlate_case(case_id: str, db: Session = Depends(get_db)):
+    case_uuid = _parse_uuid(case_id)
+    if not CaseService(db).get_case(case_uuid): raise SentinelError("Case not found", status_code=404)
+    from app.services.correlation import CorrelationService
+    return APIResponse(data=CorrelationService(db).correlate(case_uuid))
+
+
+@router.post("/{case_id}/mitre", response_model=APIResponse[list[MitreMappingRead]])
+def mitre_case(case_id: str, db: Session = Depends(get_db)):
+    case_uuid = _parse_uuid(case_id)
+    if not CaseService(db).get_case(case_uuid): raise SentinelError("Case not found", status_code=404)
+    from app.services.mitre import map_case
+    return APIResponse(data=map_case(db, case_uuid))
 
 
 @router.get("/{case_id}/ledger", response_model=APIResponse[list[AuditEventRead]])

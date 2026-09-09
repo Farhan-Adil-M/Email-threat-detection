@@ -247,3 +247,23 @@ class ExplanationRead(BaseModel):
     possible_attack_type: list[str]
     investigative_next_steps: list[str]
     limitations: list[str]
+
+
+class CampaignRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: UUID
+    name: str
+    description: str
+    confidence: float
+    created_at: datetime
+
+
+class MitreMappingRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: UUID
+    case_id: UUID
+    technique: str
+    reason: str
+    evidence_refs: str
+    confidence: float
+    created_at: datetime
