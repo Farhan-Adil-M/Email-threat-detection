@@ -19,6 +19,8 @@ from app.schemas.common import (
     AuditEventRead,
     CaseCreate,
     CaseRead,
+    CaseSummaryResponse,
+    EmailMessageRead,
     FindingRead,
     LedgerVerifyResponse,
     ThreatIntelResultRead,
@@ -72,6 +74,67 @@ def get_case(case_id: str, db: Session = Depends(get_db)):
     if not case:
         raise SentinelError("Case not found", status_code=404)
     return APIResponse(data=case)
+
+
+@router.get("/{case_id}/email", response_model=APIResponse[EmailMessageRead | None])
+def get_case_email(case_id: str, db: Session = Depends(get_db)):
+    case_uuid = _parse_uuid(case_id)
+    if not CaseService(db).get_case(case_uuid):
+        raise SentinelError("Case not found", status_code=404)
+    email = db.query(EmailMessage).filter(EmailMessage.case_id == case_uuid).order_by(EmailMessage.created_at.desc()).first()
+    return APIResponse(data=email)
+
+
+@router.get("/{case_id}/summary", response_model=APIResponse[CaseSummaryResponse])
+def get_case_summary(case_id: str, db: Session = Depends(get_db)):
+    """Single endpoint returning everything the case detail page needs."""
+    case_uuid = _parse_uuid(case_id)
+    case = CaseService(db).get_case(case_uuid)
+    if not case:
+        raise SentinelError("Case not found", status_code=404)
+
+    from app.models.risk_assessment import RiskAssessment
+    from app.models.finding import Finding
+    import json
+
+    email = db.query(EmailMessage).filter(EmailMessage.case_id == case_uuid).order_by(EmailMessage.created_at.desc()).first()
+    risk = db.query(RiskAssessment).filter(RiskAssessment.case_id == case_uuid).order_by(RiskAssessment.created_at.desc()).first() if email else None
+    findings = db.query(Finding).filter(Finding.case_id == case_uuid).order_by(Finding.score_delta.desc()).all() if email else []
+    ml = db.query(MLAssessment).filter(MLAssessment.case_id == case_uuid).order_by(MLAssessment.created_at.desc()).first() if email else None
+    auth_results = db.query(AuthenticationResult).filter(AuthenticationResult.email_id == email.id).all() if email else []
+    hops_count = db.query(ReceivedHop).filter(ReceivedHop.email_id == email.id).count() if email else 0
+
+    explanation = None
+    if risk:
+        from app.services.explanation import explain_case
+        explanation = explain_case(db, case_uuid)
+
+    risk_score = risk.risk_score if risk else None
+    risk_level = risk.risk_level if risk else None
+
+    if explanation:
+        summary = explanation.get("executive_summary", "No analysis available.")
+        findings_plain = explanation.get("why_suspicious", [])
+    elif findings:
+        summary = f"This email triggered {len(findings)} security finding(s) with a risk score of {risk_score or 'N/A'}."
+        findings_plain = [f.title for f in findings[:5]]
+    else:
+        summary = "No analysis has been run on this case yet."
+        findings_plain = []
+
+    return APIResponse(data=CaseSummaryResponse(
+        case=case,
+        email=email,
+        risk_score=risk_score,
+        risk_level=risk_level,
+        summary=summary,
+        findings_plain=findings_plain,
+        explanation=explanation,
+        ml=ml,
+        auth_results=auth_results,
+        hops_count=hops_count,
+        findings_count=len(findings),
+    ))
 
 
 @router.patch("/{case_id}", response_model=APIResponse[CaseRead])

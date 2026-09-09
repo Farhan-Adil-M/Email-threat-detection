@@ -288,6 +288,22 @@ class CaseNoteRead(BaseModel):
     created_at: datetime
 
 
+class CaseSummaryResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    case: CaseRead
+    email: EmailMessageRead | None = None
+    risk_score: int | None = None
+    risk_level: str | None = None
+    summary: str
+    findings_plain: list[str]
+    explanation: ExplanationRead | None = None
+    ml: MLAssessmentRead | None = None
+    auth_results: list[AuthenticationResultRead]
+    hops_count: int
+    findings_count: int
+
+
 class LoginRequest(BaseModel):
     username: str
     password: str
