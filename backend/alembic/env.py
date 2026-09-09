@@ -8,6 +8,8 @@ from app.models.base import Base
 
 # Import all models so Alembic can discover them
 from app.models.case import Case  # noqa: F401
+from app.models.evidence import EvidenceObject  # noqa: F401
+from app.models.audit import AuditEvent  # noqa: F401
 
 # this is the Alembic Config object
 config = context.config

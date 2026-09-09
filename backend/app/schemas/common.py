@@ -40,3 +40,30 @@ class CaseRead(BaseModel):
     created_by: str | None
     created_at: datetime
     updated_at: datetime
+
+
+class EvidenceRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: UUID
+    case_id: UUID
+    type: str
+    sha256: str
+    storage_reference: str
+    original_filename: str | None
+    content_type: str | None
+    size: int
+    sensitivity: str
+    created_at: datetime
+
+
+class UploadResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    case_id: UUID
+    evidence_id: UUID
+    sha256: str
+    filename: str | None
+    size: int
+    status: str
+    message: str

@@ -25,5 +25,9 @@ class CaseService:
         self.db.refresh(case)
         return case
 
+    def create_case_from_upload(self, filename: str | None) -> Case:
+        title = f"Investigation: {filename}" if filename else "Uploaded evidence"
+        return self.create_case(CaseCreate(title=title))
+
     def get_case(self, case_id: str) -> Case | None:
         return self.db.query(Case).filter(Case.id == case_id).first()
