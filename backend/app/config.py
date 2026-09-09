@@ -14,12 +14,15 @@ class Settings(BaseSettings):
     REDIS_URL: str = "redis://localhost:6379/0"
     CORS_ORIGINS: List[str] = ["http://localhost:3000"]
     LOG_LEVEL: str = "INFO"
-    SECRET_KEY: str = "dev-secret-change-in-production"
+    SECRET_KEY: str = "dev-secret-change-in-production-32-bytes-minimum"
     DEMO_MODE: bool = False
     EVIDENCE_STORAGE_PATH: str = "./data/storage"
     MAX_UPLOAD_SIZE: int = 25 * 1024 * 1024  # 25 MB
     INTEL_MODE: str = "disabled"  # disabled | fixture | live
     INTEL_DNS_TIMEOUT: float = 2.0
+    AUTH_REQUIRED: bool = False
+    DEMO_ANALYST_PASSWORD: str = "change-me-analyst"
+    DEMO_ADMIN_PASSWORD: str = "change-me-admin"
 
     def get_database_url(self) -> str:
         return self.DATABASE_URL

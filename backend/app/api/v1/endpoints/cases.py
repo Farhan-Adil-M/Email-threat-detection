@@ -4,6 +4,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
 from app.core.errors import SentinelError
+from app.core.auth import Principal, require_role
 from app.database import get_db
 from app.models.auth_result import AuthenticationResult
 from app.models.evidence import EvidenceObject
@@ -65,7 +66,7 @@ def get_case(case_id: str, db: Session = Depends(get_db)):
 
 
 @router.patch("/{case_id}", response_model=APIResponse[CaseRead])
-def update_case(case_id: str, payload: CaseUpdate, db: Session = Depends(get_db)):
+def update_case(case_id: str, payload: CaseUpdate, db: Session = Depends(get_db), principal: Principal = Depends(require_role("analyst", "admin"))):
     case_uuid = _parse_uuid(case_id)
     case = CaseService(db).get_case(case_uuid)
     if not case: raise SentinelError("Case not found", status_code=404)
@@ -86,11 +87,11 @@ def list_notes(case_id: str, db: Session = Depends(get_db)):
 
 
 @router.post("/{case_id}/notes", response_model=APIResponse[CaseNoteRead])
-def add_note(case_id: str, payload: CaseNoteCreate, db: Session = Depends(get_db)):
+def add_note(case_id: str, payload: CaseNoteCreate, db: Session = Depends(get_db), principal: Principal = Depends(require_role("analyst", "admin"))):
     case_uuid = _parse_uuid(case_id)
     if not CaseService(db).get_case(case_uuid): raise SentinelError("Case not found", status_code=404)
     if not payload.body.strip(): raise SentinelError("Note body cannot be empty", status_code=400)
-    note = CaseNote(case_id=case_uuid, author="analyst", body=payload.body.strip())
+    note = CaseNote(case_id=case_uuid, author=principal.username, body=payload.body.strip())
     db.add(note); db.commit(); db.refresh(note)
     return APIResponse(data=note)
 
@@ -245,6 +246,14 @@ def mitre_case(case_id: str, db: Session = Depends(get_db)):
     if not CaseService(db).get_case(case_uuid): raise SentinelError("Case not found", status_code=404)
     from app.services.mitre import map_case
     return APIResponse(data=map_case(db, case_uuid))
+
+
+@router.get("/{case_id}/report.json")
+def report_json(case_id: str, db: Session = Depends(get_db)):
+    case_uuid = _parse_uuid(case_id)
+    if not CaseService(db).get_case(case_uuid): raise SentinelError("Case not found", status_code=404)
+    from app.services.report_service import build_json_report
+    return build_json_report(db, case_uuid)
 
 
 @router.get("/{case_id}/ledger", response_model=APIResponse[list[AuditEventRead]])

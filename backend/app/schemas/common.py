@@ -286,3 +286,14 @@ class CaseNoteRead(BaseModel):
     author: str
     body: str
     created_at: datetime
+
+
+class LoginRequest(BaseModel):
+    username: str
+    password: str
+
+
+class LoginResponse(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
+    role: str
