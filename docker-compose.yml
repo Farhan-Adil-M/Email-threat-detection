@@ -1,0 +1,89 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: sentinel-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: sentinel
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: sentinel-redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./backend
+    container_name: sentinel-backend
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    environment:
+      DATABASE_URL: postgresql+psycopg://postgres:postgres@db:5432/sentinel
+      REDIS_URL: redis://redis:6379/0
+      SECRET_KEY: dev-secret-change-in-production
+      DEMO_MODE: "false"
+      EVIDENCE_STORAGE_PATH: /app/data/storage
+      MAX_UPLOAD_SIZE: "26214400"
+      LOG_LEVEL: INFO
+      CORS_ORIGINS: '["http://localhost:3000"]'
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - evidence_storage:/app/data/storage
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  worker:
+    build: ./backend
+    container_name: sentinel-worker
+    command: celery -A app.tasks.worker worker -l info -Q celery
+    environment:
+      DATABASE_URL: postgresql+psycopg://postgres:postgres@db:5432/sentinel
+      REDIS_URL: redis://redis:6379/0
+      SECRET_KEY: dev-secret-change-in-production
+      LOG_LEVEL: INFO
+    volumes:
+      - ./backend:/app
+      - evidence_storage:/app/data/storage
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    container_name: sentinel-frontend
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+  evidence_storage:
