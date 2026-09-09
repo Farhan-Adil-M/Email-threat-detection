@@ -21,6 +21,7 @@ from app.schemas.common import (
     LedgerVerifyResponse,
     ThreatIntelResultRead,
     MLAssessmentRead,
+    RiskAssessmentRead, GraphRead, ExplanationRead,
 )
 from app.services.audit_service import AuditService
 from app.services.case_service import CaseService
@@ -169,6 +170,31 @@ def ml_analyze_case(case_id: str, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(assessment)
     return APIResponse(data=assessment)
+
+
+@router.post("/{case_id}/risk", response_model=APIResponse[RiskAssessmentRead])
+def risk_case(case_id: str, db: Session = Depends(get_db)):
+    case_uuid = _parse_uuid(case_id)
+    if not CaseService(db).get_case(case_uuid): raise SentinelError("Case not found", status_code=404)
+    from app.services.risk_engine import RiskEngine
+    return APIResponse(data=RiskEngine(db).assess(case_uuid))
+
+
+@router.get("/{case_id}/explanation", response_model=APIResponse[ExplanationRead])
+def explanation_case(case_id: str, db: Session = Depends(get_db)):
+    case_uuid = _parse_uuid(case_id)
+    if not CaseService(db).get_case(case_uuid): raise SentinelError("Case not found", status_code=404)
+    from app.services.explanation import explain_case
+    return APIResponse(data=explain_case(db, case_uuid))
+
+
+@router.post("/{case_id}/graph", response_model=APIResponse[GraphRead])
+def graph_case(case_id: str, db: Session = Depends(get_db)):
+    case_uuid = _parse_uuid(case_id)
+    if not CaseService(db).get_case(case_uuid): raise SentinelError("Case not found", status_code=404)
+    from app.services.graph_builder import GraphBuilder
+    nodes, edges = GraphBuilder(db).build(case_uuid)
+    return APIResponse(data=GraphRead(nodes=nodes, edges=edges))
 
 
 @router.get("/{case_id}/ledger", response_model=APIResponse[list[AuditEventRead]])

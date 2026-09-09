@@ -197,3 +197,53 @@ class MLAssessmentRead(BaseModel):
     important_features_json: str
     limitations_json: str
     created_at: datetime
+
+
+class RiskAssessmentRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: UUID
+    case_id: UUID
+    email_id: UUID
+    risk_score: int
+    risk_level: str
+    confidence: float
+    classification_json: str
+    contributions_json: str
+    limitations_json: str
+    model_version: str
+    created_at: datetime
+
+
+class GraphNodeRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: UUID
+    case_id: UUID
+    node_type: str
+    label: str
+    entity_id: str | None
+    properties_json: str
+
+
+class GraphEdgeRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: UUID
+    case_id: UUID
+    source_node_id: UUID
+    target_node_id: UUID
+    relationship_type: str
+    confidence: float
+    evidence_refs: str
+
+
+class GraphRead(BaseModel):
+    nodes: list[GraphNodeRead]
+    edges: list[GraphEdgeRead]
+
+
+class ExplanationRead(BaseModel):
+    executive_summary: str
+    why_suspicious: list[str]
+    key_evidence: list[dict]
+    possible_attack_type: list[str]
+    investigative_next_steps: list[str]
+    limitations: list[str]

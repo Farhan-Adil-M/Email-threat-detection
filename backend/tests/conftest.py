@@ -20,6 +20,18 @@ from sqlalchemy.orm import sessionmaker
 from app.database import get_db
 from app.main import app
 from app.models.base import Base
+# Register every mapped table for metadata-based SQLite tests.
+from app.models.attachment import Attachment  # noqa: F401
+from app.models.audit import AuditEvent  # noqa: F401
+from app.models.auth_result import AuthenticationResult  # noqa: F401
+from app.models.email import EmailMessage  # noqa: F401
+from app.models.finding import Finding  # noqa: F401
+from app.models.graph import GraphEdge, GraphNode  # noqa: F401
+from app.models.ml_assessment import MLAssessment  # noqa: F401
+from app.models.received_hop import ReceivedHop  # noqa: F401
+from app.models.risk_assessment import RiskAssessment  # noqa: F401
+from app.models.threat_intel import ThreatIntelResult  # noqa: F401
+from app.models.url_indicator import URLIndicator  # noqa: F401
 
 engine = create_engine(
     os.environ["DATABASE_URL"],
