@@ -1,0 +1,28 @@
+From: sarah@company.com
+To: team@company.com
+Subject: Team standup - Wednesday 10am
+Date: Mon, 08 Sep 2026 09:00:00 +0000
+Message-ID: <calendar-standup@company.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+Authentication-Results: mx.company.com;
+  spf=pass header.d=company.com;
+  dkim=pass header.d=company.com;
+  dmarc=pass (p=REJECT) header.d=company.com
+Received: from mail.company.com (10.0.1.1)
+  by mx.company.com with ESMTP id def456
+  for <team@company.com>; Mon, 08 Sep 2026 09:00:00 +0000
+
+Hi team,
+
+Please join our weekly standup this Wednesday at 10am in Conference Room B.
+
+Agenda:
+- Sprint progress updates
+- Blockers and dependencies
+- Demo of new features
+
+See you there!
+
+Sarah
+Engineering Manager

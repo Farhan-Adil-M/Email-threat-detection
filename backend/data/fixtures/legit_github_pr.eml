@@ -1,0 +1,22 @@
+From: notifications@github.com
+To: developer@company.com
+Subject: [acme/app] Pull request #42: Fix authentication middleware
+Date: Mon, 08 Sep 2026 14:30:00 +0000
+Message-ID: <github-pr-42@github.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+Authentication-Results: mx.company.com;
+  spf=pass header.d=github.com;
+  dkim=pass header.d=github.com;
+  dmarc=pass (p=REJECT) header.d=github.com
+Received: from github-smtp-mailserver.lxguc.github.com (140.82.112.10)
+  by mx.company.com with ESMTP id abc123
+  for <developer@company.com>; Mon, 08 Sep 2026 14:30:00 +0000
+
+@developer opened a new pull request in acme/app:
+https://github.com/acme/app/pull/42
+
+Fixes the authentication middleware to properly validate JWT tokens.
+Changes: 3 files changed, 42 insertions(+), 15 deletions(-)
+
+Please review and merge.

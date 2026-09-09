@@ -288,6 +288,34 @@ class CaseNoteRead(BaseModel):
     created_at: datetime
 
 
+class URLIndicatorRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: UUID
+    email_id: UUID
+    case_id: UUID
+    raw_url: str
+    normalized_url: str
+    scheme: str | None = None
+    hostname: str | None = None
+    port: int | None = None
+    path: str | None = None
+    has_userinfo: bool
+    is_ip_literal: bool
+    is_punycode: bool
+
+
+class AttachmentRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: UUID
+    email_id: UUID
+    case_id: UUID
+    filename: str | None = None
+    content_type: str | None = None
+    size: int
+    sha256: str | None = None
+    metadata_only: bool
+
+
 class CaseSummaryResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
@@ -300,8 +328,16 @@ class CaseSummaryResponse(BaseModel):
     explanation: ExplanationRead | None = None
     ml: MLAssessmentRead | None = None
     auth_results: list[AuthenticationResultRead]
+    hops: list[ReceivedHopRead]
     hops_count: int
     findings_count: int
+    urls: list[URLIndicatorRead]
+    attachments: list[AttachmentRead]
+    intelligence: list[ThreatIntelResultRead]
+    evidence_sha256: str | None = None
+    campaign: CampaignRead | None = None
+    related_case_ids: list[str]
+    mitre: list[MitreMappingRead]
 
 
 class LoginRequest(BaseModel):

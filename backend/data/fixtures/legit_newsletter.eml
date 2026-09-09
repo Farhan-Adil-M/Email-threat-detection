@@ -1,0 +1,25 @@
+From: newsletter@techdigest.io
+To: subscriber@company.com
+Subject: TechDigest Weekly - Top 5 AI Trends
+Date: Mon, 08 Sep 2026 08:00:00 +0000
+Message-ID: <newsletter-weekly-42@techdigest.io>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+Authentication-Results: mx.company.com;
+  spf=pass header.d=techdigest.io;
+  dkim=pass header.d=techdigest.io;
+  dmarc=pass (p=NONE) header.d=techdigest.io
+Received: from mail.techdigest.io (198.51.100.1)
+  by mx.company.com with ESMTP id ghi789
+  for <subscriber@company.com>; Mon, 08 Sep 2026 08:00:00 +0000
+
+TechDigest Weekly - Issue #42
+
+This week's top stories:
+1. New AI models surpass human benchmarks in coding
+2. Cloud providers announce green computing initiatives
+3. Open source security tools gain enterprise adoption
+
+Read more at https://techdigest.io/weekly/42
+
+To unsubscribe: https://techdigest.io/unsubscribe?id=subscriber

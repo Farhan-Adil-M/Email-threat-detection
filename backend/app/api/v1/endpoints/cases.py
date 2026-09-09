@@ -95,6 +95,11 @@ def get_case_summary(case_id: str, db: Session = Depends(get_db)):
 
     from app.models.risk_assessment import RiskAssessment
     from app.models.finding import Finding
+    from app.models.url_indicator import URLIndicator
+    from app.models.attachment import Attachment
+    from app.models.threat_intel import ThreatIntelResult
+    from app.models.evidence import EvidenceObject
+    from app.models.campaign import CampaignMembership, MitreMapping, Campaign
     import json
 
     email = db.query(EmailMessage).filter(EmailMessage.case_id == case_uuid).order_by(EmailMessage.created_at.desc()).first()
@@ -102,7 +107,24 @@ def get_case_summary(case_id: str, db: Session = Depends(get_db)):
     findings = db.query(Finding).filter(Finding.case_id == case_uuid).order_by(Finding.score_delta.desc()).all() if email else []
     ml = db.query(MLAssessment).filter(MLAssessment.case_id == case_uuid).order_by(MLAssessment.created_at.desc()).first() if email else None
     auth_results = db.query(AuthenticationResult).filter(AuthenticationResult.email_id == email.id).all() if email else []
-    hops_count = db.query(ReceivedHop).filter(ReceivedHop.email_id == email.id).count() if email else 0
+    hops = db.query(ReceivedHop).filter(ReceivedHop.email_id == email.id).order_by(ReceivedHop.hop_index).all() if email else []
+    urls = db.query(URLIndicator).filter(URLIndicator.case_id == case_uuid).all()
+    attachments = db.query(Attachment).filter(Attachment.case_id == case_uuid).all()
+    intelligence = db.query(ThreatIntelResult).filter(ThreatIntelResult.case_id == case_uuid).all()
+    evidence = db.query(EvidenceObject).filter(EvidenceObject.case_id == case_uuid).first()
+    mitre = db.query(MitreMapping).filter(MitreMapping.case_id == case_uuid).all()
+
+    campaign = None
+    related_case_ids: list[str] = []
+    membership = db.query(CampaignMembership).filter(CampaignMembership.case_id == case_uuid).first()
+    if membership:
+        campaign = db.query(Campaign).filter(Campaign.id == membership.campaign_id).first()
+        if campaign:
+            related_members = db.query(CampaignMembership).filter(
+                CampaignMembership.campaign_id == campaign.id,
+                CampaignMembership.case_id != case_uuid,
+            ).all()
+            related_case_ids = [str(m.case_id) for m in related_members]
 
     explanation = None
     if risk:
@@ -132,8 +154,16 @@ def get_case_summary(case_id: str, db: Session = Depends(get_db)):
         explanation=explanation,
         ml=ml,
         auth_results=auth_results,
-        hops_count=hops_count,
+        hops=hops,
+        hops_count=len(hops),
         findings_count=len(findings),
+        urls=urls,
+        attachments=attachments,
+        intelligence=intelligence,
+        evidence_sha256=evidence.sha256 if evidence else None,
+        campaign=campaign,
+        related_case_ids=related_case_ids,
+        mitre=mitre,
     ))
 
 
@@ -301,6 +331,19 @@ def graph_case(case_id: str, db: Session = Depends(get_db)):
     if not CaseService(db).get_case(case_uuid): raise SentinelError("Case not found", status_code=404)
     from app.services.graph_builder import GraphBuilder
     nodes, edges = GraphBuilder(db).build(case_uuid)
+    return APIResponse(data=GraphRead(nodes=nodes, edges=edges))
+
+
+@router.get("/{case_id}/graph", response_model=APIResponse[GraphRead])
+def get_graph(case_id: str, db: Session = Depends(get_db)):
+    case_uuid = _parse_uuid(case_id)
+    if not CaseService(db).get_case(case_uuid): raise SentinelError("Case not found", status_code=404)
+    from app.models.graph import GraphNode as GN, GraphEdge as GE
+    nodes = db.query(GN).filter(GN.case_id == case_uuid).all()
+    edges = db.query(GE).filter(GE.case_id == case_uuid).all()
+    if not nodes:
+        from app.services.graph_builder import GraphBuilder
+        nodes, edges = GraphBuilder(db).build(case_uuid)
     return APIResponse(data=GraphRead(nodes=nodes, edges=edges))
 
 

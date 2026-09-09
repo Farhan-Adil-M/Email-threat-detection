@@ -15,6 +15,7 @@ build/
 
 # Backend
 backend/data/storage/
+backend/data/uploads/
 backend/tests/storage/
 backend/tests/test.db
 backend/.env

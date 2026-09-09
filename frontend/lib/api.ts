@@ -41,13 +41,67 @@ export type MLAssessment = {
   impersonation_probability: number; model_version: string;
 }
 
+export type ReceivedHop = {
+  id: string; email_id: string; hop_index: number;
+  source_host: string | null; source_ip: string | null;
+  destination_host: string | null; protocol: string | null;
+  timestamp: string | null; is_private_ip: boolean;
+  is_malformed: boolean; missing_data: boolean;
+}
+
+export type URLIndicator = {
+  id: string; email_id: string; case_id: string;
+  raw_url: string; normalized_url: string;
+  scheme: string | null; hostname: string | null;
+  port: number | null; path: string | null;
+  has_userinfo: boolean; is_ip_literal: boolean; is_punycode: boolean;
+}
+
+export type AttachmentInfo = {
+  id: string; email_id: string; case_id: string;
+  filename: string | null; content_type: string | null;
+  size: number; sha256: string | null; metadata_only: boolean;
+}
+
+export type ThreatIntel = {
+  id: string; case_id: string; indicator: string; indicator_type: string;
+  provider: string; status: string; queried_at: string;
+  data_json: string; confidence: number;
+  source_reference: string | null; raw_available: boolean;
+}
+
+export type MitreMapping = {
+  id: string; case_id: string; technique: string;
+  reason: string; evidence_refs: string; confidence: number;
+}
+
 export type CaseSummary = {
   case: Case; email: EmailMessage | null;
   risk_score: number | null; risk_level: string | null;
   summary: string; findings_plain: string[];
   explanation: Explanation | null; ml: MLAssessment | null;
-  auth_results: AuthResult[]; hops_count: number; findings_count: number;
+  auth_results: AuthResult[];
+  hops: ReceivedHop[]; hops_count: number; findings_count: number;
+  urls: URLIndicator[]; attachments: AttachmentInfo[];
+  intelligence: ThreatIntel[];
+  evidence_sha256: string | null;
+  campaign: { id: string; name: string; description: string; confidence: number } | null;
+  related_case_ids: string[];
+  mitre: MitreMapping[];
 }
+
+export type GraphNode = {
+  id: string; case_id: string; node_type: string;
+  label: string; entity_id: string | null; properties_json: string;
+}
+
+export type GraphEdge = {
+  id: string; case_id: string;
+  source_node_id: string; target_node_id: string;
+  relationship_type: string; confidence: number; evidence_refs: string;
+}
+
+export type Graph = { nodes: GraphNode[]; edges: GraphEdge[] }
 
 export type Campaign = {
   id: string; name: string; description: string;

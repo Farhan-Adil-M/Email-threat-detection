@@ -12,7 +12,7 @@ def test_baseline_returns_probabilities_and_limitations(client: TestClient):
     response = client.post(f"/api/v1/cases/{case_id}/ml-analyze")
     assert response.status_code == 200
     data = response.json()["data"]
-    assert data["model_version"] == "nb-baseline-001"
+    assert data["model_version"] == "nb-baseline-002"
     assert 0 <= data["phishing_probability"] <= 1
     assert 0 <= data["bec_probability"] <= 1
     assert 0 <= data["impersonation_probability"] <= 1
