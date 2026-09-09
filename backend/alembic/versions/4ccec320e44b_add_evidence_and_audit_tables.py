@@ -1,8 +1,8 @@
 """add evidence and audit tables
 
-Revision ID: f20d1e61aef3
+Revision ID: 4ccec320e44b
 Revises: 
-Create Date: 2026-09-09 13:12:53.571633
+Create Date: 2026-09-09 13:28:11.603163
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'f20d1e61aef3'
+revision = '4ccec320e44b'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -38,6 +38,7 @@ def upgrade() -> None:
     sa.Column('evidence_refs', sa.Text(), nullable=True),
     sa.Column('previous_hash', sa.String(length=64), nullable=True),
     sa.Column('event_hash', sa.String(length=64), nullable=False),
+    sa.Column('canonical_payload', sa.Text(), nullable=False),
     sa.Column('metadata_json', sa.Text(), nullable=True),
     sa.ForeignKeyConstraint(['case_id'], ['cases.id'], ),
     sa.PrimaryKeyConstraint('id')

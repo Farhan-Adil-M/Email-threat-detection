@@ -67,3 +67,24 @@ class UploadResponse(BaseModel):
     size: int
     status: str
     message: str
+
+
+class AuditEventRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: UUID
+    case_id: UUID
+    actor: str
+    action: str
+    timestamp: datetime
+    evidence_refs: str | None
+    previous_hash: str | None
+    event_hash: str
+    canonical_payload: str
+    metadata_json: str | None
+
+
+class LedgerVerifyResponse(BaseModel):
+    valid: bool
+    event_count: int
+    events: list[AuditEventRead]

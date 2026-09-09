@@ -21,4 +21,5 @@ class AuditEvent(Base):
     evidence_refs: Mapped[str | None] = mapped_column(Text, nullable=True)
     previous_hash: Mapped[str | None] = mapped_column(String(64), nullable=True)
     event_hash: Mapped[str] = mapped_column(String(64), nullable=False, index=True)
+    canonical_payload: Mapped[str] = mapped_column(Text, nullable=False)
     metadata_json: Mapped[str | None] = mapped_column(Text, nullable=True)

@@ -2,9 +2,14 @@ import os
 import shutil
 from pathlib import Path
 
+# Determine project paths relative to this file: backend/tests/conftest.py
+TEST_DIR = Path(__file__).resolve().parent
+STORAGE_DIR = TEST_DIR / "storage"
+DB_PATH = TEST_DIR / "test.db"
+
 # Use SQLite for tests to avoid requiring a running PostgreSQL instance.
-os.environ["DATABASE_URL"] = "sqlite:///./backend/tests/test.db"
-os.environ["EVIDENCE_STORAGE_PATH"] = "./backend/tests/storage"
+os.environ["DATABASE_URL"] = f"sqlite:///{DB_PATH}"
+os.environ["EVIDENCE_STORAGE_PATH"] = str(STORAGE_DIR)
 os.environ["SECRET_KEY"] = "test-secret"
 
 import pytest
@@ -36,6 +41,8 @@ app.dependency_overrides[get_db] = override_get_db
 
 @pytest.fixture(scope="session", autouse=True)
 def setup_database():
+    # Ensure the tests directory exists for the SQLite file.
+    TEST_DIR.mkdir(parents=True, exist_ok=True)
     Base.metadata.create_all(bind=engine)
     yield
     engine.dispose()
@@ -43,10 +50,9 @@ def setup_database():
 
 @pytest.fixture(autouse=True)
 def clean_storage():
-    storage = Path(os.environ["EVIDENCE_STORAGE_PATH"])
-    if storage.exists():
-        shutil.rmtree(storage)
-    storage.mkdir(parents=True, exist_ok=True)
+    if STORAGE_DIR.exists():
+        shutil.rmtree(STORAGE_DIR)
+    STORAGE_DIR.mkdir(parents=True, exist_ok=True)
     yield
 
 

@@ -75,3 +75,26 @@ def test_upload_existing_case(client: TestClient):
     )
     assert r2.status_code == 200
     assert r2.json()["data"]["case_id"] == case_id
+
+
+def test_upload_records_audit_event_and_verifies_ledger(client: TestClient):
+    eml = build_eml_bytes()
+    upload = client.post(
+        "/api/v1/evidence/upload",
+        files={"file": ("audit.eml", eml, "message/rfc822")},
+    )
+    assert upload.status_code == 200
+    case_id = upload.json()["data"]["case_id"]
+    sha256 = upload.json()["data"]["sha256"]
+
+    verify = client.get(f"/api/v1/cases/{case_id}/ledger/verify")
+    assert verify.status_code == 200
+    data = verify.json()["data"]
+    assert data["valid"] is True
+    assert data["event_count"] == 1
+    assert data["events"][0]["action"] == "EVIDENCE_INGESTED"
+    assert sha256 in data["events"][0]["canonical_payload"]
+
+    ledger = client.get(f"/api/v1/cases/{case_id}/ledger")
+    assert ledger.status_code == 200
+    assert len(ledger.json()["data"]) == 1

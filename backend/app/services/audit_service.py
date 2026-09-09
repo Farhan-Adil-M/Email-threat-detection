@@ -45,6 +45,7 @@ class AuditService:
             evidence_refs=json.dumps(payload["evidence_refs"]),
             previous_hash=previous_hash,
             event_hash=event_hash,
+            canonical_payload=canonical,
             metadata_json=json.dumps(metadata or {}),
         )
         self.db.add(event)
@@ -73,17 +74,8 @@ class AuditService:
 
         previous_hash = ""
         for event in events:
-            payload = {
-                "case_id": str(event.case_id),
-                "actor": event.actor,
-                "action": event.action,
-                "timestamp": event.timestamp.isoformat(),
-                "evidence_refs": json.loads(event.evidence_refs or "[]"),
-                "metadata": json.loads(event.metadata_json or "{}"),
-            }
-            canonical = json.dumps(payload, sort_keys=True, separators=(",", ":"))
             expected = hashlib.sha256(
-                (canonical + (event.previous_hash or "")).encode("utf-8")
+                (event.canonical_payload + (event.previous_hash or "")).encode("utf-8")
             ).hexdigest()
             if expected != event.event_hash:
                 return False, events
