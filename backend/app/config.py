@@ -18,6 +18,8 @@ class Settings(BaseSettings):
     DEMO_MODE: bool = False
     EVIDENCE_STORAGE_PATH: str = "./data/storage"
     MAX_UPLOAD_SIZE: int = 25 * 1024 * 1024  # 25 MB
+    INTEL_MODE: str = "disabled"  # disabled | fixture | live
+    INTEL_DNS_TIMEOUT: float = 2.0
 
     def get_database_url(self) -> str:
         return self.DATABASE_URL

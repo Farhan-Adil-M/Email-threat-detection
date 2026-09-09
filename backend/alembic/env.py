@@ -16,6 +16,7 @@ from app.models.finding import Finding  # noqa: F401
 from app.models.received_hop import ReceivedHop  # noqa: F401
 from app.models.attachment import Attachment  # noqa: F401
 from app.models.url_indicator import URLIndicator  # noqa: F401
+from app.models.threat_intel import ThreatIntelResult  # noqa: F401
 
 # this is the Alembic Config object
 config = context.config

@@ -8,6 +8,7 @@ from app.database import get_db
 from app.models.auth_result import AuthenticationResult
 from app.models.evidence import EvidenceObject
 from app.models.received_hop import ReceivedHop
+from app.models.threat_intel import ThreatIntelResult
 from app.schemas.common import (
     APIResponse,
     AnalyzeResponse,
@@ -16,6 +17,7 @@ from app.schemas.common import (
     CaseRead,
     FindingRead,
     LedgerVerifyResponse,
+    ThreatIntelResultRead,
 )
 from app.services.audit_service import AuditService
 from app.services.case_service import CaseService
@@ -116,6 +118,26 @@ def get_findings(case_id: str, db: Session = Depends(get_db)):
     finding_service = FindingService(db)
     findings = finding_service.list_for_case(case_uuid)
     return APIResponse(data=findings)
+
+
+@router.post("/{case_id}/enrich", response_model=APIResponse[list[ThreatIntelResultRead]])
+def enrich_case(case_id: str, db: Session = Depends(get_db)):
+    case_uuid = _parse_uuid(case_id)
+    if not CaseService(db).get_case(case_uuid):
+        raise SentinelError("Case not found", status_code=404)
+    from app.services.intelligence.enricher import IntelligenceEnricher
+
+    results = IntelligenceEnricher(db).enrich_case(case_uuid)
+    return APIResponse(data=results)
+
+
+@router.get("/{case_id}/intelligence", response_model=APIResponse[list[ThreatIntelResultRead]])
+def get_intelligence(case_id: str, db: Session = Depends(get_db)):
+    case_uuid = _parse_uuid(case_id)
+    if not CaseService(db).get_case(case_uuid):
+        raise SentinelError("Case not found", status_code=404)
+    results = db.query(ThreatIntelResult).filter(ThreatIntelResult.case_id == case_uuid).all()
+    return APIResponse(data=results)
 
 
 @router.get("/{case_id}/ledger", response_model=APIResponse[list[AuditEventRead]])

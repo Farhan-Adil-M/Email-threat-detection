@@ -166,3 +166,19 @@ class AnalyzeResponse(BaseModel):
     auth_count: int
     status: str
     message: str
+
+
+class ThreatIntelResultRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: UUID
+    case_id: UUID
+    indicator: str
+    indicator_type: str
+    provider: str
+    status: str
+    queried_at: datetime
+    data_json: str
+    confidence: float
+    source_reference: str | None
+    raw_available: bool
