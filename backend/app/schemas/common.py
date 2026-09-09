@@ -182,3 +182,18 @@ class ThreatIntelResultRead(BaseModel):
     confidence: float
     source_reference: str | None
     raw_available: bool
+
+
+class MLAssessmentRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: UUID
+    case_id: UUID
+    email_id: UUID
+    model_version: str
+    phishing_probability: float
+    bec_probability: float
+    impersonation_probability: float
+    important_features_json: str
+    limitations_json: str
+    created_at: datetime

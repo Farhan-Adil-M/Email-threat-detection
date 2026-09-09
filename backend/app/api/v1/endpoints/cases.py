@@ -9,6 +9,8 @@ from app.models.auth_result import AuthenticationResult
 from app.models.evidence import EvidenceObject
 from app.models.received_hop import ReceivedHop
 from app.models.threat_intel import ThreatIntelResult
+from app.models.email import EmailMessage
+from app.models.ml_assessment import MLAssessment
 from app.schemas.common import (
     APIResponse,
     AnalyzeResponse,
@@ -18,6 +20,7 @@ from app.schemas.common import (
     FindingRead,
     LedgerVerifyResponse,
     ThreatIntelResultRead,
+    MLAssessmentRead,
 )
 from app.services.audit_service import AuditService
 from app.services.case_service import CaseService
@@ -138,6 +141,34 @@ def get_intelligence(case_id: str, db: Session = Depends(get_db)):
         raise SentinelError("Case not found", status_code=404)
     results = db.query(ThreatIntelResult).filter(ThreatIntelResult.case_id == case_uuid).all()
     return APIResponse(data=results)
+
+
+@router.post("/{case_id}/ml-analyze", response_model=APIResponse[MLAssessmentRead])
+def ml_analyze_case(case_id: str, db: Session = Depends(get_db)):
+    case_uuid = _parse_uuid(case_id)
+    if not CaseService(db).get_case(case_uuid):
+        raise SentinelError("Case not found", status_code=404)
+    email = db.query(EmailMessage).filter(EmailMessage.case_id == case_uuid).order_by(EmailMessage.created_at.desc()).first()
+    if not email:
+        raise SentinelError("Run forensic analysis before ML analysis", status_code=400)
+    from app.services.ml_baseline import classify_email
+    import json
+
+    result = classify_email(email.subject, email.body_text, email.from_address, email.reply_to)
+    assessment = MLAssessment(
+        case_id=case_uuid,
+        email_id=email.id,
+        model_version=result.model_version,
+        phishing_probability=result.phishing_probability,
+        bec_probability=result.bec_probability,
+        impersonation_probability=result.impersonation_probability,
+        important_features_json=json.dumps(result.important_features, sort_keys=True),
+        limitations_json=json.dumps(result.limitations),
+    )
+    db.add(assessment)
+    db.commit()
+    db.refresh(assessment)
+    return APIResponse(data=assessment)
 
 
 @router.get("/{case_id}/ledger", response_model=APIResponse[list[AuditEventRead]])
