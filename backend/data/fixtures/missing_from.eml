@@ -1,0 +1,8 @@
+To: victim@example.com
+Subject: Missing From header
+Message-ID: <missing-from-001@evil.com>
+Date: Mon, 01 Jan 2024 12:00:00 +0000
+MIME-Version: 1.0
+Content-Type: text/plain
+
+This email has no From header.

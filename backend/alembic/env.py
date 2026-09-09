@@ -7,9 +7,13 @@ from app.config import settings
 from app.models.base import Base
 
 # Import all models so Alembic can discover them
-from app.models.case import Case  # noqa: F401
-from app.models.evidence import EvidenceObject  # noqa: F401
 from app.models.audit import AuditEvent  # noqa: F401
+from app.models.auth_result import AuthenticationResult  # noqa: F401
+from app.models.case import Case  # noqa: F401
+from app.models.email import EmailMessage  # noqa: F401
+from app.models.evidence import EvidenceObject  # noqa: F401
+from app.models.finding import Finding  # noqa: F401
+from app.models.received_hop import ReceivedHop  # noqa: F401
 
 # this is the Alembic Config object
 config = context.config

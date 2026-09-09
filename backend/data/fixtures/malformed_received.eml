@@ -1,0 +1,12 @@
+From: attacker@evil.com
+To: victim@example.com
+Subject: Malformed route
+Message-ID: <route-001@evil.com>
+Date: Mon, 01 Jan 2024 13:00:00 +0000
+MIME-Version: 1.0
+Content-Type: text/plain
+Received: from [192.168.1.1] by ??? with SMTP; Mon, 01 Jan 2024 13:00:00 +0000
+Received: from mail.evil.com by mx.example.com with ESMTP; Mon, 01 Jan 2024 12:59:00 +0000
+Authentication-Results: mx.example.com; spf=fail smtp.mailfrom=evil.com; dkim=fail header.i=@evil.com; dmarc=fail (p=REJECT) header.from=evil.com
+
+Body with malformed received chain.

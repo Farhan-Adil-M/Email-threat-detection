@@ -88,3 +88,81 @@ class LedgerVerifyResponse(BaseModel):
     valid: bool
     event_count: int
     events: list[AuditEventRead]
+
+
+class EmailMessageRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: UUID
+    evidence_id: UUID
+    case_id: UUID
+    from_address: str | None
+    from_display_name: str | None
+    to_addresses: str | None
+    cc_addresses: str | None
+    reply_to: str | None
+    return_path: str | None
+    subject: str | None
+    date: datetime | None
+    message_id: str | None
+    body_text: str | None
+    body_html_sanitized: str | None
+    created_at: datetime
+
+
+class ReceivedHopRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: UUID
+    email_id: UUID
+    hop_index: int
+    source_host: str | None
+    source_ip: str | None
+    destination_host: str | None
+    protocol: str | None
+    timestamp: datetime | None
+    is_private_ip: bool
+    is_malformed: bool
+    missing_data: bool
+
+
+class AuthenticationResultRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: UUID
+    email_id: UUID
+    mechanism: str
+    domain: str | None
+    result: str | None
+    alignment: str | None
+    policy: str | None
+    explanation: str | None
+
+
+class FindingRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: UUID
+    case_id: UUID
+    email_id: UUID | None
+    rule_id: str
+    category: str
+    severity: str
+    title: str
+    description: str
+    evidence_refs: str
+    score_delta: int
+    confidence: float
+    status: str
+    created_at: datetime
+
+
+class AnalyzeResponse(BaseModel):
+    case_id: UUID
+    email_id: UUID
+    message_id: str | None
+    findings_count: int
+    hops_count: int
+    auth_count: int
+    status: str
+    message: str
