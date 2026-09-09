@@ -1,0 +1,33 @@
+Return-Path: <hr@company-payroll-portal.com>
+Received: from smtp.company-payroll-portal.com (us-east smtp.sendgrid.net [167.89.20.144])
+	by mx.aol.com with ESMTPS id q8788990011
+	from <hr@company-payroll-portal.com>
+	for <employee@aol.com>; Tue, 02 Sep 2025 09:15:44 -0400
+Authentication-Results: mx.aol.com;
+	spf=softfail (aol.com: domain of hr@company-payroll-portal.com does not designate 167.89.20.144 as permitted sender)
+	dmarc=fail header.from=company-payroll-portal.com
+From: "HR Department" <hr@company-payroll-portal.com>
+To: "Employee" <employee@aol.com>
+Subject: [Action Required] Download your 2025 W-2 form
+Date: Tue, 02 Sep 2025 09:15:44 -0400
+Message-ID: <w2-download-887766@company-payroll-portal.com>
+Content-Type: text/html; charset="UTF-8"
+MIME-Version: 1.0
+
+<html>
+<body style="font-family:Arial;background:#f5f5f5">
+<div style="max-width:500px;margin:30px auto;background:white;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1)">
+<div style="background:#1a73e8;color:white;padding:20px;text-align:center">
+<h2 style="margin:0">Payroll Portal</h2>
+</div>
+<div style="padding:25px">
+<p>Dear Employee,</p>
+<p>Your 2025 W-2 form is now available for download. Due to IRS requirements, all employees must verify their identity before accessing tax documents.</p>
+<p style="text-align:center;margin:25px 0">
+<a href="https://company-payroll-portal.com/w2?emp=887766&token=xK9mN2pL" style="background:#1a73e8;color:white;padding:12px 30px;text-decoration:none;border-radius:4px;font-weight:bold">Download W-2</a>
+</p>
+<p style="color:#666;font-size:12px">This is an automated message from HR. Do not reply.</p>
+</div>
+</div>
+</body>
+</html>

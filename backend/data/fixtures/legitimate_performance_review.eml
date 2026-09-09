@@ -1,0 +1,38 @@
+Return-Path: <sarah.mitchell@acme-corp.com>
+Received: from mail.acme-corp.com (mail.acme-corp.com [10.0.1.50])
+	by mx.google.com with ESMTPS id r9899001122
+	from <sarah.mitchell@acme-corp.com>
+	for <james.kim@acme-corp.com>; Mon, 08 Sep 2025 16:15:33 -0700
+DKIM-Signature: v=1; a=rsa-sha256; d=acme-corp.com; s=google; bh=abc123=;
+Authentication-Results: mx.google.com;
+	dkim=pass header.d=acme-corp.com;
+	spf=pass (google.com: domain of sarah.mitchell@acme-corp.com designates 10.0.1.50 as permitted sender)
+	dmarc=pass (p=REJECT) header.from=acme-corp.com
+From: "Sarah Mitchell" <sarah.mitchell@acme-corp.com>
+To: "James Kim" <james.kim@acme-corp.com>
+Subject: Q3 Performance Review - Your preparation materials
+Date: Mon, 08 Sep 2025 16:15:33 -0700
+Message-ID: <perf-review-jkim-q3@acme-corp.com>
+Content-Type: text/plain; charset="UTF-8"
+MIME-Version: 1.0
+
+Hi James,
+
+Your Q3 performance review is scheduled for September 15 at 2pm in Conference Room A.
+
+Please prepare the following before our meeting:
+1. Self-assessment form (attached to calendar invite)
+2. List of 3 key accomplishments this quarter
+3. Goals for Q4 and 2026
+4. Any support or resources you need from me
+
+Review period: July 1 - September 30, 2025
+
+I've been really impressed with your work on the API gateway migration and the on-call rotation improvements. Let's make sure we capture all your contributions.
+
+If you'd like to reschedule or have any questions, just let me know.
+
+Best,
+Sarah Mitchell
+Engineering Manager
+sarah.mitchell@acme-corp.com

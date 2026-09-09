@@ -1,0 +1,39 @@
+Return-Path: <david.chen@acmecorp-secure.com>
+Received: from smtp.acmecorp-secure.com (us-east smtp.proxymail.net [85.214.132.220])
+	by mx.outlook.com with ESMTPS id o6566778899
+	from <david.chen@acmecorp-secure.com>
+	for <finance@acme-corp.com>; Thu, 04 Sep 2025 06:33:11 +0200
+Authentication-Results: mx.outlook.com;
+	spf=softfail (outlook.com: domain of david.chen@acmecorp-secure.com does not designate 85.214.132.220 as permitted sender)
+	dkim=none
+	dmarc=fail header.from=acmecorp-secure.com
+From: "David Chen" <david.chen@acmecorp-secure.com>
+To: "Finance Team" <finance@acme-corp.com>
+Subject: Re: Quick favor needed
+Date: Thu, 04 Sep 2025 06:33:11 +0200
+In-Reply-To: <CA+KJw9V8XQh7p3mZk2vTqYwRn5fJdA1bC4eD6fG@acmecorp-secure.com>
+References: <CA+KJw9V8XQh7p3mZk2vTqYwRn5fJdA1bC4eD6fG@acmecorp-secure.com>
+Message-ID: <reply-finance-88776655@acmecorp-secure.com>
+Content-Type: text/plain; charset="UTF-8"
+MIME-Version: 1.0
+
+Hi Finance,
+
+Following up on my earlier email. I need this handled before market open.
+
+Please wire $182,500 to:
+
+Bank: Wells Fargo
+Account Name: Pinnacle Consulting Group
+Routing: 121000248
+Account: 9988112233
+Amount: $182,500.00
+Reference: Q3 Advisory Fee
+
+This is for the Meridian acquisition advisory. I'm in meetings all day so please handle directly. Confirm once done.
+
+Sent from my iPhone
+
+On Sep 3, 2025, at 4:15 PM, David Chen wrote:
+
+> I need you to process an urgent wire transfer. Please see details below. This is confidential.

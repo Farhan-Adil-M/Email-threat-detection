@@ -1,0 +1,49 @@
+Return-Path: <hr@acme-corp.com>
+Received: from mail.acme-corp.com (mail.acme-corp.com [10.0.1.50])
+	by mx.google.com with ESMTPS id j1011223344
+	from <hr@acme-corp.com>
+	for <alex.turner@acme-corp.com>; Mon, 08 Sep 2025 08:00:11 -0700
+DKIM-Signature: v=1; a=rsa-sha256; d=acme-corp.com; s=google; bh=abc123=;
+Authentication-Results: mx.google.com;
+	dkim=pass header.d=acme-corp.com;
+	spf=pass (google.com: domain of hr@acme-corp.com designates 10.0.1.50 as permitted sender)
+	dmarc=pass (p=REJECT) header.from=acme-corp.com
+From: "Human Resources" <hr@acme-corp.com>
+To: "Alex Turner" <alex.turner@acme-corp.com>
+Subject: Welcome to Acme Corp - First Day Checklist
+Date: Mon, 08 Sep 2025 08:00:11 -0700
+Message-ID: <onboarding-alex-turner@acme-corp.com>
+Content-Type: text/plain; charset="UTF-8"
+MIME-Version: 1.0
+
+Hi Alex,
+
+Welcome to Acme Corp! We're thrilled to have you join the Engineering team.
+
+YOUR FIRST DAY - September 9, 2025:
+
+8:30 AM - Arrive at reception (456 Innovation Drive, Floor 3)
+9:00 AM - HR orientation with Maria (Room 301)
+10:30 AM - IT setup with the IT team
+12:00 PM - Team lunch (on us!)
+1:30 PM - Meet your manager Sarah Mitchell
+2:30 PM - Codebase walkthrough with the team
+4:00 PM - Welcome happy hour
+
+WHAT TO BRING:
+- Government-issued ID (for I-9 verification)
+- Bank account details for direct deposit
+- Signed offer letter (if not already submitted)
+
+FIRST WEEK PRIORITIES:
+1. Complete onboarding paperwork
+2. Set up your dev environment
+3. Attend security awareness training
+4. Shadow a team member on the current sprint
+
+Your onboarding buddy is James Kim (james.kim@acme-corp.com). Don't hesitate to reach out with any questions!
+
+Best,
+Human Resources
+Acme Corp
+hr@acme-corp.com

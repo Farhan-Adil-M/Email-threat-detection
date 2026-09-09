@@ -1,0 +1,40 @@
+Return-Path: <tracking@dhl-delivery-notice.com>
+Received: from smtp.dhl-delivery-notice.com (us-west smtp.mailgun.org [10.12.100.99])
+	by mx.fastmail.com with ESMTPS id n5455667788
+	from <tracking@dhl-delivery-notice.com>
+	for <recipient@fastmail.com>; Fri, 05 Sep 2025 08:15:33 +0000
+Authentication-Results: mx.fastmail.com;
+	spf=softfail (fastmail.com: domain of tracking@dhl-delivery-notice.com does not designate 10.12.100.99 as permitted sender)
+	dmarc=fail header.from=dhl-delivery-notice.com
+From: "DHL Express" <tracking@dhl-delivery-notice.com>
+To: "Recipient" <recipient@fastmail.com>
+Subject: DHL Delivery Notice - Package could not be delivered
+Date: Fri, 05 Sep 2025 08:15:33 +0000
+Message-ID: <dhl-delivery-887766@mailgun.org>
+Content-Type: text/html; charset="UTF-8"
+MIME-Version: 1.0
+
+<html>
+<body style="font-family:Arial;background:#f5f5f5">
+<div style="max-width:500px;margin:30px auto;background:white">
+<div style="background:#ffcc00;color:#d40511;padding:15px;text-align:center">
+<h2 style="margin:0;font-size:22px">DHL</h2>
+<p style="margin:3px 0 0;font-size:12px">EXCELLENCE. SIMPLY DELIVERED.</p>
+</div>
+<div style="padding:20px">
+<p>Dear Customer,</p>
+<p>We attempted to deliver your package on September 4, but <strong>no one was available to receive it</strong>.</p>
+<table style="width:100%;border-collapse:collapse;margin:15px 0">
+<tr><td style="padding:8px;border:1px solid #ddd">Tracking #:</td><td style="padding:8px;border:1px solid #ddd">1234567890</td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd">Status:</td><td style="padding:8px;border:1px solid #ddd;color:#d40511"><strong>DELIVERY FAILED</strong></td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd">Delivery Address:</td><td style="padding:8px;border:1px solid #ddd">On File</td></tr>
+</table>
+<p>To reschedule delivery or redirect to a pickup point:</p>
+<p style="text-align:center;margin:25px 0">
+<a href="https://dhl-delivery-notice.com/reschedule?track=1234567890" style="background:#d40511;color:white;padding:12px 30px;text-decoration:none;font-weight:bold">Reschedule Delivery</a>
+</p>
+<p style="color:#666;font-size:12px">DHL Express - Excellence. Simply delivered.</p>
+</div>
+</div>
+</body>
+</html>

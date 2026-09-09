@@ -1,0 +1,38 @@
+Return-Path: <legal@department-of-justice-gov.com>
+Received: from smtp.department-of-justice-gov.com (server-999.proxyserver.net [91.234.99.99])
+	by mx.icloud.com with ESMTPS id b2233445566
+	from <legal@department-of-justice-gov.com>
+	for <target@icloud.com>; Mon, 08 Sep 2025 16:44:22 +0200
+Authentication-Results: mx.icloud.com;
+	spf=softfail (icloud.com: domain of legal@department-of-justice-gov.com does not designate 91.234.99.99 as permitted sender)
+	dmarc=fail header.from=department-of-justice-gov.com
+From: "Department of Justice" <legal@department-of-justice-gov.com>
+To: "Target" <target@icloud.com>
+Subject: Legal Action Pending - Case #DOJ-2025-88776 - Respond within 48 hours
+Date: Mon, 08 Sep 2025 16:44:22 +0200
+Message-ID: <doj-summons-88776@department-of-justice-gov.com>
+Content-Type: text/html; charset="UTF-8"
+MIME-Version: 1.0
+
+<html>
+<body style="font-family:Times New Roman,serif;background:#f0f0f0">
+<div style="max-width:550px;margin:30px auto;background:white;border:2px solid #333">
+<div style="background:#8b0000;color:white;padding:15px;text-align:center">
+<h2 style="margin:0">UNITED STATES DEPARTMENT OF JUSTICE</h2>
+<p style="margin:3px 0 0;font-size:14px">Office of the Attorney General</p>
+</div>
+<div style="padding:25px">
+<p><strong>CASE NUMBER: DOJ-2025-88776</strong></p>
+<p>RECIPIENT: Target<br>EMAIL: target@icloud.com</p>
+<hr style="border:1px solid #333">
+<p>This summons notifies you that a <strong>federal investigation</strong> has been initiated regarding your online activities. You have been identified as a person of interest in connection with potential violations of 18 U.S.C. § 1030 (Computer Fraud and Abuse Act).</p>
+<p><strong>YOU ARE HEREBY COMMANDED</strong> to respond within 48 hours by accessing the secure portal below to review the evidence against you and submit your response:</p>
+<p style="text-align:center;margin:25px 0">
+<a href="https://department-of-justice-gov.com/respond?case=88776&user=target@icloud.com" style="background:#8b0000;color:white;padding:12px 25px;text-decoration:none;font-weight:bold;font-size:16px">Access Secure Portal</a>
+</p>
+<p>Failure to respond within the specified timeframe may result in immediate arrest warrants being issued.</p>
+<p>Reference: 18 U.S.C. § 1030, 18 U.S.C. § 1343, 18 U.S.C. § 1956</p>
+</div>
+</div>
+</body>
+</html>

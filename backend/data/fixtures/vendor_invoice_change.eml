@@ -1,0 +1,52 @@
+Return-Path: <billing@trustedpartner.com>
+Received: from mail.trustedpartner.com (mail.trustedpartner.com [209.17.96.88])
+	by mx.google.com with ESMTPS id m4344556677
+	from <billing@trustedpartner.com>
+	for <ap@acme-corp.com>; Mon, 08 Sep 2025 14:22:33 -0700
+DKIM-Signature: v=1; a=rsa-sha256; d=trustedpartner.com; s=google; bh=abc123=;
+Authentication-Results: mx.google.com;
+	dkim=pass header.d=trustedpartner.com;
+	spf=pass (google.com: domain of billing@trustedpartner.com designates 209.17.96.88 as permitted sender)
+	dmarc=pass (p=REJECT) header.from=trustedpartner.com
+From: "TrustedPartner Billing" <billing@trustedpartner.com>
+To: "Accounts Payable" <ap@acme-corp.com>
+Subject: Invoice #TP-2025-3344 - Office Supplies (September)
+Date: Mon, 08 Sep 2025 14:22:33 -0700
+Message-ID: <TP-3344-sep2025@trustedpartner.com>
+Content-Type: multipart/mixed; boundary="----=_Part_TP_3344"
+MIME-Version: 1.0
+
+------=_Part_TP_3344
+Content-Type: text/plain; charset="UTF-8"
+
+Hi AP Team,
+
+Please find attached invoice #TP-2025-3344 for September office supplies.
+
+Items:
+- Printer paper (10 reams) - $45.00
+- Toner cartridges (3) - $127.50
+- Desk organizers (12) - $180.00
+- Hand sanitizer (4 cases) - $68.00
+- First aid kit (2) - $45.00
+
+Subtotal: $465.50
+Tax (8.25%): $38.40
+Total: $503.90
+
+Payment Terms: Net 30
+Due Date: October 8, 2025
+
+Thank you for your business!
+
+TrustedPartner Office Supply
+billing@trustedpartner.com
+(555) 345-6789
+
+------=_Part_TP_3344
+Content-Type: application/pdf; name="TP-2025-3344.pdf"
+Content-Disposition: attachment; filename="TP-2025-3344.pdf"
+Content-Transfer-Encoding: base64
+
+JVBERi0xLjQKMSAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL1R5cGUgL1BhZ2VzCi9LaWRzIFszIDAgUl0KL0NvdW50IDEKPj4KZW5kb2JqCjMgMCBvYmoKPDwKL1R5cGUgL1BhZ2UKL1BhcmVudCAyIDAgUgovTWVkaWFCb3ggWzAgMCA2MTIgNzkyXQovUmVzb3VyY2VzIDw8Ci9Gb250IDw8Ci9GMSA0IDAgUgo+Pgo+PgovQ29udGVudHMgNSAwIFIKPj4KZW5kb2JqCjQgMCBvYmoKPDwKL1R5cGUgL0ZvbnQKL1N1YnR5cGUgL1R5cGUwMQovQmFzZUZvbnQgL0hlbHZldGljYQo+PgplbmRvYmoKNSAwIG9iago8PAovTGVuZ3RoIDMwCnN0cmVhbQpCVAovRjEgMTIgVGYKMTAwIDcwMCBUZAooVFAyMDI1LTMzNDQgLSAkNTAzLjkwKSBURgpTVAplbmRzdHJlYW0KZW5kb2JqCnRyYWlsZXIKPAovU2l6ZSA1Ci9Sb290IDEgMCBSCj4+CnN0YXJ0eHJlZgozNDIKZW5kb29iCnhyZWYKMCA2CjAwMDAwMDAwMDAgNjU1MzUgZgowMDAwMDAwMDE2IDAwMDAwIG4KMDAwMDAwMDA3NSAwMDAwMCBuCjAwMDAwMDAxMjggMDAwMDAgbgowMDAwMDAwMjI1IDAwMDAwIG4KMDAwMDAwMDI5MyAwMDAwIG4KdHJhaWxlcgo=
+------=_Part_TP_3344--

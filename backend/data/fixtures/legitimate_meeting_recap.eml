@@ -1,0 +1,38 @@
+Return-Path: <david.chen@acme-corp.com>
+Received: from mail.acme-corp.com (mail.acme-corp.com [10.0.1.50])
+	by mx.google.com with ESMTPS id i9900112233
+	from <david.chen@acme-corp.com>
+	for <team@acme-corp.com>; Mon, 08 Sep 2025 17:00:44 -0700
+DKIM-Signature: v=1; a=rsa-sha256; d=acme-corp.com; s=google; bh=abc123=;
+Authentication-Results: mx.google.com;
+	dkim=pass header.d=acme-corp.com;
+	spf=pass (google.com: domain of david.chen@acme-corp.com designates 10.0.1.50 as permitted sender)
+	dmarc=pass (p=REJECT) header.from=acme-corp.com
+From: "David Chen" <david.chen@acme-corp.com>
+To: "All Hands" <team@acme-corp.com>
+Subject: Board Meeting Recap - September 8
+Date: Mon, 08 Sep 2025 17:00:44 -0700
+Message-ID: <board-recap-20250908@acme-corp.com>
+Content-Type: text/plain; charset="UTF-8"
+MIME-Version: 1.0
+
+Team,
+
+Quick recap from today's board meeting:
+
+1. Q3 Revenue: $4.2M (up 18% QoQ) - great work everyone
+2. New enterprise deal signed with Meridian Corp ($890K ARR)
+3. Headcount: Approved 12 new hires across engineering and sales
+4. Product: v2.0 launch pushed to October 15
+5. Security: Board approved $200K budget for SOC 2 compliance
+
+Action items:
+- Finance: Prepare Q3 close materials by Sep 15
+- Engineering: Finalize v2.0 feature freeze by Sep 20
+- Sales: Submit updated forecasts by Sep 12
+
+Next board meeting: October 13, 2025
+
+Thanks,
+David Chen
+CEO, Acme Corp
