@@ -21,6 +21,7 @@ from app.models.ml_assessment import MLAssessment  # noqa: F401
 from app.models.risk_assessment import RiskAssessment  # noqa: F401
 from app.models.graph import GraphNode, GraphEdge  # noqa: F401
 from app.models.campaign import Campaign, CampaignMembership, MitreMapping  # noqa: F401
+from app.models.case_note import CaseNote  # noqa: F401
 
 # this is the Alembic Config object
 config = context.config

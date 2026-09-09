@@ -1,4 +1,12 @@
+"use client"
+import { useEffect, useState } from "react"
+import { api, Case } from "@/lib/api"
+
 export default function DashboardPage() {
+  const [cases, setCases] = useState<Case[] | null>(null)
+  const [error, setError] = useState(false)
+  useEffect(() => { api<Case[]>("/cases").then(setCases).catch(() => setError(true)) }, [])
+  const open = cases?.filter((item) => !["RESOLVED", "FALSE_POSITIVE"].includes(item.status)).length ?? 0
   return (
     <main className="min-h-screen bg-background p-8">
       <div className="mx-auto max-w-7xl space-y-8">
@@ -8,15 +16,15 @@ export default function DashboardPage() {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <MetricCard label="Open Cases" value="0" />
-          <MetricCard label="High Risk" value="0" />
-          <MetricCard label="Active Campaigns" value="0" />
-          <MetricCard label="Indicators Observed" value="0" />
+          <MetricCard label="Open Cases" value={cases ? String(open) : "—"} />
+          <MetricCard label="High Risk" value={cases ? String(cases.filter((item) => item.severity === "high").length) : "—"} />
+          <MetricCard label="Active Campaigns" value="—" />
+          <MetricCard label="Indicators Observed" value="—" />
         </div>
 
         <div className="rounded-lg border border-border bg-card p-6">
           <h2 className="text-lg font-semibold text-card-foreground">Recent Investigations</h2>
-          <p className="text-sm text-muted-foreground mt-2">No cases yet. Upload a .eml file to start an investigation.</p>
+          {error ? <p className="text-sm text-red-400">Backend unavailable. Core UI is ready; retry when the API is online.</p> : <p className="text-sm text-muted-foreground mt-2">{cases?.length ? `${cases.length} investigations loaded.` : "No cases yet. Upload a .eml file through the API docs to start."}</p>}
         </div>
       </div>
     </main>

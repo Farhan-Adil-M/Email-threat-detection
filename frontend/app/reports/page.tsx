@@ -1,0 +1,1 @@
+export default function ReportsPage() { return <main className="min-h-screen bg-background p-8"><div className="mx-auto max-w-4xl"><h1 className="text-3xl font-bold">Reports</h1><p className="mt-2 text-muted-foreground">Evidence-backed JSON/PDF reporting will appear here after report generation.</p></div></main> }

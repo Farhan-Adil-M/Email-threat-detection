@@ -267,3 +267,22 @@ class MitreMappingRead(BaseModel):
     evidence_refs: str
     confidence: float
     created_at: datetime
+
+
+class CaseUpdate(BaseModel):
+    status: str | None = None
+    severity: str | None = None
+    tags: str | None = None
+
+
+class CaseNoteCreate(BaseModel):
+    body: str
+
+
+class CaseNoteRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: UUID
+    case_id: UUID
+    author: str
+    body: str
+    created_at: datetime

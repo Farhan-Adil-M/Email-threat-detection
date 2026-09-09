@@ -9,6 +9,7 @@ from app.models.auth_result import AuthenticationResult
 from app.models.evidence import EvidenceObject
 from app.models.received_hop import ReceivedHop
 from app.models.threat_intel import ThreatIntelResult
+from app.models.case_note import CaseNote
 from app.models.email import EmailMessage
 from app.models.ml_assessment import MLAssessment
 from app.schemas.common import (
@@ -23,6 +24,7 @@ from app.schemas.common import (
     MLAssessmentRead,
     RiskAssessmentRead, GraphRead, ExplanationRead,
     CampaignRead, MitreMappingRead,
+    CaseUpdate, CaseNoteCreate, CaseNoteRead,
 )
 from app.services.audit_service import AuditService
 from app.services.case_service import CaseService
@@ -60,6 +62,37 @@ def get_case(case_id: str, db: Session = Depends(get_db)):
     if not case:
         raise SentinelError("Case not found", status_code=404)
     return APIResponse(data=case)
+
+
+@router.patch("/{case_id}", response_model=APIResponse[CaseRead])
+def update_case(case_id: str, payload: CaseUpdate, db: Session = Depends(get_db)):
+    case_uuid = _parse_uuid(case_id)
+    case = CaseService(db).get_case(case_uuid)
+    if not case: raise SentinelError("Case not found", status_code=404)
+    allowed_statuses = {"NEW", "TRIAGED", "INVESTIGATING", "CONTAINED", "RESOLVED", "FALSE_POSITIVE"}
+    if payload.status and payload.status not in allowed_statuses: raise SentinelError("Invalid case status", status_code=400)
+    for field in ("status", "severity", "tags"):
+        value = getattr(payload, field)
+        if value is not None: setattr(case, field, value)
+    db.commit(); db.refresh(case)
+    return APIResponse(data=case)
+
+
+@router.get("/{case_id}/notes", response_model=APIResponse[list[CaseNoteRead]])
+def list_notes(case_id: str, db: Session = Depends(get_db)):
+    case_uuid = _parse_uuid(case_id)
+    if not CaseService(db).get_case(case_uuid): raise SentinelError("Case not found", status_code=404)
+    return APIResponse(data=db.query(CaseNote).filter(CaseNote.case_id == case_uuid).order_by(CaseNote.created_at.desc()).all())
+
+
+@router.post("/{case_id}/notes", response_model=APIResponse[CaseNoteRead])
+def add_note(case_id: str, payload: CaseNoteCreate, db: Session = Depends(get_db)):
+    case_uuid = _parse_uuid(case_id)
+    if not CaseService(db).get_case(case_uuid): raise SentinelError("Case not found", status_code=404)
+    if not payload.body.strip(): raise SentinelError("Note body cannot be empty", status_code=400)
+    note = CaseNote(case_id=case_uuid, author="analyst", body=payload.body.strip())
+    db.add(note); db.commit(); db.refresh(note)
+    return APIResponse(data=note)
 
 
 @router.post("/{case_id}/analyze", response_model=APIResponse[AnalyzeResponse])
