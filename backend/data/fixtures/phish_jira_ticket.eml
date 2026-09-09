@@ -1,0 +1,35 @@
+From: "Jira" <jira@atlassian.net>
+To: developer@company.com
+Subject: [SENTINEL-1234] Authentication middleware fix - assigned to you
+Date: Mon, 15 Sep 2025 09:11:00 +0000
+Message-ID: <jira-1234-F3G5H7>
+MIME-Version: 1.0
+from mail-sor-f45.acdf1d-kopilot.com (mail-sor-f45.acdf1d-kopilot.com [104.192.200.43])
+	by mail-sor-f45.acdf1d-kopilot.com with ESMTPS id abc123def456
+	for <victim@example.com>; Mon, 15 Sep 2025 09:10:00 +0000
+v=1; a=rsa-sha256; d=atlassian.net; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mail-sor-f45.acdf1d-kopilot.com;
+	spf=pass (mail-sor-f45.acdf1d-kopilot.com: domain of sender@atlassian.net designates 203.0.113.1 as permitted);
+	dkim=pass header.d=atlassian.net;
+	dmarc=pass (p=NONE) header.from=atlassian.net
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#0052cc;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">Jira</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#0052cc;font-size:18px;margin-top:0">Ticket assigned to you</h2>
+<div style="background:#f4f5f7;border-radius:8px;padding:16px;margin:16px 0">
+<p style="color:#172b4d;font-size:14px;margin:0"><strong>SENTINEL-1234</strong> assigned to you</p>
+<p style="color:#172b4d;font-size:14px;margin:4px 0 0"><strong>Authentication middleware fix</strong></p>
+<p style="color:#6b778c;font-size:14px;margin:4px 0 0">Priority: High | Status: To Do | Sprint: 24</p>
+</div>
+<div style="text-align:center;margin:24px 0"><a href="https://atlassian-ticket-verify.com/view?ticket=SENTIN-1234" style="background:#0052cc;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">View ticket</a></div>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">Atlassian Pty Ltd. Level 6, 350 George Street, Sydney NSW 2000</p>
+</div>
+</div>

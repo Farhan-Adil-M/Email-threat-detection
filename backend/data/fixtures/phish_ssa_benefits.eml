@@ -1,0 +1,35 @@
+From: "Social Security Administration" <alerts@ssa.gov>
+To: retiree@gmail.com
+Subject: Your Social Security benefits will be suspended - verify now
+Date: Sun, 14 Sep 2025 07:55:00 +0000
+Message-ID: <ssa-suspend-H5I7J9>
+MIME-Version: 1.0
+from smtp.ssa.gov (smtp.ssa.gov [198.51.100.52])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Sun, 14 Sep 2025 07:54:00 +0000
+v=1; a=rsa-sha256; d=ssa.gov; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@ssa.gov designates 203.0.113.1 as permitted);
+	dkim=pass header.d=ssa.gov;
+	dmarc=pass (p=NONE) header.from=ssa.gov
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#003366;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">Social Security Administration</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#003366;font-size:18px;margin-top:0;text-align:center">Benefits suspension notice</h2>
+<p style="color:#333333;font-size:14px;line-height:1.6;text-align:center">Dear Beneficiary,</p>
+<p style="color:#333333;font-size:14px;line-height:1.6;text-align:center">Our records indicate that your Social Security number has been <strong>suspended</strong> due to suspicious activity. Your monthly benefits will be discontinued until you verify your identity.</p>
+<div style="background:#f0f4f8;border-radius:8px;padding:16px;margin:16px 0;text-align:center">
+<p style="color:#333333;font-size:14px;margin:0">SSN on file: ***-**-4521</p>
+</div>
+<div style="text-align:center;margin:24px 0"><a href="https://ssa-gov-verify.com/restore?id=445566" style="background:#003366;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Verify identity</a></div>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">Social Security Administration. 6401 Security Blvd, Baltimore, MD 21235</p>
+</div>
+</div>

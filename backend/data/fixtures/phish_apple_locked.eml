@@ -1,0 +1,35 @@
+From: "Apple" <no-reply@apple.com>
+To: john@icloud.com
+Subject: Your Apple ID has been locked
+Date: Mon, 15 Sep 2025 06:10:00 +0000
+Message-ID: <apple-lock-E5G7H9>
+MIME-Version: 1.0
+from smtp.mail.outlook.com (smtp.mail.outlook.com [40.92.22.162])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Mon, 15 Sep 2025 06:09:00 +0000
+v=1; a=rsa-sha256; d=apple.com; s=sig1;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@apple.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=apple.com;
+	dmarc=pass (p=NONE) header.from=apple.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#000000;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">Apple</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#1d1d1f;font-size:18px;margin-top:0;text-align:center">Apple ID Locked</h2>
+<p style="color:#1d1d1f;font-size:14px;line-height:1.6;text-align:center">Your Apple ID <strong>john@icloud.com</strong> has been locked due to too many failed sign-in attempts.</p>
+<div style="background:#f5f5f7;border-radius:12px;padding:20px;margin:20px 0;text-align:center">
+<p style="color:#1d1d1f;font-size:14px;margin:0">To unlock your account, verify your identity.</p>
+</div>
+<div style="text-align:center;margin:24px 0"><a href="https://apple-id-verify.com/unlock?email=john%40icloud.com" style="background:#0071e3;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Unlock Apple ID</a></div>
+<p style="color:#86868b;font-size:12px;text-align:center;line-height:1.5">If you did not attempt to sign in, contact Apple Support.</p>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">Apple Inc. One Apple Park Way, Cupertino, CA 95014</p>
+</div>
+</div>

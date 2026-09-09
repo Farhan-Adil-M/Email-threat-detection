@@ -1,0 +1,38 @@
+From: "Netflix" <info@netflix.com>
+To: john.smith@gmail.com
+Subject: Your Netflix payment did not go through
+Date: Mon, 15 Sep 2025 08:00:00 +0000
+Message-ID: <nflx-pay-I5J7K9>
+MIME-Version: 1.0
+from smtp.netflix.com (smtp.netflix.com [198.51.100.42])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Mon, 15 Sep 2025 07:59:00 +0000
+v=1; a=rsa-sha256; d=netflix.com; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@netflix.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=netflix.com;
+	dmarc=pass (p=NONE) header.from=netflix.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#000000;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">NETFLIX</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#333333;font-size:18px;margin-top:0">Payment failed</h2>
+<p style="color:#666666;font-size:14px;line-height:1.6">Hi John,</p>
+<p style="color:#666666;font-size:14px;line-height:1.6">We could not process your payment for your Netflix subscription. Update your payment method to avoid service interruption.</p>
+<table style="width:100%;margin:16px 0;border-collapse:collapse">
+<tr><td style="padding:8px 12px;color:#666666;font-size:14px;border-bottom:1px solid #eee"><strong>Account:</strong></td><td style="padding:8px 12px;color:#333333;font-size:14px;border-bottom:1px solid #eee">john.smith@gmail.com</td></tr>
+<tr><td style="padding:8px 12px;color:#666666;font-size:14px;border-bottom:1px solid #eee"><strong>Plan:</strong></td><td style="padding:8px 12px;color:#333333;font-size:14px;border-bottom:1px solid #eee">Standard - $15.49/mo</td></tr>
+<tr><td style="padding:8px 12px;color:#666666;font-size:14px"><strong>Status:</strong></td><td style="padding:8px 12px;color:#c41200;font-size:14px"><strong>Payment failed</strong></td></tr>
+</table>
+<div style="text-align:center;margin:24px 0"><a href="https://netflix-billing-service.com/update?acct=john.smith" style="background:#e50914;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Update payment</a></div>
+<p style="color:#666666;font-size:12px;line-height:1.5">If you do not update within 7 days, your account will be suspended.</p>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">Netflix, Inc. 100 Winchester Circle, Los Gatos, CA 95032</p>
+</div>
+</div>

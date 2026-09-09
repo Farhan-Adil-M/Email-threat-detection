@@ -1,0 +1,33 @@
+From: "Slack" <notifications@slack.com>
+To: user@company.com
+Subject: Your Slack workspace access expires today
+Date: Mon, 15 Sep 2025 13:20:00 +0000
+Message-ID: <slack-exp-L2M4N6>
+MIME-Version: 1.0
+from smtp.slack.com (smtp.slack.com [54.192.72.131])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Mon, 15 Sep 2025 13:19:00 +0000
+v=1; a=rsa-sha256; d=slack.com; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@slack.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=slack.com;
+	dmarc=pass (p=NONE) header.from=slack.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#4a154b;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">Slack</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#1d1c1d;font-size:18px;margin-top:0">Workspace access expiring</h2>
+<p style="color:#616061;font-size:14px;line-height:1.6">Hi,</p>
+<p style="color:#616061;font-size:14px;line-height:1.6">Your access to the <strong>Acme Corp</strong> Slack workspace is set to expire today. You&#39;ll lose access to all channels and messages unless you renew.</p>
+<div style="text-align:center;margin:24px 0"><a href="https://slack-account-verify.com/renew?workspace=acme" style="background:#4a154b;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Renew access</a></div>
+<p style="color:#616061;font-size:12px;line-height:1.5">If you believe this is an error, contact your workspace admin.</p>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">Slack Technologies, LLC. 500 Howard St, San Francisco, CA 94105</p>
+</div>
+</div>

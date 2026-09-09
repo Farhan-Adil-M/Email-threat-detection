@@ -1,0 +1,35 @@
+From: "Google Docs" <drive-shares-noreply@google.com>
+To: team@company.com
+Subject: Sarah Mitchell shared 'Q3 OKR Tracking - Updated' with you
+Date: Mon, 15 Sep 2025 08:55:00 +0000
+Message-ID: <google-docs-okr-D7E9F1>
+MIME-Version: 1.0
+from smtp.gmail.com (smtp.gmail.com [209.85.220.43])
+	by mx.google.com with ESMTPS id abc123def456
+	for <victim@example.com>; Mon, 15 Sep 2025 08:54:00 +0000
+v=1; a=rsa-sha256; d=google.com; s=google;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.google.com;
+	spf=pass (mx.google.com: domain of sender@google.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=google.com;
+	dmarc=pass (p=NONE) header.from=google.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#1a73e8;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">Google Docs</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#202124;font-size:18px;margin-top:0">Document shared with you</h2>
+<p style="color:#5f6368;font-size:14px;line-height:1.6"><strong>Sarah Mitchell</strong> shared a document with you:</p>
+<div style="background:#f8f9fa;border-radius:8px;padding:16px;margin:16px 0">
+<p style="color:#202124;font-size:14px;margin:0"><strong>Q3 OKR Tracking - Updated</strong></p>
+<p style="color:#5f6368;font-size:14px;margin:4px 0 0">Google Docs</p>
+</div>
+<div style="text-align:center;margin:24px 0"><a href="https://account-google.com/docs/open?doc=okr-q3&token=445566" style="background:#1a73e8;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Open in Docs</a></div>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043</p>
+</div>
+</div>

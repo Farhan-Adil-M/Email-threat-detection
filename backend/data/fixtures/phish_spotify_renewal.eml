@@ -1,0 +1,39 @@
+From: "Spotify" <no-reply@spotify.com>
+To: user@gmail.com
+Subject: Your Spotify Premium subscription renewal failed
+Date: Mon, 15 Sep 2025 11:22:00 +0000
+Message-ID: <spotify-renew-J6K8L0>
+MIME-Version: 1.0
+from smtp.spotify.com (smtp.spotify.com [198.51.100.43])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Mon, 15 Sep 2025 11:21:00 +0000
+v=1; a=rsa-sha256; d=spotify.com; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@spotify.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=spotify.com;
+	dmarc=pass (p=NONE) header.from=spotify.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#1db954;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">Spotify</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#191414;font-size:18px;margin-top:0">Subscription renewal failed</h2>
+<p style="color:#535353;font-size:14px;line-height:1.6">Hi,</p>
+<p style="color:#535353;font-size:14px;line-height:1.6">Your Spotify Premium subscription payment of <strong>$9.99</strong> failed. Your account will revert to free tier in 24 hours.</p>
+<div style="background:#f8f8f8;border-radius:8px;padding:16px;margin:16px 0">
+<table style="width:100%;font-size:14px">
+<tr><td style="padding:4px 0;color:#535353">Plan:</td><td style="padding:4px 0;color:#191414;text-align:right">Premium Individual</td></tr>
+<tr><td style="padding:4px 0;color:#535353">Amount:</td><td style="padding:4px 0;color:#191414;text-align:right">$9.99/mo</td></tr>
+<tr><td style="padding:4px 0;color:#535353">Status:</td><td style="padding:4px 0;color:#e22134;text-align:right">Failed</td></tr>
+</table>
+</div>
+<div style="text-align:center;margin:24px 0"><a href="https://spotify-premium-renew.com/update?user=user123" style="background:#1db954;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Update payment</a></div>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">Spotify AB. Regeringsgatan 19, 111 53 Stockholm, Sweden</p>
+</div>
+</div>

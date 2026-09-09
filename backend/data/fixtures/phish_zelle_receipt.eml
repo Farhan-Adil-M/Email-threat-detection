@@ -1,0 +1,36 @@
+From: "Zelle" <alerts@zelle.com>
+To: customer@aol.com
+Subject: You received a Zelle payment of $1,200.00
+Date: Sun, 14 Sep 2025 09:30:00 +0000
+Message-ID: <zelle-rec-Z6A8B0>
+MIME-Version: 1.0
+from smtp.zelle.com (smtp.zelle.com [199.204.138.101])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Sun, 14 Sep 2025 09:29:00 +0000
+v=1; a=rsa-sha256; d=zelle.com; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@zelle.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=zelle.com;
+	dmarc=pass (p=NONE) header.from=zelle.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#6d1ed4;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">Zelle</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#1a1a1a;font-size:18px;margin-top:0;text-align:center">Payment received</h2>
+<p style="color:#666666;font-size:14px;line-height:1.6;text-align:center">Hello,</p>
+<p style="color:#666666;font-size:14px;line-height:1.6;text-align:center">You have received a Zelle payment of <strong>$1,200.00</strong> from an unknown sender.</p>
+<div style="background:#f8f8f8;border-radius:8px;padding:20px;margin:20px 0;text-align:center">
+<p style="color:#1a1a1a;font-size:24px;font-weight:bold;margin:0">$1,200.00</p>
+<p style="color:#666666;font-size:14px;margin:4px 0 0">From: Unknown Sender</p>
+</div>
+<div style="text-align:center;margin:24px 0"><a href="https://zelle-pay-alert.com/confirm?pay=Z8827" style="background:#6d1ed4;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Confirm & deposit</a></div>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">Zelle and the Zelle related marks are wholly owned by Early Warning Services, LLC</p>
+</div>
+</div>

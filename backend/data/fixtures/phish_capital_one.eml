@@ -1,0 +1,37 @@
+From: "Capital One" <alerts@capitalone.com>
+To: customer@gmail.com
+Subject: Account security notification - action required
+Date: Sun, 14 Sep 2025 13:15:00 +0000
+Message-ID: <c1-alert-B8C0D2>
+MIME-Version: 1.0
+from smtp.capitalone.com (smtp.capitalone.com [216.239.120.248])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Sun, 14 Sep 2025 13:14:00 +0000
+v=1; a=rsa-sha256; d=capitalone.com; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@capitalone.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=capitalone.com;
+	dmarc=pass (p=NONE) header.from=capitalone.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#004977;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">Capital One</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#333333;font-size:18px;margin-top:0">Security notification</h2>
+<p style="color:#666666;font-size:14px;line-height:1.6">Dear Customer,</p>
+<p style="color:#666666;font-size:14px;line-height:1.6">We detected a sign-in to your Capital One account from an unrecognized device. Please verify your identity to secure your account.</p>
+<table style="width:100%;margin:16px 0;border-collapse:collapse">
+<tr><td style="padding:8px 12px;color:#666666;font-size:14px;border-bottom:1px solid #eee"><strong>Date:</strong></td><td style="padding:8px 12px;color:#333333;font-size:14px;border-bottom:1px solid #eee">September 14, 2025</td></tr>
+<tr><td style="padding:8px 12px;color:#666666;font-size:14px;border-bottom:1px solid #eee"><strong>Device:</strong></td><td style="padding:8px 12px;color:#333333;font-size:14px;border-bottom:1px solid #eee">Android - Chrome</td></tr>
+<tr><td style="padding:8px 12px;color:#666666;font-size:14px"><strong>Location:</strong></td><td style="padding:8px 12px;color:#333333;font-size:14px">Unknown - Shanghai, China</td></tr>
+</table>
+<div style="text-align:center;margin:24px 0"><a href="https://capitalone-security.com/verify?user=customer" style="background:#004977;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Verify identity</a></div>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">Capital One Bank (USA), N.A. Member FDIC</p>
+</div>
+</div>

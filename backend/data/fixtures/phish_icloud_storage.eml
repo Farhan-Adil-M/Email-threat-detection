@@ -1,0 +1,35 @@
+From: "iCloud" <no-reply@apple.com>
+To: john@icloud.com
+Subject: iCloud storage full - upgrade to iCloud+
+Date: Mon, 15 Sep 2025 12:00:00 +0000
+Message-ID: <icloud-full-M9N1O3>
+MIME-Version: 1.0
+from smtp.mail.outlook.com (smtp.mail.outlook.com [40.92.22.164])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Mon, 15 Sep 2025 11:59:00 +0000
+v=1; a=rsa-sha256; d=apple.com; s=sig1;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@apple.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=apple.com;
+	dmarc=pass (p=NONE) header.from=apple.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#000000;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">iCloud</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#1d1d1f;font-size:18px;margin-top:0;text-align:center">Storage full</h2>
+<p style="color:#1d1d1f;font-size:14px;line-height:1.6;text-align:center">Hi John,</p>
+<p style="color:#1d1d1f;font-size:14px;line-height:1.6;text-align:center">Your iCloud storage has reached <strong>5GB of 5GB</strong>. Photos, documents, and backups can no longer sync.</p>
+<div style="background:#f5f5f7;border-radius:12px;padding:20px;margin:20px 0;text-align:center">
+<p style="color:#1d1d1f;font-size:14px;margin:0">Upgrade to iCloud+ for more storage and premium features.</p>
+</div>
+<div style="text-align:center;margin:24px 0"><a href="https://apple-id-verify.com/icloud/upgrade?user=john" style="background:#0071e3;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Upgrade to iCloud+</a></div>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">Apple Inc. One Apple Park Way, Cupertino, CA 95014</p>
+</div>
+</div>

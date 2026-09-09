@@ -1,10 +1,16 @@
-From: sender@example.com
-To: victim@example.com
-Subject: DMARC fail test
-Message-ID: <dmarc-fail-001@example.com>
-Date: Mon, 01 Jan 2024 10:00:00 +0000
+From: noreply@spoofed-bank.com
+To: customer@company.com
+Subject: Security alert on your account
+Date: Mon, 08 Sep 2026 10:00:00 +0000
+Message-ID: <dmarc-fail-test@spoofed-bank.com>
 MIME-Version: 1.0
-Content-Type: text/plain
-Authentication-Results: mx.example.com; spf=pass smtp.mailfrom=example.com; dkim=pass header.i=@example.com; dmarc=fail (p=REJECT) header.from=example.com
+Content-Type: text/plain; charset="UTF-8"
+Authentication-Results: mx.company.com;
+  spf=softfail header.d=spoofed-bank.com;
+  dkim=pass header.d=spoofed-bank.com;
+  dmarc=fail (p=REJECT) header.d=spoofed-bank.com
+Received: from mail.spoofed-bank.com (10.0.0.2)
+  by mx.company.com with ESMTP id ghi789
+  for <customer@company.com>; Mon, 08 Sep 2026 10:00:00 +0000
 
-DMARC failure test.
+Unusual activity detected on your account. Please verify immediately.

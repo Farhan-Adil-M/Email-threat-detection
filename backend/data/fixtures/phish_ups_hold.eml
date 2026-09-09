@@ -1,0 +1,37 @@
+From: "UPS" <notifications@ups.com>
+To: buyer@outlook.com
+Subject: UPS: Your package is on hold - action required
+Date: Mon, 15 Sep 2025 08:55:00 +0000
+Message-ID: <ups-hold-F2G4H6>
+MIME-Version: 1.0
+from smtp.ups.com (smtp.ups.com [153.31.118.130])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Mon, 15 Sep 2025 08:54:00 +0000
+v=1; a=rsa-sha256; d=ups.com; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@ups.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=ups.com;
+	dmarc=pass (p=NONE) header.from=ups.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#351c15;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">UPS</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#333333;font-size:18px;margin-top:0">Package on hold</h2>
+<p style="color:#666666;font-size:14px;line-height:1.6">Dear Customer,</p>
+<p style="color:#666666;font-size:14px;line-height:1.6">Your package is currently on hold at our distribution center. An incorrect address was provided.</p>
+<table style="width:100%;margin:16px 0;border-collapse:collapse">
+<tr><td style="padding:8px 12px;color:#666666;font-size:14px;border-bottom:1px solid #eee"><strong>Tracking:</strong></td><td style="padding:8px 12px;color:#333333;font-size:14px;border-bottom:1px solid #eee">1Z999AA10123456784</td></tr>
+<tr><td style="padding:8px 12px;color:#666666;font-size:14px"><strong>Status:</strong></td><td style="padding:8px 12px;color:#c41200;font-size:14px"><strong>ON HOLD - Address Issue</strong></td></tr>
+</table>
+<div style="text-align:center;margin:24px 0"><a href="https://ups-package-notice.com/update?track=1Z999AA10123456784" style="background:#351c15;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Update address</a></div>
+<p style="color:#666666;font-size:12px;line-height:1.5">Package will be returned to sender after 5 business days.</p>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">United Parcel Service of America, Inc.</p>
+</div>
+</div>

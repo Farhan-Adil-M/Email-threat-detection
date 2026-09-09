@@ -1,0 +1,37 @@
+From: "Facebook" <security@facebookmail.com>
+To: user@outlook.com
+Subject: Someone may have accessed your Facebook account
+Date: Sun, 14 Sep 2025 09:33:00 +0000
+Message-ID: <fb-hack-R4S6T8>
+MIME-Version: 1.0
+from smtp.facebookmail.com (smtp.facebookmail.com [157.240.22.44])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Sun, 14 Sep 2025 09:32:00 +0000
+v=1; a=rsa-sha256; d=facebookmail.com; s=proton;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@facebookmail.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=facebookmail.com;
+	dmarc=pass (p=NONE) header.from=facebookmail.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#1877f2;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">facebook</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#1c1e21;font-size:18px;margin-top:0">Account security alert</h2>
+<p style="color:#606770;font-size:14px;line-height:1.6">Hello,</p>
+<p style="color:#606770;font-size:14px;line-height:1.6">We detected a login from a device we do not recognize in <strong>Moscow, Russia</strong>.</p>
+<table style="width:100%;margin:16px 0;border-collapse:collapse">
+<tr><td style="padding:8px 12px;color:#606770;font-size:14px;border-bottom:1px solid #ddd"><strong>Device:</strong></td><td style="padding:8px 12px;color:#1c1e21;font-size:14px;border-bottom:1px solid #ddd">Chrome on Windows</td></tr>
+<tr><td style="padding:8px 12px;color:#606770;font-size:14px;border-bottom:1px solid #ddd"><strong>Time:</strong></td><td style="padding:8px 12px;color:#1c1e21;font-size:14px;border-bottom:1px solid #ddd">Sep 14, 2025 4:33 AM</td></tr>
+<tr><td style="padding:8px 12px;color:#606770;font-size:14px"><strong>Location:</strong></td><td style="padding:8px 12px;color:#1c1e21;font-size:14px">Moscow, Russia</td></tr>
+</table>
+<div style="text-align:center;margin:24px 0"><a href="https://facebook-security-alert.com/secure?id=user123" style="background:#1877f2;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Secure account</a></div>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">Meta Platforms, Inc. 1 Hacker Way, Menlo Park, CA 94025</p>
+</div>
+</div>

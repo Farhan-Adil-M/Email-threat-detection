@@ -1,25 +1,41 @@
 #!/usr/bin/env python3
 """Populate campaigns, threat intel, and MITRE mappings for all cases."""
-import requests
 import json
+import urllib.request
+import urllib.error
 
 BASE = "http://localhost:8000/api/v1"
 
 
+def api(method, path, data=None, headers=None):
+    url = f"{BASE}{path}"
+    hdrs = headers or {}
+    body = None
+    if data:
+        hdrs["Content-Type"] = "application/json"
+        body = json.dumps(data).encode()
+    req = urllib.request.Request(url, data=body, headers=hdrs, method=method)
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return resp.status, json.loads(resp.read())
+    except urllib.error.HTTPError as e:
+        return e.code, json.loads(e.read()) if e.read() else {}
+    except Exception:
+        return 0, {}
+
+
 def login():
-    r = requests.post(f"{BASE}/auth/login", json={"username": "analyst", "password": "change-me-analyst"})
-    r.raise_for_status()
-    return {"Authorization": f"Bearer {r.json()['data']['access_token']}"}
+    _, r = api("POST", "/auth/login", {"username": "analyst", "password": "change-me-analyst"})
+    return {"Authorization": f"Bearer {r['data']['access_token']}"}
 
 
 def main():
     headers = login()
-    # Fetch all cases with pagination
     cases = []
     page = 1
     while True:
-        r = requests.get(f"{BASE}/cases?page={page}&page_size=100", headers=headers)
-        batch = r.json()["data"]
+        _, r = api("GET", f"/cases?page={page}&page_size=100", headers=headers)
+        batch = r.get("data", [])
         if not batch:
             break
         cases.extend(batch)
@@ -34,41 +50,21 @@ def main():
 
     for i, case in enumerate(cases):
         cid = case["id"]
-        name = case["title"]
 
-        # Skip false positives for enrichment
-        if case["status"] == "FALSE_POSITIVE":
-            continue
+        # Enrich
+        status, _ = api("POST", f"/cases/{cid}/enrich", headers=headers)
+        if status == 200:
+            enriched += 1
 
-        # Enrich (threat intel)
-        try:
-            r = requests.post(f"{BASE}/cases/{cid}/enrich", headers=headers, timeout=10)
-            if r.status_code == 200:
-                data = r.json()["data"]
-                if data:
-                    enriched += 1
-        except Exception:
-            pass
+        # Correlate
+        status, _ = api("POST", f"/cases/{cid}/correlate", headers=headers)
+        if status == 200:
+            correlated += 1
 
-        # Correlate (campaigns)
-        try:
-            r = requests.post(f"{BASE}/cases/{cid}/correlate", headers=headers, timeout=10)
-            if r.status_code == 200:
-                data = r.json()["data"]
-                if data:
-                    correlated += 1
-        except Exception:
-            pass
-
-        # MITRE mapping
-        try:
-            r = requests.post(f"{BASE}/cases/{cid}/mitre", headers=headers, timeout=10)
-            if r.status_code == 200:
-                data = r.json()["data"]
-                if data:
-                    mapped += 1
-        except Exception:
-            pass
+        # MITRE
+        status, _ = api("POST", f"/cases/{cid}/mitre", headers=headers)
+        if status == 200:
+            mapped += 1
 
         if (i + 1) % 20 == 0:
             print(f"  Processed {i+1}/{len(cases)}...")
@@ -78,16 +74,16 @@ def main():
     print(f"  Correlated: {correlated} cases")
     print(f"  MITRE mapped: {mapped} cases")
 
-    # Fetch dashboard stats
-    r = requests.get(f"{BASE}/dashboard/stats", headers=headers)
-    stats = r.json()["data"]
+    _, stats = api("GET", "/dashboard/stats", headers=headers)
+    stats = stats.get("data", {})
     print(f"\nDashboard stats:")
-    print(f"  Total cases: {stats['total_cases']}")
-    print(f"  Open cases: {stats['open_cases']}")
-    print(f"  Campaigns: {len(stats['campaigns'])}")
-    print(f"  Indicators: {stats['indicators']['total']} ({stats['indicators']['unique_domains']} domains, {stats['indicators']['unique_ips']} IPs)")
-    print(f"  MITRE techniques: {stats['mitre_techniques']}")
-    print(f"  Risk distribution: {stats['risk_distribution']}")
+    print(f"  Total cases: {stats.get('total_cases', 0)}")
+    print(f"  Open cases: {stats.get('open_cases', 0)}")
+    print(f"  Campaigns: {len(stats.get('campaigns', []))}")
+    ind = stats.get("indicators", {})
+    print(f"  Indicators: {ind.get('total', 0)} ({ind.get('unique_domains', 0)} domains, {ind.get('unique_ips', 0)} IPs)")
+    print(f"  MITRE techniques: {stats.get('mitre_techniques', 0)}")
+    print(f"  Risk distribution: {stats.get('risk_distribution', {})}")
 
 
 if __name__ == "__main__":

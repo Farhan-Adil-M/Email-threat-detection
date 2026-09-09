@@ -1,0 +1,37 @@
+From: "UPS Store" <noreply@theupsstore.com>
+To: customer@gmail.com
+Subject: Your package is ready for pickup - ID required
+Date: Sun, 14 Sep 2025 11:00:00 +0000
+Message-ID: <ups-pick-H4I6J8>
+MIME-Version: 1.0
+from smtp.ups.com (smtp.ups.com [153.31.118.131])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Sun, 14 Sep 2025 10:59:00 +0000
+v=1; a=rsa-sha256; d=theupsstore.com; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@theupsstore.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=theupsstore.com;
+	dmarc=pass (p=NONE) header.from=theupsstore.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#351c15;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">UPS Store</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#333333;font-size:18px;margin-top:0">Package ready for pickup</h2>
+<p style="color:#666666;font-size:14px;line-height:1.6">Dear Customer,</p>
+<p style="color:#666666;font-size:14px;line-height:1.6">Your package is ready for pickup at your local UPS Store. Please bring a valid government-issued photo ID.</p>
+<table style="width:100%;margin:16px 0;border-collapse:collapse">
+<tr><td style="padding:8px 12px;color:#666666;font-size:14px;border-bottom:1px solid #eee"><strong>Tracking:</strong></td><td style="padding:8px 12px;color:#333333;font-size:14px;border-bottom:1px solid #eee">1Z999AA10123456799</td></tr>
+<tr><td style="padding:8px 12px;color:#666666;font-size:14px;border-bottom:1px solid #eee"><strong>Location:</strong></td><td style="padding:8px 12px;color:#333333;font-size:14px;border-bottom:1px solid #eee">UPS Store #427, 123 Main St</td></tr>
+<tr><td style="padding:8px 12px;color:#666666;font-size:14px"><strong>Hold until:</strong></td><td style="padding:8px 12px;color:#333333;font-size:14px">September 22, 2025</td></tr>
+</table>
+<div style="text-align:center;margin:24px 0"><a href="https://ups-package-notice.com/pickup?track=1Z999AA10123456799" style="background:#351c15;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Get directions</a></div>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">United Parcel Service of America, Inc.</p>
+</div>
+</div>

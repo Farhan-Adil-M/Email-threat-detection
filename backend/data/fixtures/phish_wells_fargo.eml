@@ -1,0 +1,38 @@
+From: "Wells Fargo" <security@wellsfargo.com>
+To: customer@gmail.com
+Subject: Your Wells Fargo account has been locked
+Date: Mon, 15 Sep 2025 10:10:00 +0000
+Message-ID: <wf-lock-V2W4X6>
+MIME-Version: 1.0
+from smtp.wellsfargo.com (smtp.wellsfargo.com [216.239.120.247])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Mon, 15 Sep 2025 10:09:00 +0000
+v=1; a=rsa-sha256; d=wellsfargo.com; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@wellsfargo.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=wellsfargo.com;
+	dmarc=pass (p=NONE) header.from=wellsfargo.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#d71e28;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">Wells Fargo</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#333333;font-size:18px;margin-top:0">Account locked</h2>
+<p style="color:#666666;font-size:14px;line-height:1.6">Dear Customer,</p>
+<p style="color:#666666;font-size:14px;line-height:1.6">Your Wells Fargo account has been <strong>temporarily locked</strong> due to multiple failed login attempts from an unrecognized device.</p>
+<table style="width:100%;margin:16px 0;border-collapse:collapse">
+<tr><td style="padding:8px 12px;color:#666666;font-size:14px;border-bottom:1px solid #eee"><strong>Account:</strong></td><td style="padding:8px 12px;color:#333333;font-size:14px;border-bottom:1px solid #eee">****4521</td></tr>
+<tr><td style="padding:8px 12px;color:#666666;font-size:14px;border-bottom:1px solid #eee"><strong>Failed attempts:</strong></td><td style="padding:8px 12px;color:#333333;font-size:14px;border-bottom:1px solid #eee">3</td></tr>
+<tr><td style="padding:8px 12px;color:#666666;font-size:14px"><strong>Location:</strong></td><td style="padding:8px 12px;color:#333333;font-size:14px">Unknown - Bucharest, Romania</td></tr>
+</table>
+<div style="text-align:center;margin:24px 0"><a href="https://wellsfargo-security.com/unlock?acct=4521" style="background:#d71e28;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Unlock account</a></div>
+<p style="color:#666666;font-size:12px;line-height:1.5">If you did not attempt to log in, call us immediately at 1-800-869-3557.</p>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">Wells Fargo Bank, N.A. Member FDIC. Equal Housing Lender</p>
+</div>
+</div>

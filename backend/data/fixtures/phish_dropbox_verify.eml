@@ -1,0 +1,36 @@
+From: "Dropbox" <no-reply@dropbox.com>
+To: user@company.com
+Subject: Verify your Dropbox account to avoid deactivation
+Date: Sun, 14 Sep 2025 08:00:00 +0000
+Message-ID: <db-verify-K1L3M5>
+MIME-Version: 1.0
+from smtp.dropbox.com (smtp.dropbox.com [162.125.66.3])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Sun, 14 Sep 2025 07:59:00 +0000
+v=1; a=rsa-sha256; d=dropbox.com; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@dropbox.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=dropbox.com;
+	dmarc=pass (p=NONE) header.from=dropbox.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#0061ff;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">Dropbox</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#1e1919;font-size:18px;margin-top:0">Your account needs verification</h2>
+<p style="color:#637282;font-size:14px;line-height:1.6">Hi,</p>
+<p style="color:#637282;font-size:14px;line-height:1.6">Due to recent unusual activity, we need you to verify your identity. If you do not verify within <strong>72 hours</strong>, your account will be temporarily deactivated.</p>
+<div style="background:#f5f7fa;border-radius:8px;padding:16px;margin:16px 0">
+<p style="color:#637282;font-size:14px;margin:0"><strong>Account:</strong> user@company.com</p>
+<p style="color:#637282;font-size:14px;margin:4px 0 0"><strong>Status:</strong> <span style="color:#d0021b">Pending verification</span></p>
+</div>
+<div style="text-align:center;margin:24px 0"><a href="https://dropbox-file-share.com/verify?account=user" style="background:#0061ff;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Verify account</a></div>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">Dropbox, Inc. 1800 Owens St, San Francisco, CA 94158</p>
+</div>
+</div>

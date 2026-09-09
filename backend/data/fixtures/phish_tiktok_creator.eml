@@ -1,0 +1,32 @@
+From: "TikTok Creator Fund" <creator@tiktok.com>
+To: creator@gmail.com
+Subject: You have been selected for the TikTok Creator Fund
+Date: Mon, 15 Sep 2025 10:33:00 +0000
+Message-ID: <tt-fund-U7V9W1>
+MIME-Version: 1.0
+from smtp.tiktok.com (smtp.tiktok.com [198.51.100.48])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Mon, 15 Sep 2025 10:32:00 +0000
+v=1; a=rsa-sha256; d=tiktok.com; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@tiktok.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=tiktok.com;
+	dmarc=pass (p=NONE) header.from=tiktok.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#000000;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">TikTok</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#0f0f0f;font-size:18px;margin-top:0;text-align:center">Creator Fund invitation</h2>
+<p style="color:#161823;font-size:14px;line-height:1.6;text-align:center">Congratulations!</p>
+<p style="color:#161823;font-size:14px;line-height:1.6;text-align:center">Your account has been selected for the <strong>TikTok Creator Fund</strong>. You can earn up to <strong>$10,000/month</strong> based on your video views.</p>
+<div style="text-align:center;margin:24px 0"><a href="https://tiktok-creator-verify.com/join?id=user123" style="background:#fe2c55;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Join Creator Fund</a></div>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">TikTok Inc. 5800 Bristol Parkway, Suite 100, Culver City, CA 90230</p>
+</div>
+</div>

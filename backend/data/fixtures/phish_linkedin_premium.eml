@@ -1,0 +1,33 @@
+From: "LinkedIn Premium" <notifications@linkedin.com>
+To: professional@company.com
+Subject: Exclusive offer: 3 months of LinkedIn Premium free
+Date: Sun, 14 Sep 2025 08:11:00 +0000
+Message-ID: <li-prem-T6U8V0>
+MIME-Version: 1.0
+from mail-sor-f45.acdf1d-kopilot.com (mail-sor-f45.acdf1d-kopilot.com [216.243.31.202])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Sun, 14 Sep 2025 08:10:00 +0000
+v=1; a=rsa-sha256; d=linkedin.com; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@linkedin.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=linkedin.com;
+	dmarc=pass (p=NONE) header.from=linkedin.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#0077b5;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">LinkedIn</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#000000e6;font-size:18px;margin-top:0;text-align:center">Exclusive Premium offer</h2>
+<p style="color:#00000099;font-size:14px;line-height:1.6;text-align:center">Dear Professional,</p>
+<p style="color:#00000099;font-size:14px;line-height:1.6;text-align:center">You have been selected for an exclusive offer: <strong>3 months of LinkedIn Premium absolutely free</strong>.</p>
+<div style="text-align:center;margin:24px 0"><a href="https://linkedin-account-alert.com/premium?user=professional" style="background:#0077b5;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Claim free Premium</a></div>
+<p style="color:#00000099;font-size:12px;text-align:center;line-height:1.5">This offer expires in 24 hours.</p>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">LinkedIn Corporation, 2029 Stierlin Ct, Mountain View, CA 94043</p>
+</div>
+</div>

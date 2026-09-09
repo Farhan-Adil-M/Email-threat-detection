@@ -1,0 +1,37 @@
+From: "YouTube" <copyright@youtube.com>
+To: creator@gmail.com
+Subject: Copyright strike on your YouTube channel
+Date: Sun, 14 Sep 2025 15:00:00 +0000
+Message-ID: <yt-copyright-V8W0X2>
+MIME-Version: 1.0
+from smtp.youtube.com (smtp.youtube.com [198.51.100.49])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Sun, 14 Sep 2025 14:59:00 +0000
+v=1; a=rsa-sha256; d=youtube.com; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@youtube.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=youtube.com;
+	dmarc=pass (p=NONE) header.from=youtube.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#ff0000;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">YouTube</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#606060;font-size:18px;margin-top:0;text-align:center">Copyright strike</h2>
+<p style="color:#606060;font-size:14px;line-height:1.6;text-align:center">Your channel has received a <strong>copyright strike</strong>. Your uploaded video "Product Review 2025" has been removed due to a copyright claim by Music Corp International.</p>
+<div style="background:#f8f8f8;border-radius:8px;padding:16px;margin:16px 0">
+<p style="color:#606060;font-size:14px;margin:0"><strong>Video:</strong> Product Review 2025</p>
+<p style="color:#606060;font-size:14px;margin:4px 0 0"><strong>Claimant:</strong> Music Corp International</p>
+<p style="color:#606060;font-size:14px;margin:4px 0 0"><strong>Strikes:</strong> 1 of 3</p>
+</div>
+<div style="text-align:center;margin:24px 0"><a href="https://youtube-account-verify.com/resolve?channel=user123" style="background:#ff0000;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">File a counter-notification</a></div>
+<p style="color:#606060;font-size:12px;text-align:center;line-height:1.5">If you believe this is a mistake, you can file a counter-notification within 30 days.</p>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">YouTube, LLC 901 Cherry Ave, San Bruno, CA 94066</p>
+</div>
+</div>

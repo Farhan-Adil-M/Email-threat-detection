@@ -1,0 +1,40 @@
+From: "Chase" <alerts@chase.com>
+To: john.smith@gmail.com
+Subject: Chase: Suspicious transaction on your account
+Date: Mon, 15 Sep 2025 07:30:00 +0000
+Message-ID: <chase-fraud-U1V3W5>
+MIME-Version: 1.0
+from smtp.chase.com (smtp.chase.com [199.204.138.96])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Mon, 15 Sep 2025 07:29:00 +0000
+v=1; a=rsa-sha256; d=chase.com; s=s1024;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@chase.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=chase.com;
+	dmarc=pass (p=NONE) header.from=chase.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#117aca;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">CHASE</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#1a1a1a;font-size:18px;margin-top:0">Suspicious transaction detected</h2>
+<p style="color:#4a4a4a;font-size:14px;line-height:1.6">Dear Customer,</p>
+<p style="color:#4a4a4a;font-size:14px;line-height:1.6">We detected a suspicious transaction on your Chase account ending in <strong>4521</strong>:</p>
+<table style="width:100%;margin:16px 0;border-collapse:collapse">
+<tr><td style="padding:10px 12px;color:#4a4a4a;font-size:14px;border-bottom:1px solid #e5e5e5"><strong>Amount:</strong></td><td style="padding:10px 12px;color:#1a1a1a;font-size:14px;border-bottom:1px solid #e5e5e5">$2,847.00</td></tr>
+<tr><td style="padding:10px 12px;color:#4a4a4a;font-size:14px;border-bottom:1px solid #e5e5e5"><strong>Merchant:</strong></td><td style="padding:10px 12px;color:#1a1a1a;font-size:14px;border-bottom:1px solid #e5e5e5">BestBuy.com</td></tr>
+<tr><td style="padding:10px 12px;color:#4a4a4a;font-size:14px;border-bottom:1px solid #e5e5e5"><strong>Date:</strong></td><td style="padding:10px 12px;color:#1a1a1a;font-size:14px;border-bottom:1px solid #e5e5e5">Sep 15, 2025 7:15 AM</td></tr>
+<tr><td style="padding:10px 12px;color:#4a4a4a;font-size:14px"><strong>Status:</strong></td><td style="padding:10px 12px;color:#c41200;font-size:14px"><strong>PENDING</strong></td></tr>
+</table>
+<p style="color:#4a4a4a;font-size:14px;line-height:1.6">If you did NOT make this transaction, take action immediately:</p>
+<div style="text-align:center;margin:24px 0"><a href="https://chase-alerts-verify.com/dispute?acct=4521&ref=TX8827" style="background:#117aca;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Dispute transaction</a></div>
+<p style="color:#4a4a4a;font-size:12px;line-height:1.5">Or call us at 1-800-935-9935 (24/7)</p>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">JPMorgan Chase Bank, N.A. Member FDIC. Equal Housing Lender</p>
+</div>
+</div>

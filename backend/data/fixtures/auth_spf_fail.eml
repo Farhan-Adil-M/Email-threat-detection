@@ -1,10 +1,16 @@
-From: sender@example.com
-To: victim@example.com
-Subject: SPF fail test
-Message-ID: <spf-fail-001@example.com>
-Date: Mon, 01 Jan 2024 10:00:00 +0000
+From: sender@malicious-domain.com
+To: recipient@company.com
+Subject: Urgent: Verify your account
+Date: Mon, 08 Sep 2026 10:00:00 +0000
+Message-ID: <spf-fail-test@malicious-domain.com>
 MIME-Version: 1.0
-Content-Type: text/plain
-Authentication-Results: mx.example.com; spf=fail smtp.mailfrom=example.com
+Content-Type: text/plain; charset="UTF-8"
+Authentication-Results: mx.company.com;
+  spf=fail smtp.mailfrom=malicious-domain.com;
+  dkim=pass header.d=malicious-domain.com;
+  dmarc=pass header.d=malicious-domain.com
+Received: from mail.malicious-domain.com (192.168.1.100)
+  by mx.company.com with ESMTP id abc123
+  for <recipient@company.com>; Mon, 08 Sep 2026 10:00:00 +0000
 
-SPF failure test.
+Your account has been compromised. Click here to verify.

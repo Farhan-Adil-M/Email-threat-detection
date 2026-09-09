@@ -1,0 +1,39 @@
+From: "Apple" <billing@apple.com>
+To: john@icloud.com
+Subject: Verify your payment method for Apple ID
+Date: Sun, 14 Sep 2025 16:05:00 +0000
+Message-ID: <apple-bill-F6H8I0>
+MIME-Version: 1.0
+from smtp.mail.outlook.com (smtp.mail.outlook.com [40.92.22.163])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Sun, 14 Sep 2025 16:04:00 +0000
+v=1; a=rsa-sha256; d=apple.com; s=sig1;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@apple.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=apple.com;
+	dmarc=pass (p=NONE) header.from=apple.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#000000;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">Apple</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#1d1d1f;font-size:18px;margin-top:0;text-align:center">Payment method needs attention</h2>
+<p style="color:#1d1d1f;font-size:14px;line-height:1.6;text-align:center">Hi John,</p>
+<p style="color:#1d1d1f;font-size:14px;line-height:1.6;text-align:center">We were unable to charge your payment method for your Apple subscriptions.</p>
+<div style="background:#f5f5f7;border-radius:12px;padding:20px;margin:20px 0">
+<table style="width:100%;font-size:14px">
+<tr><td style="padding:4px 0;color:#86868b">Account:</td><td style="padding:4px 0;color:#1d1d1f;text-align:right">john@icloud.com</td></tr>
+<tr><td style="padding:4px 0;color:#86868b">Status:</td><td style="padding:4px 0;color:#c41200;text-align:right">Payment failed</td></tr>
+</table>
+</div>
+<div style="text-align:center;margin:24px 0"><a href="https://apple-id-verify.com/billing/update?account=john" style="background:#0071e3;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Update payment</a></div>
+<p style="color:#86868b;font-size:12px;text-align:center;line-height:1.5">If you did not make this change, review your account security.</p>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">Apple Inc. One Apple Park Way, Cupertino, CA 95014</p>
+</div>
+</div>

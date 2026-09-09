@@ -1,9 +1,16 @@
-From: legitimate@example.com
-To: user@example.com
-Subject: Quarterly report
-Message-ID: <legit-001@example.com>
-Date: Mon, 15 Jan 2024 09:00:00 +0000
+From: updates@linkedin.com
+To: user@company.com
+Subject: You have 3 new profile views
+Date: Mon, 08 Sep 2026 10:00:00 +0000
+Message-ID: <legitimate-test@linkedin.com>
 MIME-Version: 1.0
-Content-Type: text/plain
+Content-Type: text/plain; charset="UTF-8"
+Authentication-Results: mx.company.com;
+  spf=pass header.d=linkedin.com;
+  dkim=pass header.d=linkedin.com;
+  dmarc=pass header.d=linkedin.com
+Received: from mail.linkedin.com (108.172.232.100)
+  by mx.company.com with ESMTP id pqr678
+  for <user@company.com>; Mon, 08 Sep 2026 10:00:00 +0000
 
-Here is the quarterly report you requested.
+Your profile was viewed by 3 people this week.

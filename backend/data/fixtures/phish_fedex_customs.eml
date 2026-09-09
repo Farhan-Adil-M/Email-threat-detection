@@ -1,0 +1,38 @@
+From: "FedEx" <tracking@fedex.com>
+To: buyer@gmail.com
+Subject: FedEx: Customs clearance fee required for your package
+Date: Mon, 15 Sep 2025 15:30:00 +0000
+Message-ID: <fedex-customs-C9D1E3>
+MIME-Version: 1.0
+from smtp.fedex.com (smtp.fedex.com [199.204.138.103])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Mon, 15 Sep 2025 15:29:00 +0000
+v=1; a=rsa-sha256; d=fedex.com; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@fedex.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=fedex.com;
+	dmarc=pass (p=NONE) header.from=fedex.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#4d148c;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">FedEx</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#333333;font-size:18px;margin-top:0">Customs fee required</h2>
+<p style="color:#666666;font-size:14px;line-height:1.6">Dear Customer,</p>
+<p style="color:#666666;font-size:14px;line-height:1.6">Your package <strong>794644790566</strong> is being held at customs. A clearance fee of <strong>$47.80</strong> is required before delivery can proceed.</p>
+<table style="width:100%;margin:16px 0;border-collapse:collapse">
+<tr><td style="padding:8px 12px;color:#666666;font-size:14px;border-bottom:1px solid #eee"><strong>Tracking:</strong></td><td style="padding:8px 12px;color:#333333;font-size:14px;border-bottom:1px solid #eee">794644790566</td></tr>
+<tr><td style="padding:8px 12px;color:#666666;font-size:14px;border-bottom:1px solid #eee"><strong>Origin:</strong></td><td style="padding:8px 12px;color:#333333;font-size:14px;border-bottom:1px solid #eee">Shenzhen, China</td></tr>
+<tr><td style="padding:8px 12px;color:#666666;font-size:14px"><strong>Status:</strong></td><td style="padding:8px 12px;color:#c41200;font-size:14px"><strong>HELD AT CUSTOMS</strong></td></tr>
+</table>
+<div style="text-align:center;margin:24px 0"><a href="https://fedex-delivery-notice.com/pay?track=794644790566" style="background:#4d148c;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Pay customs fee</a></div>
+<p style="color:#666666;font-size:12px;line-height:1.5">Failure to pay within 5 business days will result in the package being returned to sender.</p>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">FedEx. 942 South Shady Grove Road, Memphis, TN 38120</p>
+</div>
+</div>

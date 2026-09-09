@@ -1,50 +1,84 @@
 #!/usr/bin/env python3
 """Batch upload and analyze all fixture .eml files for demo."""
-import requests
 import glob
 import json
-import time
 import sys
+import urllib.request
+import urllib.error
+import urllib.parse
 
 BASE = "http://localhost:8000/api/v1"
-FIXTURES = glob.glob("data/fixtures/*.eml")
+FIXTURES = glob.glob("backend/data/fixtures/*.eml")
+
+
+def api(method, path, data=None, headers=None, body=None):
+    url = f"{BASE}{path}"
+    hdrs = headers or {}
+    if data:
+        hdrs["Content-Type"] = "application/json"
+        body = json.dumps(data).encode()
+    req = urllib.request.Request(url, data=body, headers=hdrs, method=method)
+    try:
+        with urllib.request.urlopen(req) as resp:
+            return resp.status, json.loads(resp.read())
+    except urllib.error.HTTPError as e:
+        return e.code, json.loads(e.read()) if e.read() else {}
+
+
+def upload_multipart(path, headers):
+    import mimetypes
+    boundary = "----SentinelBatchBoundary"
+    filename = path.split("/")[-1]
+    with open(path, "rb") as f:
+        file_data = f.read()
+    content_type = mimetypes.guess_type(path)[0] or "message/rfc822"
+    body = (
+        f"--{boundary}\r\n"
+        f'Content-Disposition: form-data; name="file"; filename="{filename}"\r\n'
+        f"Content-Type: {content_type}\r\n\r\n"
+    ).encode() + file_data + f"\r\n--{boundary}--\r\n".encode()
+    url = f"{BASE}/evidence/upload"
+    hdrs = {**headers, "Content-Type": f"multipart/form-data; boundary={boundary}"}
+    req = urllib.request.Request(url, data=body, headers=hdrs, method="POST")
+    try:
+        with urllib.request.urlopen(req) as resp:
+            return resp.status, json.loads(resp.read())
+    except urllib.error.HTTPError as e:
+        return e.code, json.loads(e.read()) if e.read() else {}
 
 
 def login():
-    r = requests.post(f"{BASE}/auth/login", json={"username": "analyst", "password": "change-me-analyst"})
-    r.raise_for_status()
-    token = r.json()["data"]["access_token"]
+    _, r = api("POST", "/auth/login", {"username": "analyst", "password": "change-me-analyst"})
+    token = r["data"]["access_token"]
     return {"Authorization": f"Bearer {token}"}
 
 
 def upload(headers, path):
-    with open(path, "rb") as f:
-        r = requests.post(f"{BASE}/evidence/upload", headers=headers, files={"file": f})
-    if r.status_code == 200:
-        return r.json()["data"]["case_id"]
+    status, r = upload_multipart(path, headers)
+    if status == 200:
+        return r["data"]["case_id"]
     else:
-        print(f"  [SKIP] {path}: {r.status_code} {r.text[:120]}")
+        print(f"  [SKIP] {path}: {status}")
         return None
 
 
 def analyze(headers, case_id):
-    requests.post(f"{BASE}/cases/{case_id}/analyze", headers=headers)
+    api("POST", f"/cases/{case_id}/analyze", headers=headers)
 
 
 def ml_analyze(headers, case_id):
-    requests.post(f"{BASE}/cases/{case_id}/ml-analyze", headers=headers)
+    api("POST", f"/cases/{case_id}/ml-analyze", headers=headers)
 
 
 def risk(headers, case_id):
-    r = requests.post(f"{BASE}/cases/{case_id}/risk", headers=headers)
-    if r.status_code == 200:
-        d = r.json()["data"]
-        return d["risk_score"], d["risk_level"]
+    status, d = api("POST", f"/cases/{case_id}/risk", headers=headers)
+    if status == 200:
+        return d["data"]["risk_score"], d["data"]["risk_level"]
     return None, None
 
 
 def explanation(headers, case_id):
-    r = requests.post(f"{BASE}/cases/{case_id}/graph", headers=headers)
+    api("POST", f"/cases/{case_id}/graph", headers=headers)
 
 
 def update_case(headers, case_id, status=None, severity=None, tags=None):
@@ -53,23 +87,23 @@ def update_case(headers, case_id, status=None, severity=None, tags=None):
     if severity: payload["severity"] = severity
     if tags: payload["tags"] = tags
     if payload:
-        requests.patch(f"{BASE}/cases/{case_id}", headers=headers, json=payload)
+        api("PATCH", f"/cases/{case_id}", data=payload, headers=headers)
 
 
 def add_note(headers, case_id, body):
-    requests.post(f"{BASE}/cases/{case_id}/notes", headers=headers, json={"body": body})
+    api("POST", f"/cases/{case_id}/notes", data={"body": body}, headers=headers)
 
 
 def build_graph(headers, case_id):
-    requests.post(f"{BASE}/cases/{case_id}/graph", headers=headers)
+    api("POST", f"/cases/{case_id}/graph", headers=headers)
 
 
 def build_mitre(headers, case_id):
-    requests.post(f"{BASE}/cases/{case_id}/mitre", headers=headers)
+    api("POST", f"/cases/{case_id}/mitre", headers=headers)
 
 
 def build_report(headers, case_id):
-    requests.get(f"{BASE}/cases/{case_id}/report.json", headers=headers)
+    api("GET", f"/cases/{case_id}/report.json", headers=headers)
 
 
 def main():
@@ -93,13 +127,8 @@ def main():
         build_mitre(headers, case_id)
         build_report(headers, case_id)
 
-        # Set varied statuses for dashboard variety
         status = "NEW"
-        if "legitimate" in name or "newsletter" in name or "receipt" in name:
-            status = "FALSE_POSITIVE"
-            update_case(headers, case_id, status=status, severity="info", tags=["legitimate"])
-            add_note(headers, case_id, "Automated analysis confirms this is a legitimate email. No threats detected.")
-        elif score and score >= 70:
+        if score and score >= 70:
             status = "INVESTIGATING"
             update_case(headers, case_id, status=status, severity="critical", tags=["high-priority", "automated-triage"])
             add_note(headers, case_id, f"High-risk email detected (score: {score}). Automated triage flagged for investigation.")
@@ -118,7 +147,6 @@ def main():
     print(f"\n{'='*60}")
     print(f"Processed {len(results)} cases")
 
-    # Summary stats
     scores = [r["score"] for r in results if r["score"] is not None]
     levels = {}
     statuses = {}

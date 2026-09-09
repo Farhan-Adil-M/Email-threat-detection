@@ -1,10 +1,16 @@
-From: sender@example.com
-To: victim@example.com
-Subject: DKIM fail test
-Message-ID: <dkim-fail-001@example.com>
-Date: Mon, 01 Jan 2024 10:00:00 +0000
+From: sender@phishing-site.com
+To: victim@company.com
+Subject: Your invoice is ready
+Date: Mon, 08 Sep 2026 10:00:00 +0000
+Message-ID: <dkim-fail-test@phishing-site.com>
 MIME-Version: 1.0
-Content-Type: text/plain
-Authentication-Results: mx.example.com; dkim=fail header.i=@example.com
+Content-Type: text/plain; charset="UTF-8"
+Authentication-Results: mx.company.com;
+  spf=pass header.d=phishing-site.com;
+  dkim=fail header.d=phishing-site.com;
+  dmarc=fail header.d=phishing-site.com
+Received: from mail.phishing-site.com (10.0.0.1)
+  by mx.company.com with ESMTP id def456
+  for <victim@company.com>; Mon, 08 Sep 2026 10:00:00 +0000
 
-DKIM failure test.
+Please review the attached invoice immediately.

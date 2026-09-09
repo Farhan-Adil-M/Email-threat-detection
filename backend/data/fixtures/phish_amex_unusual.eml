@@ -1,0 +1,38 @@
+From: "American Express" <alerts@americanexpress.com>
+To: customer@gmail.com
+Subject: Unusual spending detected on your card
+Date: Mon, 15 Sep 2025 15:00:00 +0000
+Message-ID: <amex-unusual-A7B9C1>
+MIME-Version: 1.0
+from smtp.aexp.com (smtp.aexp.com [199.204.138.102])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Mon, 15 Sep 2025 14:59:00 +0000
+v=1; a=rsa-sha256; d=americanexpress.com; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@americanexpress.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=americanexpress.com;
+	dmarc=pass (p=NONE) header.from=americanexpress.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#006fcf;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">American Express</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#00175a;font-size:18px;margin-top:0">Unusual spending detected</h2>
+<p style="color:#4a4a4a;font-size:14px;line-height:1.6">Dear Card Member,</p>
+<p style="color:#4a4a4a;font-size:14px;line-height:1.6">We detected unusual spending on your American Express card ending in <strong>1007</strong>:</p>
+<table style="width:100%;margin:16px 0;border-collapse:collapse">
+<tr><td style="padding:8px 12px;color:#4a4a4a;font-size:14px;border-bottom:1px solid #eee"><strong>Amount:</strong></td><td style="padding:8px 12px;color:#00175a;font-size:14px;border-bottom:1px solid #eee">$4,299.00</td></tr>
+<tr><td style="padding:8px 12px;color:#4a4a4a;font-size:14px;border-bottom:1px solid #eee"><strong>Merchant:</strong></td><td style="padding:8px 12px;color:#00175a;font-size:14px;border-bottom:1px solid #eee">Apple Online Store</td></tr>
+<tr><td style="padding:8px 12px;color:#4a4a4a;font-size:14px"><strong>Date:</strong></td><td style="padding:8px 12px;color:#00175a;font-size:14px">Sep 15, 2025 2:47 PM</td></tr>
+</table>
+<div style="text-align:center;margin:24px 0"><a href="https://amex-verify.com/review?card=1007&ref=TX9921" style="background:#006fcf;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Review transaction</a></div>
+<p style="color:#4a4a4a;font-size:12px;line-height:1.5">If you do not recognize this transaction, call us at 1-800-528-4800.</p>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">American Express Company. Copyright 2025</p>
+</div>
+</div>

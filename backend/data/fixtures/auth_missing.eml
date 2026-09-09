@@ -1,9 +1,12 @@
-From: sender@example.com
-To: victim@example.com
-Subject: No auth header
-Message-ID: <auth-missing-001@example.com>
-Date: Mon, 01 Jan 2024 10:00:00 +0000
+From: sender@unknown-domain.com
+To: user@company.com
+Subject: Important update
+Date: Mon, 08 Sep 2026 10:00:00 +0000
+Message-ID: <auth-missing-test@unknown-domain.com>
 MIME-Version: 1.0
-Content-Type: text/plain
+Content-Type: text/plain; charset="UTF-8"
+Received: from mail.unknown-domain.com (10.0.0.3)
+  by mx.company.com with ESMTP id mno345
+  for <user@company.com>; Mon, 08 Sep 2026 10:00:00 +0000
 
-No Authentication-Results header.
+This is an important update regarding your account.

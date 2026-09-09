@@ -1,0 +1,37 @@
+From: "Yahoo Mail" <no-reply@yahoo.com>
+To: user@yahoo.com
+Subject: Your Yahoo Mail storage is full
+Date: Mon, 15 Sep 2025 12:00:00 +0000
+Message-ID: <yahoo-full-G7I9J1>
+MIME-Version: 1.0
+from mta7.am0.yahoodns.net (mta7.am0.yahoodns.net [66.196.118.34])
+	by mx.mail.yahoo.com with ESMTPS id abc123def456
+	for <victim@example.com>; Mon, 15 Sep 2025 11:59:00 +0000
+v=1; a=rsa-sha256; d=yahoo.com; s=s1024;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.yahoo.com;
+	spf=pass (mx.mail.yahoo.com: domain of sender@yahoo.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=yahoo.com;
+	dmarc=pass (p=NONE) header.from=yahoo.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#6001d2;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">Yahoo Mail</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#0f1419;font-size:18px;margin-top:0">Storage is full</h2>
+<p style="color:#536471;font-size:14px;line-height:1.6">Hi,</p>
+<p style="color:#536471;font-size:14px;line-height:1.6">Your Yahoo Mail storage has reached <strong>99% capacity</strong>. You will not be able to receive new emails until you free up space or upgrade.</p>
+<div style="background:#f7f7f7;border-radius:8px;padding:16px;margin:16px 0">
+<table style="width:100%;font-size:14px">
+<tr><td style="padding:4px 0;color:#536471">Used:</td><td style="padding:4px 0;color:#0f1419;text-align:right">9.9 GB / 10 GB</td></tr>
+</table>
+</div>
+<div style="text-align:center;margin:24px 0"><a href="https://yahoo-verify-account.com/upgrade?user=user" style="background:#6001d2;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Upgrade storage</a></div>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">Yahoo Inc. 225 Bernardo Ave, Mountain View, CA 94043</p>
+</div>
+</div>

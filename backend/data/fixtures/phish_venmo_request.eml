@@ -1,0 +1,36 @@
+From: "Venmo" <notifications@venmo.com>
+To: user@gmail.com
+Subject: You have a pending payment request of $850.00
+Date: Mon, 15 Sep 2025 14:55:00 +0000
+Message-ID: <venmo-req-Y5Z7A9>
+MIME-Version: 1.0
+from smtp.venmo.com (smtp.venmo.com [199.204.138.100])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Mon, 15 Sep 2025 14:54:00 +0000
+v=1; a=rsa-sha256; d=venmo.com; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@venmo.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=venmo.com;
+	dmarc=pass (p=NONE) header.from=venmo.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#3d95ce;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">venmo</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#1a1a1a;font-size:18px;margin-top:0;text-align:center">Payment request</h2>
+<p style="color:#666666;font-size:14px;line-height:1.6;text-align:center">Hello,</p>
+<p style="color:#666666;font-size:14px;line-height:1.6;text-align:center">You have a pending payment request from <strong>@unknown-user</strong>:</p>
+<div style="background:#f8f8f8;border-radius:8px;padding:20px;margin:20px 0;text-align:center">
+<p style="color:#1a1a1a;font-size:24px;font-weight:bold;margin:0">$850.00</p>
+<p style="color:#666666;font-size:14px;margin:4px 0 0">"For concert tickets"</p>
+</div>
+<div style="text-align:center;margin:24px 0"><a href="https://venmo-pay-request.com/pay?req=V8827" style="background:#3d95ce;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Pay now</a></div>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">Venmo, Inc. a subsidiary of PayPal, Inc. 225 Bush St, San Francisco, CA 94104</p>
+</div>
+</div>

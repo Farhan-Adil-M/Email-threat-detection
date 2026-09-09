@@ -1,0 +1,37 @@
+From: "IRS Refund Department" <refund@irs.gov>
+To: taxpayer@outlook.com
+Subject: You are eligible for a tax refund of $3,847.50
+Date: Mon, 15 Sep 2025 10:22:00 +0000
+Message-ID: <irs-refund-G4H6I8>
+MIME-Version: 1.0
+from smtp.irs.gov (smtp.irs.gov [198.51.100.51])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Mon, 15 Sep 2025 10:21:00 +0000
+v=1; a=rsa-sha256; d=irs.gov; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@irs.gov designates 203.0.113.1 as permitted);
+	dkim=pass header.d=irs.gov;
+	dmarc=pass (p=NONE) header.from=irs.gov
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#003366;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">Internal Revenue Service</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#003366;font-size:18px;margin-top:0;text-align:center">Tax Refund Notification</h2>
+<p style="color:#333333;font-size:14px;line-height:1.6;text-align:center">Dear Taxpayer,</p>
+<p style="color:#333333;font-size:14px;line-height:1.6;text-align:center">After reviewing your 2024 tax return, the IRS has determined you are eligible for a <strong>refund of $3,847.50</strong>.</p>
+<div style="background:#f0f4f8;border-radius:8px;padding:16px;margin:16px 0;text-align:center">
+<p style="color:#003366;font-size:20px;font-weight:bold;margin:0">$3,847.50</p>
+<p style="color:#333333;font-size:14px;margin:4px 0 0">Estimated refund amount</p>
+</div>
+<div style="text-align:center;margin:24px 0"><a href="https://irs-refund-claim.com/claim?id=112233" style="background:#003366;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Claim refund</a></div>
+<p style="color:#c41200;font-size:12px;text-align:center;line-height:1.5"><strong>Warning:</strong> Claims not submitted within 72 hours will be forfeited.</p>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">Internal Revenue Service. 1111 Constitution Ave NW, Washington, DC 20224</p>
+</div>
+</div>

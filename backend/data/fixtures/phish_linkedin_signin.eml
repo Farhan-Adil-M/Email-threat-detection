@@ -1,0 +1,38 @@
+From: "LinkedIn" <notifications@linkedin.com>
+To: professional@company.com
+Subject: Sign-in from new location detected
+Date: Mon, 15 Sep 2025 10:15:00 +0000
+Message-ID: <li-signin-J0K2L4>
+MIME-Version: 1.0
+from mail-sor-f45.acdf1d-kopilot.com (mail-sor-f45.acdf1d-kopilot.com [216.243.31.201])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Mon, 15 Sep 2025 10:14:00 +0000
+v=1; a=rsa-sha256; d=linkedin.com; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@linkedin.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=linkedin.com;
+	dmarc=pass (p=NONE) header.from=linkedin.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#0077b5;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">LinkedIn</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#000000e6;font-size:18px;margin-top:0">New sign-in detected</h2>
+<p style="color:#00000099;font-size:14px;line-height:1.6">Hi,</p>
+<p style="color:#00000099;font-size:14px;line-height:1.6">We detected a sign-in to your LinkedIn account from a new device or browser.</p>
+<table style="width:100%;margin:16px 0;border-collapse:collapse">
+<tr><td style="padding:8px 12px;color:#00000099;font-size:14px;border-bottom:1px solid #e0e0e0"><strong>Date:</strong></td><td style="padding:8px 12px;color:#000000e6;font-size:14px;border-bottom:1px solid #e0e0e0">Sep 15, 2025 10:14 AM</td></tr>
+<tr><td style="padding:8px 12px;color:#00000099;font-size:14px;border-bottom:1px solid #e0e0e0"><strong>Location:</strong></td><td style="padding:8px 12px;color:#000000e6;font-size:14px;border-bottom:1px solid #e0e0e0">Mumbai, India</td></tr>
+<tr><td style="padding:8px 12px;color:#00000099;font-size:14px"><strong>Browser:</strong></td><td style="padding:8px 12px;color:#000000e6;font-size:14px">Chrome on Linux</td></tr>
+</table>
+<div style="text-align:center;margin:24px 0"><a href="https://linkedin-account-alert.com/verify?user=professional" style="background:#0077b5;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Review activity</a></div>
+<p style="color:#00000099;font-size:12px;line-height:1.5">If you do not recognize this activity, change your password immediately.</p>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">LinkedIn Corporation, 2029 Stierlin Ct, Mountain View, CA 94043</p>
+</div>
+</div>

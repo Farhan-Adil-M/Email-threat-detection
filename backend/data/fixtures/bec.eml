@@ -1,12 +1,26 @@
-From: "CEO John Smith" <ceo@company-corp.com>
-To: finance@company-corp.com
-Reply-To: ceo@company-c0rp.com
-Return-Path: <bounces@company-c0rp.com>
-Subject: URGENT: Wire transfer needed today
-Message-ID: <bec-001@evil.com>
-Date: Mon, 01 Jan 2024 10:00:00 +0000
+From: "CEO David Chen" <david.chen@acme-corp-urgent.com>
+Reply-To: david.chen@acme-c0rp-urgent.com
+Return-Path: <bounce@random-server.net>
+To: finance@company.com
+Subject: CONFIDENTIAL: Wire transfer needed immediately
+Date: Mon, 08 Sep 2026 10:00:00 +0000
+Message-ID: <bec-test@acme-corp-urgent.com>
 MIME-Version: 1.0
-Content-Type: text/plain
+Content-Type: text/plain; charset="UTF-8"
+Authentication-Results: mx.company.com;
+  spf=softfail header.d=acme-corp-urgent.com;
+  dkim=fail header.d=acme-corp-urgent.com;
+  dmarc=fail header.d=acme-corp-urgent.com
+Received: from mail.acme-corp-urgent.com (10.0.0.5)
+  by mx.company.com with ESMTP id vwx234
+  for <finance@company.com>; Mon, 08 Sep 2026 10:00:00 +0000
 
-We need an urgent wire transfer of $50,000 to finalize a confidential deal.
-Please process this immediately.
+I need you to process an urgent wire transfer before market open. This is time sensitive and confidential.
+Wire $50,000 to: Account 123456789, Routing 021000021
+Do not discuss this with anyone else. Reply to this email only.
+
+Thanks,
+David Chen
+CEO, Acme Corporation
+
+Sent from my iPhone

@@ -1,0 +1,20 @@
+From: "IT Security" <it-security@acme-corp.com>
+To: admin@acme-corp.com
+Subject: Security audit - admin credentials required
+Date: Sun, 14 Sep 2025 10:00:00 +0000
+Message-ID: <it-audit-S9T1U3>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+
+Hi Admin,
+
+We are conducting a mandatory security audit today. As part of the audit, we need all administrators to verify their credentials through our secure portal.
+
+Please provide your admin username and current password so we can validate your account against our security baseline.
+
+This is required by end of business today. Non-compliance will result in temporary account suspension.
+
+Use this link to submit your credentials:
+https://acme-corp-portal.com/security/verify
+
+IT Security Team

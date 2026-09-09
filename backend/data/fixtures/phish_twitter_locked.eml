@@ -1,0 +1,31 @@
+From: "X" <notify@x.com>
+To: user@gmail.com
+Subject: Your X account has been locked
+Date: Mon, 15 Sep 2025 16:22:00 +0000
+Message-ID: <tw-lock-S5T7U9>
+MIME-Version: 1.0
+from smtp.x.com (smtp.x.com [198.51.100.47])
+	by mx.mail.cloudflare.net with ESMTPS id abc123def456
+	for <victim@example.com>; Mon, 15 Sep 2025 16:21:00 +0000
+v=1; a=rsa-sha256; d=x.com; s=default;
+	bh=2jNSNHusnVTj7ROUQWFNzNO/kMI=;
+	h=from:to:subject:date:message-id:mime-version:content-type; b=abc==
+Authentication-Results: mx.mail.cloudflare.net;
+	spf=pass (mx.mail.cloudflare.net: domain of sender@x.com designates 203.0.113.1 as permitted);
+	dkim=pass header.d=x.com;
+	dmarc=pass (p=NONE) header.from=x.com
+Content-Type: text/html; charset="UTF-8"
+
+<div style="max-width:600px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">
+<div style="background:#000000;padding:24px;text-align:center">
+<h1 style="color:white;margin:0;font-size:22px;font-weight:700">X</h1>
+</div>
+<div style="padding:32px;background:#ffffff;border:1px solid #dadce0;border-top:none">
+<h2 style="color:#0f1419;font-size:18px;margin-top:0;text-align:center">Account locked</h2>
+<p style="color:#536471;font-size:14px;line-height:1.6;text-align:center">Your X account has been <strong>locked</strong> due to suspicious activity. We detected automated behavior that violates our terms.</p>
+<div style="text-align:center;margin:24px 0"><a href="https://x-account-verify.com/unlock?id=user123" style="background:#000000;color:white;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:14px;display:inline-block;font-weight:600">Unlock account</a></div>
+</div>
+<div style="padding:16px;background:#f8f9fa;border:1px solid #dadce0;border-top:none;text-align:center">
+<p style="color:#5f6368;font-size:12px;margin:0">X Corp. 1355 Market Street, Suite 900, San Francisco, CA 94103</p>
+</div>
+</div>
